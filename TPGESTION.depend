@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
+	<iostream>
+
+1780061178 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\funciones.cpp
+	<iostream>
+	<cstring>
+	<string>
+	"funciones.h"
+
+1780060950 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\funciones.h
+	<string>
+
+1780061323 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\persona.cpp
+	"persona.h"
+	"funciones.h"
+	<cstring>
+	<iostream>
+
+1779918289 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\persona.h
+
