@@ -1,9 +1,17 @@
 #include <iostream>
-
+///#include "Persona.h"
+#include "vendedor.h"
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+Persona p;
+Vendedor v;
+
+v.Cargar();
+v.Mostrar();
+
+///p.Cargar();
+///p.Mostrar();
     return 0;
 }

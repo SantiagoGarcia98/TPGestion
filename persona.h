@@ -1,3 +1,4 @@
+#include "Fecha.h"
 
 class Persona {
 protected:
@@ -6,6 +7,7 @@ protected:
     char _DNI[12];
     char _Telefono[20];
     char _Email[50];
+    Fecha _FechaNacimiento;
     bool _Estado;
 
 public:
@@ -21,7 +23,8 @@ public:
      char *getDni() ;
      char *getTelefono() ;
      char *getEmail() ;
-    bool getEstado() ;
+     Fecha getFechaNacimiento();
+     bool getEstado() ;
 
     // Setters
     void setNombre( char* nombre);
@@ -29,6 +32,7 @@ public:
     void setDni( char* dni);
     void setTelefono( char* tel);
     void setEmail( char *email);
+    void setFechaNacimiento(Fecha f);
     void setEstado(bool est);
 
 

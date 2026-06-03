@@ -1,16 +1,28 @@
-#ifndef VENDEDOR_H
-#define VENDEDOR_H
+#pragma once
+#include "Persona.h"
+#include "Fecha.h"
+class Vendedor : public Persona {
+private:
+    int _IdVendedor;
+    int _legajo;
+    Fecha _FechaContratacion;
+    Fecha _FechaBaja;
+    float _Sueldo;
 
 
-class vendedor
-{
-    public:
-        vendedor();
-        virtual ~vendedor();
+public:
+    Vendedor();
+    void setIdVendedor(int id);
+    void setLegajo (int legajo);
+    void setSueldo(float s);
+    void setFechaContratacion(Fecha f);
+    void setFechaBaja(Fecha fb);
 
-    protected:
-
-    private:
+    int getIdVendedor();
+    int getLegajo();
+    float getSueldo();
+    Fecha getFechaContratacion();
+    Fecha getFechaBaja();
+    void Cargar();
+    void Mostrar();
 };
-
-#endif // VENDEDOR_H

@@ -34,11 +34,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="cliente.cpp" />
+		<Unit filename="cliente.h" />
+		<Unit filename="fecha.cpp" />
+		<Unit filename="fecha.h" />
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="persona.cpp" />
 		<Unit filename="persona.h" />
+		<Unit filename="vendedor.cpp" />
+		<Unit filename="vendedor.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

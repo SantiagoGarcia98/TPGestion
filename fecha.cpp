@@ -1,0 +1,59 @@
+#include "Fecha.h"
+#include <iostream>
+ using namespace std;
+
+
+
+Fecha::Fecha() : _dia(0), _mes(0), _anio(0) { }
+
+Fecha::Fecha(int dia, int mes, int anio) {
+    setDia(dia);
+    setMes(mes);
+    setAnio(anio);
+}
+
+int Fecha::getDia() { return _dia; }
+void Fecha::setDia(int dia) { _dia = dia; }
+
+int Fecha::getMes() { return _mes; }
+void Fecha::setMes(int mes) { _mes = mes; }
+
+int Fecha::getAnio() { return _anio; }
+void Fecha::setAnio(int anio) { _anio = anio; }
+using namespace std;
+void Fecha::Cargar() {
+    do {
+        cout << "Dia: ";
+        cin >> _dia;
+        cout << "Mes: ";
+        cin >> _mes;
+        cout << "A" << char(164) << "o:";
+        cin >> _anio;
+
+        if (!esFechaValida(_dia, _mes, _anio)) {
+            cout << " Fecha invalida. Reingrese.\n\n";
+        }
+    } while (!esFechaValida(_dia, _mes, _anio));
+}
+
+bool Fecha::esBisiesto(int anio) {
+    return (anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0);
+}
+
+bool Fecha::esFechaValida(int dia, int mes, int anio) {
+    if (anio < 1900 || anio > 2100 || mes < 1 || mes > 12 || dia < 1)
+        return false;
+
+    int diasPorMes[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if (mes == 2 && esBisiesto(anio))
+        diasPorMes[1] = 29;
+
+    return dia <= diasPorMes[mes - 1];
+}
+string Fecha::toString() {
+  return to_string(_dia) + "/"+ to_string(_mes) + "/" + to_string(_anio); }
+
+void Fecha::Mostrar() {
+    cout << toString() << endl;
+}
+

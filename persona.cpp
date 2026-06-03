@@ -46,6 +46,8 @@ void Persona::setEmail( char *e)
 {
     strcpy(_Email, e);
 }
+void Persona::setFechaNacimiento(Fecha f) {
+    _FechaNacimiento=f; }
 void Persona::setEstado(bool est)
 {
     _Estado = est;
@@ -71,7 +73,12 @@ char *Persona::getTelefono()
 char *Persona::getEmail()
 {
     return _Email;
+
 }
+Fecha Persona::getFechaNacimiento() {
+         return _FechaNacimiento;
+}
+
 bool Persona::getEstado()
 {
     return _Estado;
@@ -97,7 +104,7 @@ void Persona::Cargar()
 
         if (!validarDNI(_DNI))
         {
-            cout << "ERROR: DNI inv" << char(160) << "lido. Reintente.\n";
+            cout << "ERROR: DNI invalido. Reintente.\n";
             strcpy(_DNI, "");// el campo se deja en blanco para repetir
             continue; //
         }
@@ -130,7 +137,7 @@ void Persona::Cargar()
     // --- TELÉFONO ---
     do
     {
-        cout << "Tel" << char(130) << "fono (0 para cancelar): ";
+        cout << "Telefono (0 para cancelar): ";
         cin.getline(_Telefono, 20);
 
         if (Volver(_Telefono))
@@ -142,7 +149,7 @@ void Persona::Cargar()
 
         if (!esTelefonoValido(_Telefono))
         {
-            cout << "Tel" << char(130) << "fono inv"<< char(160) << "lido. Ingrese solo n"<< char(163) <<"meros (6–15 d" << char(161) << "gitos).\n";
+            cout << "Telefono invalido. Ingrese solo numeros (6–15 digitos).\n";
             strcpy(_Telefono, "");
         }
 
@@ -167,7 +174,7 @@ void Persona::Mostrar()
     cout << "Nombre:   " << _Nombre << endl;
     cout << "Apellido: " << _Apellido << endl;
     cout << "DNI:      " << _DNI << endl;
-    cout << "Tel" << char(130) << "fono: " << _Telefono << endl;
+    cout << "Telefono: " << _Telefono << endl;
     cout << "Email:    " << _Email << endl;
     cout << "Estado:   " << (_Estado ? "Activo" : "Inactivo") << endl;
 }
