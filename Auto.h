@@ -1,16 +1,37 @@
-#ifndef AUTO_H
-#define AUTO_H
+#pragma once
 
 
 class Auto
 {
-  public:
+private:
+    int _idAuto;
+    char _marca[30];
+    char _modelo[30];
+    int _anio;
+    float _precio;
+    int _stock; /// Archivo
+    bool _activo;
+
+public:
     Auto();
-    virtual ~Auto();
+    //virtual ~Auto();
 
-  protected:
+    void cargar();
+    void mostrar();
 
-  private:
+    int getIdAuto();
+    const char* getMarca();
+    const char* getModelo();
+    int getAnio();
+    float getPrecio();
+    int getStock();
+    bool getActivo();
+
+    void setIdAuto(int id);
+    void setMarca(const char* m);
+    void setModelo(const char* mo);
+    void setAnio(int a);
+    void setPrecio(float p);
+    void setStock(int s);
+    void setActivo(bool ac);
 };
-
-#endif // AUTO_H
