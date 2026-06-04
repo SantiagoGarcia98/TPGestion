@@ -89,3 +89,45 @@
 	<iomanip>
 	<iostream>
 
+1780545015 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\auto.cpp
+	"Auto.h"
+	"utils.h"
+	<iostream>
+	<cstring>
+
+1780544864 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\auto.h
+
+1780544994 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\utils.h
+	"Fecha.h"
+	<string>
+
+1780545011 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\utils.cpp
+	<iostream>
+	"utils.h"
+
+1780545326 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\autoarchivo.cpp
+	<iostream>
+	"AutoArchivo.h"
+
+1780545313 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\autoarchivo.h
+	<string>
+	"Auto.h"
+
+1780545417 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automanager.cpp
+	"AutoManager.h"
+	"Auto.h"
+	"utils.h"
+	<iostream>
+	<cstring>
+
+1780545400 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automanager.h
+	"AutoArchivo.h"
+
+1780545497 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automenu.cpp
+	<iostream>
+	"AutoMenu.h"
+	"utils.h"
+
+1780545480 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automenu.h
+	"AutoManager.h"
+
