@@ -72,3 +72,24 @@ void Venta::setMontoTotal(float m){
 void Venta::setEstado(bool e){
     _estado = e;
 }
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+
+ return 0;
+}#include "VentaArchivo.h"
+
+VentaArchivo::VentaArchivo()
+{
+  //ctor
+}
+
+VentaArchivo::~VentaArchivo()
+{
+  //dtor
+}
