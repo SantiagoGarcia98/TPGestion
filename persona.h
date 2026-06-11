@@ -1,4 +1,7 @@
+#pragma once
+
 #include "Fecha.h"
+
 
 class Persona {
 protected:

@@ -1,4 +1,6 @@
 #pragma once
+#include "persona.h"
+
 
 class Cliente : public Persona {
 private:

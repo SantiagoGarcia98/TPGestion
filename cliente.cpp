@@ -1,6 +1,7 @@
 #include <iostream>
-#include "Persona.h"
 #include "Cliente.h"
+#include "persona.h"
+
 using namespace std;
 
 Cliente::Cliente() {

@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1780513605 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
+1780525940 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
 	<iostream>
 	"Persona.h"
+	"vendedor.h"
+	"cliente.h"
 
 1780061178 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\funciones.cpp
 	<iostream>
@@ -12,13 +14,13 @@
 1780060950 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\funciones.h
 	<string>
 
-1780511537 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\persona.cpp
+1780525805 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\persona.cpp
 	"persona.h"
 	"funciones.h"
 	<cstring>
 	<iostream>
 
-1780511306 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\persona.h
+1780525836 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\persona.h
 	"Fecha.h"
 
 1780510423 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\fecha.cpp
@@ -37,10 +39,11 @@
 	"Persona.h"
 	"Fecha.h"
 
-1780513155 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\cliente.cpp
+1780525766 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\cliente.cpp
 	<iostream>
-	"Persona.h"
 	"Cliente.h"
+	"persona.h"
 
-1780513771 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\cliente.h
+1780525774 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\cliente.h
+	"persona.h"
 
