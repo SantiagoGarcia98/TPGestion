@@ -5,6 +5,7 @@
 		<Option title="TPGESTION" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="Clientes/;Vendedores/;Autos/;Ventas/;Consultas/;Listados/;Reportes/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/TPGESTION" prefix_auto="1" extension_auto="1" />
@@ -14,6 +15,7 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="./" />
+					<Add directory="../TPGestion" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -24,6 +26,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="./" />
+					<Add directory="../TPGestion" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -34,8 +37,46 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="cliente.cpp" />
-		<Unit filename="cliente.h" />
+		<Unit filename="Auto.cpp">
+			<Option virtualFolder="Autos/" />
+		</Unit>
+		<Unit filename="Auto.h">
+			<Option virtualFolder="Autos/" />
+		</Unit>
+		<Unit filename="AutoArchivo.cpp">
+			<Option virtualFolder="Autos/" />
+		</Unit>
+		<Unit filename="AutoArchivo.h">
+			<Option virtualFolder="Autos/" />
+		</Unit>
+		<Unit filename="AutoManager.cpp">
+			<Option virtualFolder="Autos/" />
+		</Unit>
+		<Unit filename="AutoManager.h">
+			<Option virtualFolder="Autos/" />
+		</Unit>
+		<Unit filename="AutoMenu.cpp">
+			<Option virtualFolder="Autos/" />
+		</Unit>
+		<Unit filename="AutoMenu.h">
+			<Option virtualFolder="Autos/" />
+		</Unit>
+		<Unit filename="Venta.cpp">
+			<Option virtualFolder="Ventas/" />
+		</Unit>
+		<Unit filename="Venta.h">
+			<Option virtualFolder="Ventas/" />
+		</Unit>
+		<Unit filename="cliente.cpp">
+			<Option virtualFolder="Clientes/" />
+		</Unit>
+		<Unit filename="cliente.h">
+			<Option virtualFolder="Clientes/" />
+		</Unit>
+		<Unit filename="clienteArchivo.cpp" />
+		<Unit filename="clienteArchivo.h" />
+		<Unit filename="clienteManager.cpp" />
+		<Unit filename="clienteManager.h" />
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
 		<Unit filename="funciones.cpp" />
@@ -43,8 +84,14 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="persona.cpp" />
 		<Unit filename="persona.h" />
-		<Unit filename="vendedor.cpp" />
-		<Unit filename="vendedor.h" />
+		<Unit filename="utils.cpp" />
+		<Unit filename="utils.h" />
+		<Unit filename="vendedor.cpp">
+			<Option virtualFolder="Vendedores/" />
+		</Unit>
+		<Unit filename="vendedor.h">
+			<Option virtualFolder="Vendedores/" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

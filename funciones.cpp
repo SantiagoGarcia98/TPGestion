@@ -52,3 +52,20 @@ bool Volver(const char* texto) {
     // Retorna true si el usuario escribió "0"
     return strcmp(texto, "0") == 0;
 }
+
+bool confirmarAccion(const char* mensaje ) {
+    cout << mensaje;
+    string respuesta = cargarCadena();
+
+
+    while (respuesta.empty() ||/// que no este vacio
+          (respuesta[0] != 's' && respuesta[0] != 'S' &&
+           respuesta[0] != 'n' && respuesta[0] != 'N')) {
+
+        cout << "Opcion invalida. Ingrese 's' o 'n': ";
+        respuesta = cargarCadena();
+    }
+
+    return (respuesta[0] == 's' || respuesta[0] == 'S');
+}
+

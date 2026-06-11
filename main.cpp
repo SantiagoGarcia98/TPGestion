@@ -2,21 +2,16 @@
 #include "Persona.h"
 #include "vendedor.h"
 #include "cliente.h"
+#include "clienteManager.h"
 using namespace std;
 
 int main()
 {
-Persona p;
-Vendedor v;
-Cliente c;
+ClienteManager p;
 
-///c.Cargar();
-///c.Mostrar();
 
-v.Cargar();
-v.Mostrar();
-
-///p.Cargar();
-///p.Mostrar();
+p.cargarCliente();
+///p.listarClientesTodos();
+///p.eliminarCliente();
     return 0;
 }

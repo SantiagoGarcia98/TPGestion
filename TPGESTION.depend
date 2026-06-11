@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1780525940 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
+1781215276 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
 	<iostream>
 	"Persona.h"
 	"vendedor.h"
 	"cliente.h"
+	"clienteManager.h"
 
-1780061178 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\funciones.cpp
+1781206775 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\funciones.cpp
 	<iostream>
 	<cstring>
 	<string>
@@ -46,4 +47,155 @@
 
 1780525774 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\cliente.h
 	"persona.h"
+
+1780524311 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\cliente.cpp
+	<iostream>
+	"Persona.h"
+	"Cliente.h"
+
+1780524311 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\persona.h
+	"Fecha.h"
+
+1780524311 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\fecha.h
+	<string>
+
+1780524311 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\cliente.h
+
+1780524311 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\fecha.cpp
+	"Fecha.h"
+	<iostream>
+
+1780524311 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\funciones.cpp
+	<iostream>
+	<cstring>
+	<string>
+	"funciones.h"
+
+1780524311 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\funciones.h
+	<string>
+
+1780524311 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\main.cpp
+	<iostream>
+	"vendedor.h"
+
+1780524311 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedor.h
+	"Persona.h"
+	"Fecha.h"
+
+1780524311 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\persona.cpp
+	"persona.h"
+	"funciones.h"
+	<cstring>
+	<iostream>
+
+1780524311 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedor.cpp
+	"vendedor.h"
+	<iomanip>
+	<iostream>
+
+1780545015 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\auto.cpp
+	"Auto.h"
+	"utils.h"
+	<iostream>
+	<cstring>
+
+1780544864 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\auto.h
+
+1780544994 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\utils.h
+	"Fecha.h"
+	<string>
+
+1780545011 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\utils.cpp
+	<iostream>
+	"utils.h"
+
+1780545326 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\autoarchivo.cpp
+	<iostream>
+	"AutoArchivo.h"
+
+1780545313 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\autoarchivo.h
+	<string>
+	"Auto.h"
+
+1780545417 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automanager.cpp
+	"AutoManager.h"
+	"Auto.h"
+	"utils.h"
+	<iostream>
+	<cstring>
+
+1780545400 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automanager.h
+	"AutoArchivo.h"
+
+1780545497 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automenu.cpp
+	<iostream>
+	"AutoMenu.h"
+	"utils.h"
+
+1780545480 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automenu.h
+	"AutoManager.h"
+
+1781204171 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\auto.cpp
+	"Auto.h"
+	"utils.h"
+	<iostream>
+	<cstring>
+
+1781204171 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\auto.h
+
+1781204171 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\utils.h
+	"Fecha.h"
+	<string>
+
+1781204171 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\autoarchivo.cpp
+	<iostream>
+	"AutoArchivo.h"
+
+1781204171 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\autoarchivo.h
+	<string>
+	"Auto.h"
+
+1781204171 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automanager.cpp
+	"AutoManager.h"
+	"Auto.h"
+	"utils.h"
+	<iostream>
+	<cstring>
+
+1781204171 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automanager.h
+	"AutoArchivo.h"
+
+1781204171 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.cpp
+	<iostream>
+	"AutoMenu.h"
+	"utils.h"
+
+1781204171 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.h
+	"AutoManager.h"
+
+1781204171 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\utils.cpp
+	<iostream>
+	"utils.h"
+
+1781204171 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\venta.cpp
+	<iostream>
+
+1781211676 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientearchivo.cpp
+	"ClienteArchivo.h"
+	<string>
+	<cstring>
+
+1781215136 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientearchivo.h
+	"Cliente.h"
+	<string>
+
+1781211490 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.cpp
+	"ClienteManager.h"
+	"Cliente.h"
+	"Funciones.h"
+	<iostream>
+	<cstring>
+
+1781211360 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.h
+	"ClienteArchivo.h"
 
