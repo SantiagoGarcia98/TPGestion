@@ -6,13 +6,13 @@ class AutoManager
 private:
     AutoArchivo _repoAuto;
 
-    /// std::string validarMarca();
-    std::string validarModelo();
+    /// std::string validarMarca(); /// Marca no validaría, si modelo, ver
+    std::string validarModelo(); /// Definir
 
 public:
     AutoManager(); ///
     bool cargarAuto(); /// OK
     bool modificarAuto(); /// OK
-    bool eliminarAuto(); /// Definir
-    bool altaAuto(); /// Definir
+    bool eliminarAuto(); /// OK
+    bool altaAuto(); /// OK
 };

@@ -49,7 +49,7 @@ bool AutoManager::cargarAuto()
 
 bool AutoManager::modificarAuto()
 {
-    int id, idAuto, cantRegistros;
+    int id, cantRegistros;
     Auto reg;
     Auto *pAutos;
 
@@ -111,10 +111,87 @@ bool AutoManager::modificarAuto()
 
 bool AutoManager::eliminarAuto()
 {
+    int id;
+    Auto reg;
 
+    cout << "-------- BAJA DE AUTO --------" << endl;
+    while(true)
+    {
+        cout << endl;
+        cout << "Ingrese ID del registro a eliminar: ";
+        cin >> id;
+        id = validarPositivo(id);
+        reg = _repoAuto.leer(id - 1);
+        while(reg.getIdAuto() == 0)
+        {
+            cout << endl;
+            cout << "No existe un auto registrado con ese ID... Vuelva a intentarlo..." << endl;
+            cout << endl;
+            system("pause");
+            system("cls");
+            cout << "Ingrese ID del registro a eliminar: ";
+            cin >> id;
+            id = validarPositivo(id);
+            reg = _repoAuto.leer(id - 1);
+        }
+        system("cls");
+        cout << "----- DATOS DEL REGISTRO A DAR DE BAJA -----" << endl;
+        reg.mostrar();
+        if(!reg.getEstado())
+        {
+            cout << endl;
+            cout << "El registro ya se encuentra dado de baja..." << endl;
+            return false;
+        }
+        cout << endl;
+        if (confirmarAccion("Este es el registro a eliminar?")) break;
+    }
+
+    return _repoAuto.eliminar(id-1);
 }
 
 bool AutoManager::altaAuto()
+{
+    int id;
+    Auto reg;
+
+    cout << "-------- ALTA DE AUTO --------" << endl;
+    while(true)
+    {
+        cout << endl;
+        cout << "Ingrese ID del registro a dar de alta: ";
+        cin >> id;
+        id = validarPositivo(id);
+        reg = _repoAuto.leer(id - 1);
+        while(reg.getIdAuto() == 0)
+        {
+            cout << endl;
+            cout << "No existe un auto registrado con ese ID... Vuelva a intentarlo..." << endl;
+            cout << endl;
+            system("pause");
+            system("cls");
+            cout << "Ingrese ID del registro a eliminar: ";
+            cin >> id;
+            id = validarPositivo(id);
+            reg = _repoAuto.leer(id - 1);
+        }
+        system("cls");
+        cout << "----- DATOS DEL REGISTRO A DAR DE ALTA -----" << endl;
+        reg.mostrar();
+        if(reg.getEstado())
+        {
+            cout << endl;
+            cout << "El registro ya se encuentra dado de alta..." << endl;
+            return false;
+        }
+        cout << endl;
+        if (confirmarAccion("Este es el registro a dar de alta?")) break;
+    }
+
+    return _repoAuto.alta(id-1);
+}
+
+string AutoManager::validarModelo()
 {
 
 }
