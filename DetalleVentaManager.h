@@ -1,7 +1,6 @@
 /// DEFINIR
 
-#ifndef DETALLEVENTAMANAGER_H
-#define DETALLEVENTAMANAGER_H
+#pragma once
 
 
 class DetalleVentaManager
@@ -14,5 +13,3 @@ class DetalleVentaManager
 
   private:
 };
-
-#endif // DETALLEVENTAMANAGER_H

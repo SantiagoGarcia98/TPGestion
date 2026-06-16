@@ -1,7 +1,6 @@
 /// DEFINIR
 
-#ifndef VENTAMANAGER_H
-#define VENTAMANAGER_H
+#pragma once
 
 
 class VentaManager
@@ -14,5 +13,3 @@ class VentaManager
 
   private:
 };
-
-#endif // VENTAMANAGER_H

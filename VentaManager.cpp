@@ -1,15 +1,9 @@
 /// DEFINIR
 
+#include "VentaManager.h"
 #include <iostream>
 
 using namespace std;
-
-int main()
-{
-
-
- return 0;
-}#include "VentaManager.h"
 
 VentaManager::VentaManager()
 {

@@ -1,7 +1,6 @@
 /// DEFINIR
 
-#ifndef VENTAMENU_H
-#define VENTAMENU_H
+#pragma once
 
 
 class VentaMenu
@@ -14,5 +13,3 @@ class VentaMenu
 
   private:
 };
-
-#endif // VENTAMENU_H

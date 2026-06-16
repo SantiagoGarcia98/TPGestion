@@ -1,6 +1,8 @@
 #include "TipoPago.h"
 #include "utils.h"
+#include "cstring"
 #include <iostream>
+
 
 using namespace std;
 

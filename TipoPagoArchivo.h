@@ -1,8 +1,6 @@
 /// DEFINIR
 
-#ifndef TIPOPAGOARCHIVO_H
-#define TIPOPAGOARCHIVO_H
-
+#pragma once
 
 class TipoPagoArchivo
 {
@@ -14,5 +12,3 @@ class TipoPagoArchivo
 
   private:
 };
-
-#endif // TIPOPAGOARCHIVO_H

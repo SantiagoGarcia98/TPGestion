@@ -1,7 +1,6 @@
 /// DEFINIR
 
-#ifndef TIPOPAGOMENU_H
-#define TIPOPAGOMENU_H
+#pragma once
 
 
 class TipoPagoMenu
@@ -14,5 +13,3 @@ class TipoPagoMenu
 
   private:
 };
-
-#endif // TIPOPAGOMENU_H

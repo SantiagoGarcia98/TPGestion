@@ -1,7 +1,6 @@
 /// DEFINIR
 
-#ifndef TIPOPAGOMANAGER_H
-#define TIPOPAGOMANAGER_H
+#pragma once
 
 
 class TipoPagoManager
@@ -14,5 +13,3 @@ class TipoPagoManager
 
   private:
 };
-
-#endif // TIPOPAGOMANAGER_H

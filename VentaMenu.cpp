@@ -1,15 +1,10 @@
 /// DEFINIR
 
+#include "VentaMenu.h"
 #include <iostream>
 
 using namespace std;
 
-int main()
-{
-
-
- return 0;
-}#include "VentaMenu.h"
 
 VentaMenu::VentaMenu()
 {

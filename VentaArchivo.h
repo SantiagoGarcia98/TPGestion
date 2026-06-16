@@ -1,7 +1,6 @@
 /// DEFINIR
 
-#ifndef VENTAARCHIVO_H
-#define VENTAARCHIVO_H
+#pragma once
 
 
 class VentaArchivo
@@ -14,5 +13,3 @@ class VentaArchivo
 
   private:
 };
-
-#endif // VENTAARCHIVO_H

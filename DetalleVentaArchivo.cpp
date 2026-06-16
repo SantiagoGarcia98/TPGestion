@@ -1,15 +1,10 @@
-DetalleVentaArchivo
+/// DEFINIR
 
+#include "DetalleVentaArchivo.h"
 #include <iostream>
 
 using namespace std;
 
-int main()
-{
-
-
- return 0;
-}#include "DetalleVentaArchivo.h"
 
 DetalleVentaArchivo::DetalleVentaArchivo()
 {

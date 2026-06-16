@@ -5,7 +5,7 @@
 		<Option title="TPGESTION" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Clientes/;Vendedores/;Autos/;Ventas/;Consultas/;Listados/;Reportes/" />
+		<Option virtualFolders="Clientes/;Vendedores/;Autos/;Ventas/;Consultas/;Listados/;Reportes/;Auxiliares/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/TPGESTION" prefix_auto="1" extension_auto="1" />
@@ -61,10 +61,70 @@
 		<Unit filename="AutoMenu.h">
 			<Option virtualFolder="Autos/" />
 		</Unit>
+		<Unit filename="DetalleVenta.cpp">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="DetalleVenta.h">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="DetalleVentaArchivo.cpp">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="DetalleVentaArchivo.h">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="DetalleVentaManager.cpp">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="DetalleVentaManager.h">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="TipoPago.cpp">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="TipoPago.h">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="TipoPagoArchivo.cpp">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="TipoPagoArchivo.h">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="TipoPagoManager.cpp">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="TipoPagoManager.h">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="TipoPagoMenu.cpp">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
+		<Unit filename="TipoPagoMenu.h">
+			<Option virtualFolder="Auxiliares/" />
+		</Unit>
 		<Unit filename="Venta.cpp">
 			<Option virtualFolder="Ventas/" />
 		</Unit>
 		<Unit filename="Venta.h">
+			<Option virtualFolder="Ventas/" />
+		</Unit>
+		<Unit filename="VentaArchivo.cpp">
+			<Option virtualFolder="Ventas/" />
+		</Unit>
+		<Unit filename="VentaArchivo.h">
+			<Option virtualFolder="Ventas/" />
+		</Unit>
+		<Unit filename="VentaManager.cpp">
+			<Option virtualFolder="Ventas/" />
+		</Unit>
+		<Unit filename="VentaManager.h">
+			<Option virtualFolder="Ventas/" />
+		</Unit>
+		<Unit filename="VentaMenu.cpp">
+			<Option virtualFolder="Ventas/" />
+		</Unit>
+		<Unit filename="VentaMenu.h">
 			<Option virtualFolder="Ventas/" />
 		</Unit>
 		<Unit filename="cliente.cpp">
@@ -73,10 +133,18 @@
 		<Unit filename="cliente.h">
 			<Option virtualFolder="Clientes/" />
 		</Unit>
-		<Unit filename="clienteArchivo.cpp" />
-		<Unit filename="clienteArchivo.h" />
-		<Unit filename="clienteManager.cpp" />
-		<Unit filename="clienteManager.h" />
+		<Unit filename="clienteArchivo.cpp">
+			<Option virtualFolder="Clientes/" />
+		</Unit>
+		<Unit filename="clienteArchivo.h">
+			<Option virtualFolder="Clientes/" />
+		</Unit>
+		<Unit filename="clienteManager.cpp">
+			<Option virtualFolder="Clientes/" />
+		</Unit>
+		<Unit filename="clienteManager.h">
+			<Option virtualFolder="Clientes/" />
+		</Unit>
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
 		<Unit filename="funciones.cpp" />
