@@ -1,6 +1,5 @@
 #pragma once
 
-
 class Auto
 {
 private:
@@ -10,7 +9,7 @@ private:
     int _anio;
     float _precio;
     int _stock; /// Archivo
-    bool _activo;
+    bool _estado;
 
 public:
     Auto();
@@ -25,7 +24,7 @@ public:
     int getAnio();
     float getPrecio();
     int getStock();
-    bool getActivo();
+    bool getEstado();
 
     void setIdAuto(int id);
     void setMarca(const char* m);
@@ -33,5 +32,5 @@ public:
     void setAnio(int a);
     void setPrecio(float p);
     void setStock(int s);
-    void setActivo(bool ac);
+    void setEstado(bool est);
 };

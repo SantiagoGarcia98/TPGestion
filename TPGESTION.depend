@@ -75,12 +75,14 @@
 1780524311 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\funciones.h
 	<string>
 
-1781219595 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\main.cpp
+1781579820 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\main.cpp
 	<iostream>
 	"Persona.h"
 	"vendedor.h"
 	"cliente.h"
 	"clienteManager.h"
+	"Auto.h"
+	"AutoArchivo.h"
 
 1780524311 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedor.h
 	"Persona.h"
@@ -97,15 +99,15 @@
 	<iomanip>
 	<iostream>
 
-1780545015 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\auto.cpp
+1781580325 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\auto.cpp
 	"Auto.h"
 	"utils.h"
 	<iostream>
 	<cstring>
 
-1780544864 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\auto.h
+1781575612 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\auto.h
 
-1780544994 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\utils.h
+1781581833 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\utils.h
 	"Fecha.h"
 	<string>
 
@@ -113,9 +115,9 @@
 	<iostream>
 	"utils.h"
 
-1780545326 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\autoarchivo.cpp
-	<iostream>
+1781579781 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\autoarchivo.cpp
 	"AutoArchivo.h"
+	<iostream>
 
 1780545313 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\autoarchivo.h
 	<string>
@@ -128,7 +130,7 @@
 	<iostream>
 	<cstring>
 
-1780545400 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automanager.h
+1781580846 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automanager.h
 	"AutoArchivo.h"
 
 1780545497 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automenu.cpp
@@ -283,4 +285,12 @@
 	<iostream>
 
 1781574536 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamenu.h
+
+1781574582 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopago.cpp
+	"TipoPago.h"
+	"utils.h"
+	"cstring"
+	<iostream>
+
+1781222391 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopago.h
 

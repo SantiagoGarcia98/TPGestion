@@ -11,8 +11,8 @@ private:
 
 public:
     AutoManager(); ///
-    bool cargarAuto(); /// Ver
-    bool modificarAuto(); /// Definir
+    bool cargarAuto(); /// OK
+    bool modificarAuto(); /// OK
     bool eliminarAuto(); /// Definir
     bool altaAuto(); /// Definir
 };

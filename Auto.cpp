@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 Auto::Auto()
 {
     _idAuto = 0;
@@ -14,7 +13,7 @@ Auto::Auto()
     _anio = 1;
     _precio = 0;
     _stock = 0;
-    _activo = true;
+    _estado = true;
 }
 
 void Auto::cargar()
@@ -23,12 +22,14 @@ void Auto::cargar()
     int i;
     float f;
 
-    cout << "Marca: " << endl;
+    //cout << "----- NUEVO AUTO -----" << endl << endl;
+
+    cout << "Marca: ";
     texto = cargarCadena();
     strncpy(_marca, texto.c_str(), sizeof(_marca) - 1);
     _marca[sizeof(_marca) - 1] = '\0';
 
-    cout << "Modelo: " << endl;
+    cout << "Modelo: ";
     texto = cargarCadena();
     strncpy(_modelo, texto.c_str(), sizeof(_modelo) - 1);
     _modelo[sizeof(_modelo) - 1] = '\0';
@@ -36,12 +37,10 @@ void Auto::cargar()
     cout << "Anio: ";
     cin >> i;
     setAnio(i);
-    cout << endl;
 
-    cout << "Precio: ";
+    cout << "Precio: $ ";
     cin >> f;
     setPrecio(f);
-    cout << endl;
 
     cout << "Stock disponible: ";
     cin >> i;
@@ -89,9 +88,9 @@ int Auto::getStock()
     return _stock;
 }
 
-bool Auto::getActivo()
+bool Auto::getEstado()
 {
-    return _activo;
+    return _estado;
 }
 
 /// SETTERS
@@ -125,7 +124,7 @@ void Auto::setStock(int s)
   _stock = s;
 }
 
-void Auto::setActivo(bool ac)
+void Auto::setEstado(bool est)
 {
-  _activo = ac;
+  _estado = est;
 }

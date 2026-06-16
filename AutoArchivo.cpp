@@ -1,8 +1,7 @@
-#include <iostream>
 #include "AutoArchivo.h"
+#include <iostream>
 
 using namespace std;
-
 
 AutoArchivo::AutoArchivo(std::string nombreArchivo)
 {
@@ -87,7 +86,7 @@ bool AutoArchivo::eliminar(int pos)
     Auto reg = leer(pos);
     if(reg.getIdAuto() != 0)
     {
-        reg.setActivo(true);
+        reg.setEstado(false);
         return guardar(pos, reg);
     }
     return false;
@@ -98,7 +97,7 @@ bool AutoArchivo::alta(int pos)
     Auto reg = leer(pos);
     if(reg.getIdAuto() != 0)
     {
-        reg.setActivo(false);
+        reg.setEstado(true);
         return guardar(pos, reg);
     }
     return false;
