@@ -191,6 +191,22 @@ bool AutoManager::altaAuto()
     return _repoAuto.alta(id-1);
 }
 
+Auto AutoManager::listarAuto()
+{
+
+}
+
+Auto AutoManager::listarActivos()
+{
+
+}
+
+Auto AutoManager::listarInactivos()
+{
+
+}
+
+
 string AutoManager::validarModelo()
 {
 

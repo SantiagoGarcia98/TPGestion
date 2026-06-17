@@ -15,6 +15,7 @@ int AutoArchivo::getCantidadRegistros()
     if(pArchivo == nullptr) return false;
     fseek(pArchivo, 0, SEEK_END);
     cantidad = ftell(pArchivo) / sizeof(Auto);
+    fclose(pArchivo);
     return cantidad;
 }
 

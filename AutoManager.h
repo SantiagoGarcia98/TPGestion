@@ -15,4 +15,7 @@ public:
     bool modificarAuto(); /// OK
     bool eliminarAuto(); /// OK
     bool altaAuto(); /// OK
+    Auto listarAuto(); /// Definir
+    Auto listarActivos(); /// Definir
+    Auto listarInactivos(); /// Definir
 };

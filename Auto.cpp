@@ -10,7 +10,7 @@ Auto::Auto()
     _idAuto = 0;
     strcpy(_marca, "");
     strcpy(_modelo, "");
-    _anio = 1;
+    _anio = 1900;
     _precio = 0;
     _stock = 0;
     _estado = true;
@@ -111,7 +111,8 @@ void Auto::setModelo(const char* mo)
 
 void Auto::setAnio(int a)
 {
-  _anio = a;
+    if(a>2000)
+      _anio = a;
 }
 
 void Auto::setPrecio(float p)
