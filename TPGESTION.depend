@@ -374,7 +374,7 @@
 	<string>
 	"Vendedor.h"
 
-1781811288 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.cpp
+1781812399 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.cpp
 	<iostream>
 	<cstring>
 	"Vendedor.h"
@@ -382,6 +382,6 @@
 	"VendedorManager.h"
 	"Funciones.h"
 
-1781811050 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.h
+1781812399 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.h
 	"VendedorArchivo.h"
 

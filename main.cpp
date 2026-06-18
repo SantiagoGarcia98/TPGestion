@@ -17,9 +17,10 @@ VendedorManager v;
 ///p.listarClientesTodos();
 ///p.eliminarCliente();
 ///v.cargarVendedor();
-///v.listarVendedores();
+v.listarVendedores();
 ///v.eliminarVendedor();
 ///v.buscarVendedorPorApellido();
+///v.modificarVendedor();
 
 
 
