@@ -9,6 +9,7 @@ Venta::Venta()
 {
     _idVenta = 0;
     _idCliente = 0;
+    _idVendedor = 0;
     _idTipoPago = 0;
     _montoTotal = 0;
     _estado = true;
@@ -22,6 +23,17 @@ void Venta::cargar()
 void Venta::mostrar()
 {
     ///
+    cout << "ID Venta: #" << _idVenta << endl;
+    cout << "Fecha: ";
+    _fecha.Mostrar();
+
+    cout << "Cliente: #" << _idCliente << endl;
+    cout << "Vendedor: #" << _idVendedor << endl;
+    cout << "Tipo Pago: #" << _idTipoPago << endl;
+    cout << "Monto Total: $" << _montoTotal << endl;
+
+    cout << "Estado: "
+
 }
 
 /// GETTERS
@@ -35,6 +47,10 @@ Fecha Venta::getFecha(){
 
 int Venta::getIdCliente(){
     return _idCliente;
+}
+
+int Venta::getIdVendedor(){
+    return _idVendedor;
 }
 
 int Venta::getIdTipoPago(){
@@ -62,13 +78,22 @@ void Venta::setIdCliente(int id){
     _idCliente = id;
 }
 
+void Venta::setIdVendedor(int id){
+    _idVendedor = id;
+}
+
 void Venta::setIdTipoPago(int id){
     _idTipoPago = id;
 }
 
-void Venta::setMontoTotal(float m){
-    _montoTotal = m;
+void Venta::setMontoTotal(float m)
+{
+    if(m > 0)
+    {
+        _montoTotal = m;
+    }
 }
+
 void Venta::setEstado(bool e){
     _estado = e;
 }

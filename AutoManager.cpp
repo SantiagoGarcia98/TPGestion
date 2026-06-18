@@ -28,6 +28,7 @@ bool AutoManager::cargarAuto()
 
       reg.cargar();
 
+      /*
       cantRegistros = _repoAuto.getCantidadRegistros();
       pAutos = new Auto[cantRegistros];
       if (pAutos == nullptr)
@@ -38,12 +39,16 @@ bool AutoManager::cargarAuto()
           return false;
       }
       _repoAuto.leer(pAutos, cantRegistros);
+      */
 
       reg.setIdAuto(idAuto);
       /// reg.setModelo(validarModelo(); VER
       /// VER
 
+      /*
       delete [] pAutos;
+      */
+
       return _repoAuto.guardar(reg);
 }
 
@@ -88,6 +93,7 @@ bool AutoManager::modificarAuto()
     cout << "ID: #" << id << endl;
     reg.cargar();
 
+    /*
     cantRegistros = _repoAuto.getCantidadRegistros();
     pAutos = new Auto[cantRegistros];
     if(pAutos == nullptr)
@@ -98,12 +104,16 @@ bool AutoManager::modificarAuto()
         return false;
     }
     _repoAuto.leer(pAutos, cantRegistros);
+    */
 
 
-    /// reg.setModelo(validarModelo(); VER
+    /// reg.setModelo(validarAuto(); VER
     /// VER
 
+    /*
     delete [] pAutos;
+    */
+
     return _repoAuto.guardar(id-1, reg);
 
     /// Agregar para no modificar autos dado de baja
@@ -191,23 +201,26 @@ bool AutoManager::altaAuto()
     return _repoAuto.alta(id-1);
 }
 
-Auto AutoManager::listarAuto()
+void AutoManager::listarAutos()
 {
 
 }
 
-Auto AutoManager::listarActivos()
+void AutoManager::listarAutosActivos()
 {
 
 }
 
-Auto AutoManager::listarInactivos()
+void AutoManager::listarAutosInactivos()
 {
 
 }
 
 
-string AutoManager::validarModelo()
+bool AutoManager::bool validarAuto(Auto *pAutos, int cant, const char* marca, const char* modelo, int anio, int idActual)
 {
-
+    for(int i=0; i<cant, i++)
+    {
+        if(pAutos[i].getIdAuto() == idActual)
+    }
 }

@@ -43,6 +43,69 @@ int validarPositivo(int num)
     return num;
 }
 
+void validarCarga(bool resultado)
+{
+    if(resultado)
+    {
+        cout << endl;
+        cout << "¡CARGA EXITOSA!" << endl;
+        cout << endl;
+    }
+    else
+    {
+        cout << endl;
+        cout << "NO SE PUDO REALIZAR LA CARGA..." << endl;
+        cout << endl;
+    }
+}
+
+void validarModificacion(bool resultado)
+{
+    if(resultado)
+    {
+        cout << endl;
+        cout << "¡MODIFICACION EXITOSA!" << endl;
+        cout << endl;
+    }
+    else
+    {
+        cout << endl;
+        cout << "NO SE PUDO REALIZAR LA MODIFICACION..." << endl;
+        cout << endl;
+    }
+}
+
+void validarBaja(bool resultado)
+{
+    if(resultado)
+    {
+        cout << endl;
+        cout << "¡BAJA EXITOSA!" << endl;
+        cout << endl;
+    }
+    else
+    {
+        cout << endl;
+        cout << "NO SE PUDO REALIZAR LA BAJA..." << endl;
+        cout << endl;
+    }
+}
+
+void validarAlta(bool resultado)
+{
+    if(resultado)
+    {
+        cout << endl;
+        cout << "¡ALTA EXITOSA!" << endl;
+        cout << endl;
+    }
+    else
+    {
+        cout << endl;
+        cout << "NO SE PUDO REALIZAR EL ALTA..." << endl;
+        cout << endl;
+    }
+}
 
 bool confirmarAccion(string mensaje)
 {

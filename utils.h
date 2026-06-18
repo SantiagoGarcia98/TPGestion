@@ -8,4 +8,11 @@ bool quiereCancelar(std::string mensaje = "Ingrese 0 para cancelar o cualquier n
 
 int validarPositivo(int num);
 
+void validarCarga(bool resultado);
+void validarModificacion(bool resultado);
+void validarBaja(bool resultado);
+void validarAlta(bool resultado);
+
 bool confirmarAccion(std::string mensaje);
+
+

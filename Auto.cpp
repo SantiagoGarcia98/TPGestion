@@ -50,6 +50,8 @@ void Auto::cargar()
 
 void Auto::mostrar()
 {
+    cout << "ID: " << _idAuto << endl;
+    cout << "Estado: " << _estado << endl;
     cout << "Marca: " << _marca << endl;
     cout << "Modelo: " << _modelo << endl;
     cout << "Anio: " << _anio << endl;
@@ -101,28 +103,36 @@ void Auto::setIdAuto(int id)
 
 void Auto::setMarca(const char* m)
 {
-  strcpy(_marca, m);
+  strncpy(_marca, m, sizeof(_marca) - 1);
+  _marca[sizeof(_marca) - 1] = '\0';
+
+  //strcpy(_marca, m);
 }
 
 void Auto::setModelo(const char* mo)
 {
-  strcpy(_modelo, mo);
+  strncpy(_modelo, mo, sizeof(_modelo) - 1);
+  _modelo[sizeof(_modelo) - 1] = '\0';
+
+  //strcpy(_modelo, mo);
 }
 
 void Auto::setAnio(int a)
 {
     if(a>2000)
-      _anio = a;
+        _anio = a;
 }
 
 void Auto::setPrecio(float p)
 {
-  _precio = p;
+    if(p>10000000)
+        _precio = p;
 }
 
 void Auto::setStock(int s)
 {
-  _stock = s;
+    (s>=0)
+    _stock = s;
 }
 
 void Auto::setEstado(bool est)
