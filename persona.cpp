@@ -15,7 +15,7 @@ Persona::Persona()
     strcpy(_Email, "");
     _Estado = true;
 }
-// Setters
+
 void Persona::setNombre( char *n)
 {
     strcpy(_Nombre, n);
@@ -33,7 +33,7 @@ void Persona::setDni( char* d)
     }
     else
     {
-        strcpy(_DNI, "");// dejo vacio
+        strcpy(_DNI, "");
     }
 
 }
@@ -52,7 +52,7 @@ void Persona::setEstado(bool est)
     _Estado = est;
 }
 
-// Getters
+
 char *Persona::getNombre()
 {
     return _Nombre;
@@ -88,7 +88,6 @@ bool Persona::getEstado()
 void Persona::Cargar()
 {
 
-    // --- DNI ---
     do
     {
         cout << "DNI (0 para cancelar): ";
@@ -113,7 +112,6 @@ void Persona::Cargar()
     }
     while (strlen(_DNI) == 0);
 
-    // --- NOMBRE ---
     cout << "Nombre (0 para cancelar): ";
     cin.getline(_Nombre, 50);
     if (Volver(_Nombre))
@@ -123,7 +121,6 @@ void Persona::Cargar()
         return;
     }
 
-    // --- APELLIDO ---
     cout << "Apellido (0 para cancelar): ";
     cin.getline(_Apellido, 50);
     if (Volver(_Apellido))
@@ -133,7 +130,6 @@ void Persona::Cargar()
         return;
     }
 
-    // --- TELÉFONO ---
     do
     {
         cout << "Telefono (0 para cancelar): ";
@@ -155,7 +151,6 @@ void Persona::Cargar()
     }
     while (strlen(_Telefono) == 0);
 
-    // --- EMAIL ---
     cout << "Email (0 para cancelar): ";
     cin.getline(_Email, 50);
     if (Volver(_Email))

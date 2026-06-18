@@ -29,20 +29,21 @@ float Vendedor::getSueldo() {
          return _FechaContratacion; }
 
 void Vendedor::Cargar() {
-    // === Datos generales de Persona ===
     Persona::Cargar();
     if (!_Estado) {   // si Persona fue cancelada
         //cout << //"Carga cancelada. Volviendo al menu...\n";
         return;
     }
 
-    // === Fecha de contratación ===
+
     cout << "\nFecha de contratacion: " << endl;
     _FechaContratacion.Cargar();
 
-    // === Sueldo ===
+
     cout << "\nSueldo (ingrese 0 para cancelar): ";
+
     cin >> _Sueldo;
+
     cin.ignore();
 
     if (_Sueldo == 0) {

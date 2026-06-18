@@ -160,6 +160,18 @@
 		<Unit filename="vendedor.h">
 			<Option virtualFolder="Vendedores/" />
 		</Unit>
+		<Unit filename="vendedorArchivo.cpp">
+			<Option virtualFolder="Vendedores/" />
+		</Unit>
+		<Unit filename="vendedorArchivo.h">
+			<Option virtualFolder="Vendedores/" />
+		</Unit>
+		<Unit filename="vendedorManager.cpp">
+			<Option virtualFolder="Vendedores/" />
+		</Unit>
+		<Unit filename="vendedorManager.h">
+			<Option virtualFolder="Vendedores/" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
