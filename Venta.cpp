@@ -32,7 +32,7 @@ void Venta::mostrar()
     cout << "Tipo Pago: #" << _idTipoPago << endl;
     cout << "Monto Total: $" << _montoTotal << endl;
 
-    cout << "Estado: "
+    cout << "Estado: " << _estado << endl;
 
 }
 

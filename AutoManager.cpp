@@ -107,8 +107,8 @@ bool AutoManager::modificarAuto()
     */
 
 
-    /// reg.setModelo(validarAuto(); VER
-    /// VER
+    ///reg.setModelo(validarAuto(pAutos, cantRegistros, reg.getMarca(), reg.getModelo(), reg.getAnio(), id)); ///VER
+    validarAuto(pAutos, cantRegistros, reg.getMarca(), reg.getModelo(), reg.getAnio(), id);
 
     /*
     delete [] pAutos;
@@ -217,10 +217,17 @@ void AutoManager::listarAutosInactivos()
 }
 
 
-bool AutoManager::bool validarAuto(Auto *pAutos, int cant, const char* marca, const char* modelo, int anio, int idActual)
+bool AutoManager::validarAuto(Auto *pAutos, int cant, const char* marca, const char* modelo, int anio, int idActual)
 {
-    for(int i=0; i<cant, i++)
+    for(int i=0; i<cant; i++)
     {
-        if(pAutos[i].getIdAuto() == idActual)
+        if(pAutos[i].getIdAuto() != idActual &&
+          strcmp(pAutos[i].getMarca(), marca) == 0 &&
+          strcmp(pAutos[i].getModelo(), modelo) == 0 &&
+          pAutos[i].getAnio() == anio)
+        {
+          return false; // Ya existe esa marca, modelo y anio
+        }
     }
+    return true;
 }

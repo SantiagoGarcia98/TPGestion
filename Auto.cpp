@@ -131,8 +131,8 @@ void Auto::setPrecio(float p)
 
 void Auto::setStock(int s)
 {
-    (s>=0)
-    _stock = s;
+    if(s>=0)
+        _stock = s;
 }
 
 void Auto::setEstado(bool est)
