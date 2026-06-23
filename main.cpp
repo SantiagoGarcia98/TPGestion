@@ -6,12 +6,16 @@
 #include "vendedorManager.h"
 #include "Auto.h"
 #include "AutoArchivo.h"
+#include "AutoManager.h"
+#include "AutoMenu.h"
+
 using namespace std;
 
 int main()
 {
 //ClienteManager p;
 VendedorManager v;
+AutoMenu m;
 
 ///p.cargarCliente();
 ///p.listarClientesTodos();
@@ -21,7 +25,7 @@ v.listarVendedores();
 ///v.eliminarVendedor();
 ///v.buscarVendedorPorApellido();
 ///v.modificarVendedor();
-
+m.mostrar();
 
 
 

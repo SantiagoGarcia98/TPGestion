@@ -1,14 +1,26 @@
-/// DEFINIR
-
 #pragma once
+#include <string>
+#include "TipoPago.h"
 
 class TipoPagoArchivo
 {
-  public:
-    TipoPagoArchivo();
-    virtual ~TipoPagoArchivo();
+private:
+    std::string _nombreArchivo;
 
-  protected:
+public:
+    TipoPagoArchivo(std::string nombreArchivo = "tipospago.dat");
 
-  private:
+    int getCantidadRegistros();
+    int getNuevoID();
+
+    int buscar(int id);
+
+    TipoPago leer(int pos);
+    int leer(TipoPago registros[], int cantidad);
+
+    bool guardar(TipoPago reg);
+    bool guardar(int pos, TipoPago reg);
+
+    bool eliminar(int pos);
+    bool alta(int pos);
 };

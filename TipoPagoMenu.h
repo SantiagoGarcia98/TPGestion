@@ -1,15 +1,18 @@
-/// DEFINIR
-
 #pragma once
-
+#include "TipoPagoManager.h"
 
 class TipoPagoMenu
 {
-  public:
+private:
+    int _cantidadOpciones;
+    TipoPagoManager _tipoPagoManager;
+
+    void mostrarOpciones();
+    int seleccionarOpcion();
+    void ejecutarOpcion(int opcion);
+
+public:
     TipoPagoMenu();
-    virtual ~TipoPagoMenu();
 
-  protected:
-
-  private:
+    void mostrar();
 };

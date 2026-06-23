@@ -42,6 +42,7 @@ void AutoMenu::mostrarOpciones()
 void AutoMenu::ejecutarOpcion(int opcion)
 {
     bool resultado;
+
     switch(opcion)
     {
     case 1:
@@ -92,10 +93,12 @@ void AutoMenu::ejecutarOpcion(int opcion)
 int AutoMenu::seleccionarOpcion()
 {
     int opcion;
+
     mostrarOpciones();
     cout << "--------------------" << endl;
     cout << "SELECCIONE UNA OPCION: ";
     cin >> opcion;
+
     while(opcion < 0 || opcion > _cantidadOpciones)
     {
         cout << "---------------" << endl;

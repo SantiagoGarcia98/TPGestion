@@ -1,15 +1,24 @@
-/// DEFINIR
-
 #pragma once
 
+#include "VentaArchivo.h"
+#include "ClienteArchivo.h"
+#include "AutoArchivo.h"
+#include "TipoPagoArchivo.h"
+#include "DetalleVentaArchivo.h"
 
 class VentaManager
 {
-  public:
+private:
+    VentaArchivo _archivo;
+    ClienteArchivo _clientes;
+    AutoArchivo _autos;
+    TipoPagoArchivo _pagos;
+
+    DetalleVentaArchivo _detalles;
+
+public:
     VentaManager();
-    virtual ~VentaManager();
 
-  protected:
-
-  private:
+    void nuevaVenta();
+    void listarVentas();
 };

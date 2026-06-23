@@ -16,15 +16,15 @@ public:
     //virtual ~Auto();
 
     void cargar();
-    void mostrar();
+    void mostrar() const;
 
-    int getIdAuto();
-    const char* getMarca();
-    const char* getModelo();
-    int getAnio();
-    float getPrecio();
-    int getStock();
-    bool getEstado();
+    int getIdAuto() const;
+    const char* getMarca() const;
+    const char* getModelo() const;
+    int getAnio() const;
+    float getPrecio() const;
+    int getStock() const;
+    bool getEstado() const;
 
     void setIdAuto(int id);
     void setMarca(const char* m);

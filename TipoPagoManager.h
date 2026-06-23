@@ -1,15 +1,24 @@
-/// DEFINIR
-
 #pragma once
-
+#include "TipoPagoArchivo.h"
+#include <cstring>
 
 class TipoPagoManager
 {
-  public:
+private:
+    TipoPagoArchivo _repoTipoPago;
+
+    bool tipoPagoExiste(TipoPago* pTiposPago, int cant, const TipoPago& tipoBuscado, int idActual = 0);
+
+public:
     TipoPagoManager();
-    virtual ~TipoPagoManager();
 
-  protected:
+    bool cargarTipoPago();
+    bool modificarTipoPago();
 
-  private:
+    bool eliminarTipoPago();
+    bool altaTipoPago();
+
+    void listarTiposPago();
+    void listarTiposPagoActivos();
+    void listarTiposPagoInactivos();
 };

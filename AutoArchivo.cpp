@@ -8,26 +8,77 @@ AutoArchivo::AutoArchivo(std::string nombreArchivo)
     _nombreArchivo = nombreArchivo;
 }
 
+bool AutoArchivo::actualizarStock(int idAuto, int cantidad)
+{
+    int pos = buscar(idAuto);
+
+    if(pos<0)
+        return false;
+
+    Auto reg = leer(pos);
+    reg.setStock(cantidad);
+    return guardar(pos, reg);
+}
+
+bool AutoArchivo::descontarStock(int idAuto, int cantidad)
+{
+    int pos = buscar(idAuto);
+
+    if(pos<0)
+        return false;
+
+    Auto reg = leer(pos);
+
+    if(reg.getStock() < cantidad)
+        return false;
+
+    reg.setStock(reg.getStock() - cantidad);
+    return guardar(pos, reg);
+}
+
+bool AutoArchivo::reponerStock(int idAuto, int cantidad)
+{
+    int pos = buscar(idAuto);
+
+    if(pos<0)
+        return false;
+
+    Auto reg = leer(pos);
+    reg.setStock(reg.getStock() + cantidad);
+    return guardar(pos, reg);
+}
+
 int AutoArchivo::getCantidadRegistros()
 {
     int cantidad;
     FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == nullptr) return false;
+    if(pArchivo == nullptr) return 0;
     fseek(pArchivo, 0, SEEK_END);
     cantidad = ftell(pArchivo) / sizeof(Auto);
     fclose(pArchivo);
     return cantidad;
 }
 
+/*
 int AutoArchivo::getNuevoID()
 {
     return getCantidadRegistros() + 1;
+}
+*/
+
+int AutoArchivo::getNuevoID()
+{
+    int cant = getCantidadRegistros();
+    if(cant==0) return 1;
+    Auto ultimo = leer(cant-1);
+    return ultimo.getIdAuto()+1;
 }
 
 int AutoArchivo::buscar(int id)
 {
     Auto reg;
     int pos = 0;
+
     FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
     if(pArchivo == nullptr) return -1;
     while(fread(&reg, sizeof(Auto), 1, pArchivo))
@@ -46,6 +97,7 @@ int AutoArchivo::buscar(int id)
 Auto AutoArchivo::leer(int pos)
 {
     Auto reg;
+
     FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb");
     if(pArchivo == nullptr) return reg;
     fseek(pArchivo, sizeof(Auto) * pos, SEEK_SET);

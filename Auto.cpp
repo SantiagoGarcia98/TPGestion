@@ -2,6 +2,7 @@
 #include "utils.h"
 #include <iostream>
 #include <cstring>
+#include <iomanip> /// Para precio
 
 using namespace std;
 
@@ -48,49 +49,52 @@ void Auto::cargar()
 }
 
 
-void Auto::mostrar()
+void Auto::mostrar() const
 {
     cout << "ID: " << _idAuto << endl;
-    cout << "Estado: " << _estado << endl;
+    cout << "Estado: "
+         << (_estado ? "ACTIVO" : "INACTIVO")
+         << endl;
     cout << "Marca: " << _marca << endl;
     cout << "Modelo: " << _modelo << endl;
     cout << "Anio: " << _anio << endl;
-    cout << "Precio: " << _precio << endl;
+    cout << fixed << setprecision(2); /// Para precio
+    cout << "Precio: $" << _precio << endl;
     cout << "Stock disponible: " << _stock << endl;
 }
 
 /// GETTERS
-int Auto::getIdAuto()
+int Auto::getIdAuto() const
 {
     return _idAuto;
 }
 
-const char* Auto::getMarca()
+const char* Auto::getMarca() const
 {
     return _marca;
 }
 
-const char* Auto::getModelo()
+const char* Auto::getModelo() const
 {
     return _modelo;
 }
 
-int Auto::getAnio()
+int Auto::getAnio() const
 {
     return _anio;
 }
 
-float Auto::getPrecio()
+float Auto::getPrecio() const
 {
     return _precio;
 }
 
-int Auto::getStock()
+int Auto::getStock() const
 {
     return _stock;
 }
 
-bool Auto::getEstado()
+bool Auto::getEstado() const
 {
     return _estado;
 }
@@ -119,13 +123,13 @@ void Auto::setModelo(const char* mo)
 
 void Auto::setAnio(int a)
 {
-    if(a>2000)
+    if(a>=1900 && a<=2026)
         _anio = a;
 }
 
 void Auto::setPrecio(float p)
 {
-    if(p>10000000)
+    if(p>0)
         _precio = p;
 }
 

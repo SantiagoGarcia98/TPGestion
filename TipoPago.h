@@ -1,6 +1,5 @@
 #pragma once
 
-
 class TipoPago
 {
 private:
@@ -12,11 +11,11 @@ public:
     TipoPago();
 
     void cargar();
-    void mostrar();
+    void mostrar() const;
 
-    int getIdTipoPago();
-    const char* getDescripcion();
-    bool getEstado();
+    int getIdTipoPago() const;
+    const char* getDescripcion() const;
+    bool getEstado() const;
 
     void setIdTipoPago(int id);
     void setDescripcion(const char* d);

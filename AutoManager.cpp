@@ -9,52 +9,63 @@ using namespace std;
 
 AutoManager::AutoManager()
 {
-  //ctor
+    //ctor
 }
 
 bool AutoManager::cargarAuto()
 {
-      int idAuto, cantRegistros;
-      Auto reg;
-      Auto *pAutos;
+    int idAuto, cantRegistros;
+    Auto reg;
+    Auto *pAutos;
 
-      cout << "----- CARGA DE NUEVO AUTO -----" << endl;
-      cout << endl;
+    cout << "----- CARGA DE NUEVO AUTO -----" << endl;
+    cout << endl;
 
-      if(quiereCancelar()) return false;
+    if(quiereCancelar()) return false;
 
-      idAuto = _repoAuto.getNuevoID();
-      cout << "ID: #" << idAuto << endl;
+    idAuto = _repoAuto.getNuevoID();
+    cout << "ID: #" << idAuto << endl;
 
-      reg.cargar();
+    cantRegistros = _repoAuto.getCantidadRegistros();
+    pAutos = new Auto[cantRegistros];
+    if (pAutos == nullptr)
+    {
+        cout << endl;
+        cout << "Error en la asignacion dinamica de memoria. No se pudo guardar el registro." << endl;
+        cout << endl;
+        return false;
+    }
+    _repoAuto.leer(pAutos, cantRegistros);
 
-      /*
-      cantRegistros = _repoAuto.getCantidadRegistros();
-      pAutos = new Auto[cantRegistros];
-      if (pAutos == nullptr)
-      {
-          cout << endl;
-          cout << "Error en la asignacion dinamica de memoria. No se pudo guardar el registro." << endl;
-          cout << endl;
-          return false;
-      }
-      _repoAuto.leer(pAutos, cantRegistros);
-      */
+    bool repetido;
 
-      reg.setIdAuto(idAuto);
-      /// reg.setModelo(validarModelo(); VER
-      /// VER
+    do
+    {
+        reg.cargar();
 
-      /*
-      delete [] pAutos;
-      */
+        repetido = autoExiste(pAutos, cantRegistros, reg);
 
-      return _repoAuto.guardar(reg);
+        if(repetido)
+        {
+            cout << endl;
+            cout << "Ya existe un auto con esa marca, modelo y anio." << endl;
+            cout << "Ingrese nuevamente los datos." << endl;
+            cout << endl;
+        }
+
+    }
+    while(repetido);
+
+    reg.setIdAuto(idAuto);
+
+    delete [] pAutos;
+
+    return _repoAuto.guardar(reg);
 }
 
 bool AutoManager::modificarAuto()
 {
-    int id, cantRegistros;
+    int id, pos, cantRegistros;
     Auto reg;
     Auto *pAutos;
 
@@ -66,24 +77,30 @@ bool AutoManager::modificarAuto()
         cout << "Ingrese ID del registro a modificar: ";
         cin >> id;
         id = validarPositivo(id);
-        reg = _repoAuto.leer(id - 1);
-        while(reg.getIdAuto() == 0)
+
+        pos = _repoAuto.buscar(id);
+
+        if(pos<0)
         {
             cout << endl;
             cout << "No existe un auto registrado con ese ID... Vuelva a intentarlo..." << endl;
             cout << endl;
             system("pause");
             system("cls");
-            cout << "Ingrese ID del registro a modificar: ";
-            cin >> id;
-            id = validarPositivo(id);
-            reg = _repoAuto.leer(id - 1);
+            continue;
         }
+
+        reg = _repoAuto.leer(pos);
+
         system("cls");
         cout << "----- DATOS DEL REGISTRO A MODIFICAR -----" << endl;
         reg.mostrar();
         cout << endl;
-        if (confirmarAccion("Este es el registro a modificar?")) break; /// POSIBILIDAD DE SUMAR CONFIRMACIÓN DE ACCIÓN
+
+        if(confirmarAccion("Este es el registro a modificar?")) /// POSIBILIDAD DE SUMAR CONFIRMACIÓN DE ACCIÓN
+        {
+            break;
+        }
     }
 
     system("cls");
@@ -91,9 +108,8 @@ bool AutoManager::modificarAuto()
 
     cout << endl;
     cout << "ID: #" << id << endl;
-    reg.cargar();
+/// reg.cargar();
 
-    /*
     cantRegistros = _repoAuto.getCantidadRegistros();
     pAutos = new Auto[cantRegistros];
     if(pAutos == nullptr)
@@ -103,20 +119,37 @@ bool AutoManager::modificarAuto()
         cout << endl;
         return false;
     }
+
     _repoAuto.leer(pAutos, cantRegistros);
-    */
 
+    bool repetido;
+    bool estadoOriginal = reg.getEstado();
 
-    ///reg.setModelo(validarAuto(pAutos, cantRegistros, reg.getMarca(), reg.getModelo(), reg.getAnio(), id)); ///VER
-    validarAuto(pAutos, cantRegistros, reg.getMarca(), reg.getModelo(), reg.getAnio(), id);
+    do
+    {
+        reg.cargar();
 
-    /*
+        repetido = autoExiste(pAutos, cantRegistros, reg, id);
+
+        if(repetido)
+        {
+            cout << endl;
+            cout << "Ya existe un auto con esa marca, modelo y anio." << endl;
+            cout << "Ingrese nuevamente los datos." << endl;
+            cout << endl;
+        }
+
+    }
+    while (repetido);
+
+    reg.setIdAuto(id);
+    reg.setEstado(estadoOriginal);
+
     delete [] pAutos;
-    */
 
-    return _repoAuto.guardar(id-1, reg);
+    return _repoAuto.guardar(pos, reg);
 
-    /// Agregar para no modificar autos dado de baja
+/// Agregar para no modificar autos dado de baja
 }
 
 bool AutoManager::eliminarAuto()
@@ -131,7 +164,14 @@ bool AutoManager::eliminarAuto()
         cout << "Ingrese ID del registro a eliminar: ";
         cin >> id;
         id = validarPositivo(id);
-        reg = _repoAuto.leer(id - 1);
+
+        int pos = _repoAuto.buscar(id);
+
+        if(pos>=0)
+        {
+            reg = _repoAuto.leer(pos);
+        }
+
         while(reg.getIdAuto() == 0)
         {
             cout << endl;
@@ -147,6 +187,7 @@ bool AutoManager::eliminarAuto()
         system("cls");
         cout << "----- DATOS DEL REGISTRO A DAR DE BAJA -----" << endl;
         reg.mostrar();
+
         if(!reg.getEstado())
         {
             cout << endl;
@@ -154,6 +195,7 @@ bool AutoManager::eliminarAuto()
             return false;
         }
         cout << endl;
+
         if (confirmarAccion("Este es el registro a eliminar?")) break;
     }
 
@@ -166,13 +208,21 @@ bool AutoManager::altaAuto()
     Auto reg;
 
     cout << "-------- ALTA DE AUTO --------" << endl;
+
     while(true)
     {
         cout << endl;
         cout << "Ingrese ID del registro a dar de alta: ";
         cin >> id;
         id = validarPositivo(id);
-        reg = _repoAuto.leer(id - 1);
+
+        int pos = _repoAuto.buscar(id);
+
+        if(pos>=0)
+        {
+            reg = _repoAuto.leer(pos);
+        }
+
         while(reg.getIdAuto() == 0)
         {
             cout << endl;
@@ -180,14 +230,22 @@ bool AutoManager::altaAuto()
             cout << endl;
             system("pause");
             system("cls");
-            cout << "Ingrese ID del registro a eliminar: ";
+            cout << "Ingrese ID del registro a dar de alta: ";
             cin >> id;
             id = validarPositivo(id);
-            reg = _repoAuto.leer(id - 1);
+
+            int pos = _repoAuto.buscar(id);
+
+            if(pos>=0)
+            {
+                reg = _repoAuto.leer(pos);
+            }
+
         }
         system("cls");
         cout << "----- DATOS DEL REGISTRO A DAR DE ALTA -----" << endl;
         reg.mostrar();
+
         if(reg.getEstado())
         {
             cout << endl;
@@ -195,39 +253,88 @@ bool AutoManager::altaAuto()
             return false;
         }
         cout << endl;
-        if (confirmarAccion("Este es el registro a dar de alta?")) break;
+
+        if (confirmarAccion("¿Este es el registro a dar de alta?")) break;
     }
 
     return _repoAuto.alta(id-1);
 }
 
-void AutoManager::listarAutos()
+void AutoManager::listarAutos() /// Listar todos los reg
 {
+    int cant = _repoAuto.getCantidadRegistros();
+
+    if(cant==0)
+    {
+        cout << "No hay autos registrados." << endl;
+        return;
+    }
+
+    for(int i=0; i<cant; i++)
+    {
+        Auto reg = _repoAuto.leer(i);
+        reg.mostrar();
+        cout << endl;
+    }
+}
+
+void AutoManager::listarAutosActivos() /// Listar solo los reg activos
+{
+    int cant = _repoAuto.getCantidadRegistros();
+
+    if(cant==0)
+    {
+        cout << "No hay autos registrados." << endl;
+        return;
+    }
+
+    for(int i=0; i<cant; i++)
+    {
+        Auto reg = _repoAuto.leer(i);
+
+        if(reg.getEstado())
+        {
+            reg.mostrar();
+            cout << endl;
+        }
+    }
+}
+
+void AutoManager::listarAutosInactivos() /// Listar solo los reg inactivos
+{
+    int cant = _repoAuto.getCantidadRegistros();
+
+    if(cant==0)
+    {
+        cout << "No hay autos registrados." << endl;
+        return;
+    }
+
+    for(int i=0; i<cant; i++)
+    {
+        Auto reg = _repoAuto.leer(i);
+
+        if(!reg.getEstado())
+        {
+            reg.mostrar();
+            cout << endl;
+        }
+    }
 
 }
 
-void AutoManager::listarAutosActivos()
-{
-
-}
-
-void AutoManager::listarAutosInactivos()
-{
-
-}
-
-
-bool AutoManager::validarAuto(Auto *pAutos, int cant, const char* marca, const char* modelo, int anio, int idActual)
+bool AutoManager::autoExiste(Auto *pAutos, int cant, const Auto& autoBuscado, int idActual)
 {
     for(int i=0; i<cant; i++)
     {
         if(pAutos[i].getIdAuto() != idActual &&
-          strcmp(pAutos[i].getMarca(), marca) == 0 &&
-          strcmp(pAutos[i].getModelo(), modelo) == 0 &&
-          pAutos[i].getAnio() == anio)
+                strcmp(pAutos[i].getMarca(), autoBuscado.getMarca()) == 0 &&
+                strcmp(pAutos[i].getModelo(), autoBuscado.getModelo()) == 0 &&
+                pAutos[i].getAnio() == autoBuscado.getAnio())
         {
-          return false; // Ya existe esa marca, modelo y anio
+            return true;
         }
     }
-    return true;
+    return false;
+
 }

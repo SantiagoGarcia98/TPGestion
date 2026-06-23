@@ -7,14 +7,18 @@ private:
     AutoArchivo _repoAuto;
 
     /// std::string validarMarca(); /// Marca no validaría, si modelo, ver
-    bool validarAuto(Auto *pAutos, int cant, const char* marca, const char* modelo, int anio, int idActual); /// Definir
+    ///Auto validarAuto(Auto *pAutos, int cant, const char* marca, const char* modelo, int anio, int idActual); /// Definir QUEDE ACÁ
+    bool autoExiste(Auto *pAutos, int cant, const Auto& autoBuscado, int idActual = 0);
 
 public:
     AutoManager(); ///
+
     bool cargarAuto(); /// OK
     bool modificarAuto(); /// OK
+
     bool eliminarAuto(); /// OK
     bool altaAuto(); /// OK
+
     void listarAutos(); /// Definir
     void listarAutosActivos(); /// Definir
     void listarAutosInactivos(); /// Definir
