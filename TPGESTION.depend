@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1782400193 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
+1782401137 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
 	<iostream>
 	"Persona.h"
 	"vendedor.h"
@@ -10,6 +10,7 @@
 	"AutoArchivo.h"
 	"AutoManager.h"
 	"AutoMenu.h"
+	"vendedorMenu.h"
 
 1781811671 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\funciones.cpp
 	<iostream>
@@ -456,4 +457,11 @@
 	"Fecha.h"
 	"VendedorManager.h"
 	"Funciones.h"
+
+1782401033 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormenu.cpp
+	<iostream>
+	"VendedorMenu.h"
+
+1782400960 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormenu.h
+	"VendedorManager.h"
 
