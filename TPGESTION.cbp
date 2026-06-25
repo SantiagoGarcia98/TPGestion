@@ -145,6 +145,12 @@
 		<Unit filename="clienteManager.h">
 			<Option virtualFolder="Clientes/" />
 		</Unit>
+		<Unit filename="clienteMenu.cpp">
+			<Option virtualFolder="Clientes/" />
+		</Unit>
+		<Unit filename="clienteMenu.h">
+			<Option virtualFolder="Clientes/" />
+		</Unit>
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
 		<Unit filename="funciones.h" />

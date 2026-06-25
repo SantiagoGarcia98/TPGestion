@@ -48,7 +48,7 @@ void ClienteManager::listarClientesTodos(){
  int cant = _archivo.getCantidadRegistros();
                 for (int i = 0; i < cant; i++) {
                 Cliente c = _archivo.leer(i);
-                if(c.getEstado())
+                ///if(c.getEstado()) comento para que me muestre todos , si lo dejo me muestra solo los activos
                 c.Mostrar();
                 }
 

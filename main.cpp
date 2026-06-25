@@ -9,6 +9,7 @@
 #include "AutoManager.h"
 #include "AutoMenu.h"
 #include "vendedorMenu.h"
+#include "clienteMenu.h"
 
 using namespace std;
 
@@ -17,7 +18,8 @@ int main()
 //ClienteManager p;
 //VendedorManager v;
 //AutoMenu m;
-VendedorMenu vm;
+///VendedorMenu vm;
+ClienteMenu cm;
 ///p.cargarCliente();
 ///p.listarClientesTodos();
 ///p.eliminarCliente();
@@ -27,7 +29,8 @@ VendedorMenu vm;
 ///v.buscarVendedorPorApellido();
 ///v.modificarVendedor();
 ///m.mostrar();
-vm.mostrar();
+///vm.mostrar();
+cm.mostrar();
 
 
 return 0;
