@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1781812331 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
+1782400193 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
 	<iostream>
 	"Persona.h"
 	"vendedor.h"
@@ -8,6 +8,8 @@
 	"vendedorManager.h"
 	"Auto.h"
 	"AutoArchivo.h"
+	"AutoManager.h"
+	"AutoMenu.h"
 
 1781811671 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\funciones.cpp
 	<iostream>
@@ -15,7 +17,7 @@
 	<string>
 	"funciones.h"
 
-1780060950 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\funciones.h
+1782400500 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\funciones.h
 	<string>
 
 1781810887 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\persona.cpp
@@ -148,49 +150,51 @@
 1782184365 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automenu.h
 	"AutoManager.h"
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\auto.cpp
+1782230241 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\auto.cpp
 	"Auto.h"
 	"utils.h"
 	<iostream>
 	<cstring>
+	<iomanip>
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\auto.h
+1782230241 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\auto.h
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\utils.h
+1782400502 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\utils.h
 	"Fecha.h"
 	<string>
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\autoarchivo.cpp
+1782230241 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\autoarchivo.cpp
 	"AutoArchivo.h"
 	<iostream>
 
-1781204171 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\autoarchivo.h
+1782230241 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\autoarchivo.h
 	<string>
 	"Auto.h"
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automanager.cpp
+1782230241 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automanager.cpp
 	"AutoManager.h"
 	"Auto.h"
 	"utils.h"
 	<iostream>
 	<cstring>
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automanager.h
+1782230241 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automanager.h
 	"AutoArchivo.h"
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.cpp
+1782230241 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.cpp
 	<iostream>
 	"AutoMenu.h"
 	"utils.h"
 
-1781204171 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.h
+1782230241 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.h
 	"AutoManager.h"
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\utils.cpp
+1782400560 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\utils.cpp
 	<iostream>
 	"utils.h"
+	<cstring>
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\venta.cpp
+1782400193 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\venta.cpp
 	"Venta.h"
 	<iostream>
 
@@ -203,10 +207,10 @@
 	"Cliente.h"
 	<string>
 
-1781211490 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.cpp
+1782400515 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.cpp
 	"ClienteManager.h"
 	"Cliente.h"
-	"Funciones.h"
+	"utils.h"
 	<iostream>
 	<cstring>
 
@@ -323,65 +327,87 @@
 
 1782349275 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopago.h
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventa.cpp
+1782400193 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventa.cpp
 	"DetalleVenta.h"
 	<iostream>
 	<cstring>
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventa.h
+1782400193 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventa.h
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventaarchivo.cpp
+1782400193 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventaarchivo.cpp
 	"DetalleVentaArchivo.h"
 	<iostream>
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventaarchivo.h
+1782400193 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventaarchivo.h
+	<string>
+	"DetalleVenta.h"
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventamanager.cpp
+1782400193 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventamanager.cpp
 	"DetalleVentaManager.h"
 	<iostream>
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventamanager.h
+1782400193 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventamanager.h
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopago.cpp
+1782230241 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopago.cpp
 	"TipoPago.h"
 	"utils.h"
 	"cstring"
 	<iostream>
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopago.h
+1782400193 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopago.h
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagoarchivo.cpp
+1782230241 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagoarchivo.cpp
 	"TipoPagoArchivo.h"
 	<iostream>
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagoarchivo.h
+1782230241 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagoarchivo.h
+	<string>
+	"TipoPago.h"
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagomanager.cpp
+1782230241 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagomanager.cpp
 	"TipoPagoManager.h"
+	"TipoPago.h"
+	"utils.h"
 	<iostream>
+	<cstring>
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagomanager.h
+1782230241 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagomanager.h
+	"TipoPagoArchivo.h"
+	<cstring>
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagomenu.cpp
+1782230241 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagomenu.cpp
+	<iostream>
 	"TipoPagoMenu.h"
-	<iostream>
+	"utils.h"
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagomenu.h
+1782230241 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\tipopagomenu.h
+	"TipoPagoManager.h"
 
 1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\venta.h
 	"fecha.h"
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventaarchivo.cpp
+1782400193 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventaarchivo.cpp
 	"VentaArchivo.h"
-	<iostream>
+	<cstdio>
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventaarchivo.h
+1782230241 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventaarchivo.h
+	<string>
+	"Venta.h"
 
-1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamanager.cpp
+1782400193 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamanager.cpp
 	"VentaManager.h"
+	"DetalleVenta.h"
+	"utils.h"
+	"fecha.h"
 	<iostream>
 
-1781809645 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamanager.h
+1782400193 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamanager.h
+	"VentaArchivo.h"
+	"ClienteArchivo.h"
+	"vendedorArchivo.h"
+	"AutoArchivo.h"
+	"TipoPagoArchivo.h"
+	"DetalleVentaArchivo.h"
 
 1781809645 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamenu.cpp
 	"VentaMenu.h"
@@ -399,13 +425,13 @@
 	<string>
 	"Vendedor.h"
 
-1781812399 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.cpp
+1782400534 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.cpp
 	<iostream>
 	<cstring>
 	"Vendedor.h"
 	"Fecha.h"
 	"VendedorManager.h"
-	"Funciones.h"
+	"utils.h"
 
 1781812399 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.h
 	"VendedorArchivo.h"

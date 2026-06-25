@@ -147,7 +147,6 @@
 		</Unit>
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
-		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="persona.cpp" />

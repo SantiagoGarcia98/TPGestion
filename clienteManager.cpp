@@ -1,6 +1,6 @@
 #include "ClienteManager.h"
 #include "Cliente.h"
-#include "Funciones.h"
+#include "utils.h"
 #include <iostream>
 
 #include <cstring>// para strcpy, strlen

@@ -3,7 +3,7 @@
 #include "Vendedor.h"
 #include "Fecha.h"
 #include "VendedorManager.h"
-#include "Funciones.h"
+#include "utils.h"
 using namespace std;
 
 VendedorManager::VendedorManager()
