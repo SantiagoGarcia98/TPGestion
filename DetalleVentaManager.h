@@ -1,4 +1,4 @@
-/// DEFINIR
+/// NO VA
 
 #pragma once
 

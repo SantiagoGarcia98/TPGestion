@@ -1,4 +1,4 @@
-/// DEFINIR
+/// NO VA
 
 #include "DetalleVentaManager.h"
 #include <iostream>

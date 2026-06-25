@@ -4,7 +4,7 @@ class TipoPago
 {
 private:
     int _idTipoPago;
-    char _descripcion[30];
+    char _descripcion[30]; /// Efectivo - Crédito -
     bool _estado;
 
 public:

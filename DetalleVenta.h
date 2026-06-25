@@ -14,16 +14,16 @@ private:
 public:
     DetalleVenta();
 
-    void cargar();
-    void mostrar();
+    void cargar(); /// No, se carga la venta
+    void mostrar(); /// No, tampoco hacerlo
 
-    int getIdDetalleVenta();
-    int getIdVenta();
-    int getIdAuto();
-    int getCantidad();
-    float getPrecioHistorico();
-    float getSubtotal();
-    bool getEstado();
+    int getIdDetalleVenta() const;
+    int getIdVenta() const;
+    int getIdAuto() const;
+    int getCantidad() const;
+    float getPrecioHistorico() const;
+    float getSubtotal() const;
+    bool getEstado() const;
 
     void setIdDetalleVenta(int id);
     void setIdVenta(int id);

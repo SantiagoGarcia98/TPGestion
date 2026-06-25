@@ -7,7 +7,13 @@ using namespace std;
 
 DetalleVenta::DetalleVenta()
 {
-  //ctor
+    _idDetalleVenta=0;
+    _idVenta=0;
+    _idAuto=0;
+    _cantidad=0;
+    _precioHistorico=0;
+    _subtotal=0;
+    _estado=true;
 }
 
 void DetalleVenta::cargar()
@@ -21,29 +27,39 @@ void DetalleVenta::mostrar()
 }
 
 /// GETTERS
-int DetalleVenta::getIdDetalleVenta()
+int DetalleVenta::getIdDetalleVenta() const
 {
     return _idDetalleVenta;
 }
 
-int DetalleVenta::getIdVenta()
+int DetalleVenta::getIdVenta() const
 {
     return _idVenta;
 }
 
-int DetalleVenta::getIdAuto()
+int DetalleVenta::getIdAuto() const
 {
     return _idAuto;
 }
 
-int DetalleVenta::getCantidad()
+int DetalleVenta::getCantidad() const
 {
     return _cantidad;
 }
 
-float DetalleVenta::getPrecioHistorico()
+float DetalleVenta::getPrecioHistorico() const
 {
     return _precioHistorico;
+}
+
+float DetalleVenta::getSubtotal() const
+{
+    return _subtotal;
+}
+
+bool DetalleVenta::getEstado() const
+{
+    return _estado;
 }
 
 /// SETTERS
@@ -70,4 +86,14 @@ void DetalleVenta::setCantidad(int c)
 void DetalleVenta::setPrecioHistorico(float p)
 {
     _precioHistorico = p;
+}
+
+void DetalleVenta::setSubtotal(float sub)
+{
+    _subtotal = sub;
+}
+
+void DetalleVenta::setEstado(bool e)
+{
+    _estado = e;
 }

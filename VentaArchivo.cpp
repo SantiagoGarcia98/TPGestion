@@ -50,7 +50,7 @@ Venta VentaArchivo::leer(int pos)
     Venta reg;
 
     FILE* pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == nullptr) return -1;
+    if(pArchivo == nullptr) return reg;
 
     fseek(pArchivo, sizeof(Venta)*pos, SEEK_SET);
     fread(&reg, sizeof(Venta), 1, pArchivo);

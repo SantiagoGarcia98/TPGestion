@@ -17,7 +17,7 @@ Venta::Venta()
 
 void Venta::cargar()
 {
-    ///
+    /// A Manager
 }
 
 void Venta::mostrar()
