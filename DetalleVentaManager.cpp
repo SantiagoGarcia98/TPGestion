@@ -1,4 +1,4 @@
-/// NO VA
+/// NO VA, ELIMINAR
 
 #include "DetalleVentaManager.h"
 #include <iostream>

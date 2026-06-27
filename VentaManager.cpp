@@ -12,12 +12,12 @@ VentaManager::VentaManager()
 }
 
 
-void VentaManager::nuevaVenta()
+bool VentaManager::cargarVenta()
 {
     cout << "----- NUEVA VENTA -----" << endl;
 
     if(!confirmarAccion("Desea iniciar una venta?"))
-        return;
+        return false; /// VER si está ok
 
     Venta venta;
 
@@ -75,7 +75,7 @@ void VentaManager::nuevaVenta()
     if(pos==-1)
     {
         cout<<"Vendedor inexistente";
-        return;
+        return false; /// VER SI ESTÁ OK
     }
 
     Vendedor vend = _repoVendedor.leer(pos);
@@ -83,7 +83,7 @@ void VentaManager::nuevaVenta()
     if(!vend.getEstado())
     {
         cout<<"El vendedor se encuentra inactivo";
-        return;
+        return false; /// VER SI ESTÁ OK
     }
 
     venta.setIdVendedor(idVendedor);
@@ -100,7 +100,7 @@ void VentaManager::nuevaVenta()
     if(posPago==-1)
     {
         cout << "Tipo de pago inexistente." << endl;
-        return;
+        return false; /// VER SI ESTÁ OK
     }
 
     venta.setIdTipoPago(idPago);
@@ -177,8 +177,38 @@ void VentaManager::nuevaVenta()
     /// -----------------------------
     /// 7. GUARDAR VENTA
     /// -----------------------------
-    _repoVenta.guardar(venta);
+    return _repoVenta.guardar(venta);
 
     cout << "Venta registrada correctamente." << endl;
     cout << "Total: $ " << total << endl;
+}
+
+bool VentaManager::modificarVenta() /// Definir
+{
+
+}
+
+bool VentaManager::eliminarVenta() /// Definir
+{
+
+}
+
+bool VentaManager::altaVenta() /// Definir
+{
+
+}
+
+void VentaManager::listarVentas() /// Definir
+{
+
+}
+
+void VentaManager::mostrarVentaCompleta(int idVenta) /// Definir
+{
+
+}
+
+void VentaManager::consultarVentas()
+{
+
 }

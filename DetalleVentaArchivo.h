@@ -1,5 +1,3 @@
-/// DEFINIR
-
 #pragma once
 #include <string>
 #include "DetalleVenta.h"

@@ -1,5 +1,3 @@
-/// DEFINIR
-
 #include "DetalleVentaArchivo.h"
 #include <iostream>
 

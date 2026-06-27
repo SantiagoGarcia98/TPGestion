@@ -21,7 +21,14 @@ private:
 public:
     VentaManager();
 
-    void nuevaVenta(); /// Acá va toda la lógica (sería el Cargar()), creo que 1ro en memoria y luego paso a archivo, ver
-    void listarVentas();
-    void mostrarVentaCompleta(int idVenta);
+    bool cargarVenta(); /// Nueva venta, acá va toda la lógica, creo que 1ro en memoria y luego paso a archivo, VER ESTO
+    bool modificarVenta(); /// Definir
+
+    bool eliminarVenta(); /// Definir
+    bool altaVenta(); /// Definir
+
+    void listarVentas(); /// Definir
+    void mostrarVentaCompleta(int idVenta); /// Definir
+
+    void consultarVentas();
 };
