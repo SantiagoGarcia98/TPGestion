@@ -82,19 +82,9 @@
 1782423638 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\funciones.h
 	<string>
 
-1782423638 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\main.cpp
+1782564534 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\main.cpp
 	<iostream>
-	"Persona.h"
-	"vendedor.h"
-	"cliente.h"
-	"clienteManager.h"
-	"vendedorManager.h"
-	"Auto.h"
-	"AutoArchivo.h"
-	"AutoManager.h"
-	"AutoMenu.h"
-	"vendedorMenu.h"
-	"clienteMenu.h"
+	"App.h"
 
 1780524311 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedor.h
 	"Persona.h"
@@ -319,11 +309,13 @@
 	"TipoPagoArchivo.h"
 	"DetalleVentaArchivo.h"
 
-1781574549 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamenu.cpp
+1782562609 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamenu.cpp
 	"VentaMenu.h"
 	<iostream>
+	"utils.h"
 
-1781574536 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamenu.h
+1782561398 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamenu.h
+	"VentaManager.h"
 
 1782181524 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopago.cpp
 	"TipoPago.h"
@@ -490,4 +482,15 @@
 1782423638 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedormenu.cpp
 	<iostream>
 	"VendedorMenu.h"
+
+1782564657 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\app.cpp
+	<iostream>
+	"App.h"
+
+1782563686 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\app.h
+	"clienteMenu.h"
+	"vendedorMenu.h"
+	"AutoMenu.h"
+	"VentaMenu.h"
+	"TipoPagoMenu.h"
 
