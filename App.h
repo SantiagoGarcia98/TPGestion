@@ -25,3 +25,5 @@ public:
     App();
     void run();
 };
+
+/// Clase App
