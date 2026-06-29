@@ -107,6 +107,72 @@ void ClienteManager::eliminarCliente() {
         cout << "Operacion cancelada.\n";
     }
 }
+void ClienteManager::buscarClientePorDNI() {
+    string texto;
+    char dni[12];
+
+    cout << "\n--- BUSCAR CLIENTE POR DNI ---\n";
+
+    // ingresar y validar DNI
+    do {
+        cout << "Ingrese DNI (0 para volver): ";
+        texto = cargarCadena();
+//paso de string a char
+        if (Volver(texto.c_str())) {
+            cout << "Volviendo al menu...\n";
+            return;
+        }
+
+        if (!validarDNI((char*)texto.c_str())) {
+            cout << "DNI invalido. Reintente.\n";
+            texto.clear();// si es invalido limpiamos
+        }
+    } while (texto.empty());// mientras este vacio, seguimos pidiendo
+
+    strcpy(dni, texto.c_str());
+
+    // busqueda en el archivo
+    int pos = _archivo.buscarPorDNI(dni);
+    if (pos == -1) {
+        cout << "\nNo se encontro un cliente con ese DNI.\n";
+        system("pause");
+        return;
+    }
+
+    // mostrar datos del cliente encontrado
+    Cliente c = _archivo.leer(pos);
+    cout << "\n--- CLIENTE ENCONTRADO ---\n";
+    c.Mostrar();
+
+
+}
+
+void ClienteManager::buscarClientePorApellido() {
+   char apellido[50];
+   cout << "Ingrese apellido del cliente"<< endl;
+   cin >> apellido;
+
+   int cant = _archivo.getCantidadRegistros();
+   bool encontrado = false;
+
+   for (int i=0 ; i<cant ; i++){
+    Cliente c = _archivo.leer(i);
+     if (strcmpi(c.getApellido(), apellido) == 0 && c.getEstado()) {
+            c.Mostrar();
+            encontrado = true;
+        }
+   }
+
+   if(!encontrado){
+    cout << "Nose se encontraron clientes con el apellido" << apellido << endl;
+   }
+
+
+
+   }
+
+
+
 
 
 

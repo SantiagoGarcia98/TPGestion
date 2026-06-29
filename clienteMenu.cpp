@@ -22,6 +22,8 @@ void ClienteMenu::mostrarOpciones() {
     cout << "1- CARGAR CLIENTE" << endl;
     cout << "2- LISTAR CLIENTES" << endl;
     cout << "3- ELIMINAR CLIENTE" << endl;
+    cout << "4- BUSCAR CLIENTE POR DNI" <<endl;
+    cout << "5- BUSCAR CLIENTE POR APELLIDO" <<endl;
     cout << "0- SALIR" << endl;
 }
 
@@ -46,6 +48,8 @@ void ClienteMenu::ejecutarOpcion(int opcion) {
         case 1: _clienteManager.cargarCliente(); break;
         case 2: _clienteManager.listarClientesTodos(); break;
         case 3: _clienteManager.eliminarCliente(); break;
+        case 4: _clienteManager.buscarClientePorDNI();break;
+        case 5: _clienteManager.buscarClientePorApellido();break;
             break;
 
         case 0:
