@@ -14,4 +14,5 @@ public:
     void eliminarCliente(); // baja lógica por ID
     void buscarClientePorDNI();
     void buscarClientePorApellido();
+    void buscarClientePorID();
 };

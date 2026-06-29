@@ -131,7 +131,6 @@ void ClienteManager::buscarClientePorDNI() {
 
     strcpy(dni, texto.c_str());
 
-    // busqueda en el archivo
     int pos = _archivo.buscarPorDNI(dni);
     if (pos == -1) {
         cout << "\nNo se encontro un cliente con ese DNI.\n";
@@ -139,7 +138,6 @@ void ClienteManager::buscarClientePorDNI() {
         return;
     }
 
-    // mostrar datos del cliente encontrado
     Cliente c = _archivo.leer(pos);
     cout << "\n--- CLIENTE ENCONTRADO ---\n";
     c.Mostrar();
@@ -157,7 +155,7 @@ void ClienteManager::buscarClientePorApellido() {
 
    for (int i=0 ; i<cant ; i++){
     Cliente c = _archivo.leer(i);
-     if (strcmpi(c.getApellido(), apellido) == 0 && c.getEstado()) {
+     if (strcmpi(c.getApellido(), apellido) == 0 && c.getEstado()) { // si le saco el c.getestado , puede buscar todos y no solo los activos
             c.Mostrar();
             encontrado = true;
         }
@@ -166,10 +164,20 @@ void ClienteManager::buscarClientePorApellido() {
    if(!encontrado){
     cout << "Nose se encontraron clientes con el apellido" << apellido << endl;
    }
-
-
-
    }
+void ClienteManager::buscarClientePorID(){
+    int id;
+    cout << "Ingrese ID del cliente: ";
+    cin >> id;
+
+    int pos = _archivo.buscarPorID(id);
+    if (pos=-1){
+        cout << "vendedor no encontrado. \n";
+    }
+    Cliente c = _archivo.leer(pos);
+    c.Mostrar();
+
+}
 
 
 
