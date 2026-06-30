@@ -47,7 +47,7 @@ void ClienteMenu::ejecutarOpcion(int opcion) {
     switch (opcion) {
 
         case 1: _clienteManager.cargarCliente(); break;
-        case 2: _clienteManager.listarClientesTodos(); break;
+        case 2: _clienteManager.listarClientes(); break;
         case 3: _clienteManager.eliminarCliente(); break;
         case 4: _clienteManager.buscarClientePorDNI();break;
         case 5: _clienteManager.buscarClientePorApellido();break;

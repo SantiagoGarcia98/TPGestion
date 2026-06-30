@@ -10,7 +10,7 @@ public:
     ClienteManager();
 
     void cargarCliente();
-    void listarClientesTodos();
+    void listarClientes();
     void eliminarCliente(); // baja lógica por ID
     void buscarClientePorDNI();
     void buscarClientePorApellido();

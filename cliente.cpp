@@ -7,13 +7,11 @@ using namespace std;
 Cliente::Cliente() {
     _IdCliente = 0;
 }
-//SETTERS
-//asignamos ID
+
 void Cliente::setIdCliente(int id) {
     _IdCliente = id; }
 
-    //GETTERS
-//Devuelve ID
+
 int Cliente::getIdCliente() {
     return _IdCliente; }
 

@@ -2,13 +2,12 @@
 #include "Cliente.h"
 #include "utils.h"
 #include <iostream>
-
-#include <cstring>// para strcpy, strlen
+#include <cstring>
 
 using namespace std;
 
 ClienteManager::ClienteManager()
-    : _archivo("clientes.dat")// inicio archivo
+    : _archivo("clientes.dat")
 { }
 
 void ClienteManager::cargarCliente() {
@@ -19,8 +18,8 @@ void ClienteManager::cargarCliente() {
     }
 
     Cliente c;
-    int id = _archivo.getNuevoID(); // analiza archivo y genera nuevo ID
-    c.setIdCliente(id);// asigno id
+    int id = _archivo.getNuevoID();
+    c.setIdCliente(id);
 
     cout << "ID Cliente # " << id << endl;
 
@@ -32,7 +31,7 @@ void ClienteManager::cargarCliente() {
         return;
     }
 
-    // Guarda sólo si el cliente tiene estado activo
+
     if (_archivo.guardar(c)) {
         cout << "Cliente guardado correctamente.\n";
     } else {
@@ -43,14 +42,69 @@ void ClienteManager::cargarCliente() {
 }
 
 
-void ClienteManager::listarClientesTodos(){
+void ClienteManager::listarClientes(){
 
  int cant = _archivo.getCantidadRegistros();
-                for (int i = 0; i < cant; i++) {
-                Cliente c = _archivo.leer(i);
-                ///if(c.getEstado()) comento para que me muestre todos , si lo dejo me muestra solo los activos
-                c.Mostrar();
+    if (cant == 0) {
+        cout << "No hay clientes cargados.";
+        return;
+    }
+
+    cout << "--- OPCIONES DE LISTADO ---"<<endl;
+    cout << "1. Listar clientes ACTIVOS"<<endl;
+    cout << "2. Listar clientes INACTIVOS"<<endl;
+    cout << "3. Listar TODOS los clientes"<<endl;
+    cout << "0. Volver al menu anterior\n"<<endl;
+    cout << "Opcion: ";
+
+    int opcion;
+    cin >> opcion;
+    cin.ignore();
+
+    if (opcion == 0) {
+        cout << "Volviendo al menu:...";
+        return;
+    }
+
+    system("cls");
+    cout << "--- LISTADO DE CLIENTES ---"<<endl;
+    bool hayClientes = false;// todavia no sabemos el estado del los clientes
+
+    for (int i = 0; i < cant; i++) {
+        Cliente c = _archivo.leer(i);
+
+        switch (opcion) {
+            case 1:
+                if (c.getEstado()) {
+                    c.Mostrar();
+                    hayClientes = true;
                 }
+                break;
+
+            case 2:
+                if (!c.getEstado()) {
+                    c.Mostrar();
+                    hayClientes = true;
+                }
+                break;
+
+            case 3:
+                c.Mostrar();
+                hayClientes = true;
+                break;
+
+            default:
+                cout << "Opcion invalida.\n";
+                return;
+        }
+    }
+
+    if (!hayClientes) {
+        if (opcion == 1)
+            cout << "No hay clientes activos.";
+        else if (opcion == 2)
+            cout << "No hay clientes inactivos.";
+    }
 
 }
 
@@ -71,12 +125,12 @@ void ClienteManager::eliminarCliente() {
         texto = cargarCadena();
 
         if (Volver(texto.c_str())) { // permite volver al menú
-            cout << "Operacion cancelada por el usuario.\n";
+            cout << "Operacion cancelada por el usuario."<<endl;
             return;
         }
 
         if (!validarDNI((char*)texto.c_str())) {
-            cout << "DNI invalido. Reintente.\n";
+            cout << "DNI invalido. Reintente."<<endl;
             texto.clear();
         }
     } while (texto.empty());
@@ -85,7 +139,7 @@ void ClienteManager::eliminarCliente() {
 
     int pos = _archivo.buscarPorDNI(dni);
     if (pos == -1) {
-        cout << "Cliente no encontrado.\n";
+        cout << "Cliente no encontrado."<<endl;
         return;
     }
 
@@ -100,24 +154,24 @@ void ClienteManager::eliminarCliente() {
     if (confirma == 's' || confirma == 'S') {
         c.setEstado(false);
         if (_archivo.guardar(pos, c))
-            cout << "Cliente marcado como INACTIVO correctamente.\n";
+            cout << "Cliente marcado como INACTIVO correctamente."<< endl;
         else
-            cout << "Error al actualizar el registro.\n";
+            cout << "Error al actualizar el registro."<< endl;
     } else {
-        cout << "Operacion cancelada.\n";
+        cout << "Operacion cancelada."<< endl;
     }
 }
 void ClienteManager::buscarClientePorDNI() {
     string texto;
     char dni[12];
 
-    cout << "\n--- BUSCAR CLIENTE POR DNI ---\n";
+    cout << "--- BUSCAR CLIENTE POR DNI ---"<< endl;
 
-    // ingresar y validar DNI
+
     do {
-        cout << "Ingrese DNI (0 para volver): ";
+        cout << "Ingrese DNI (0 para volver): "<< endl;
         texto = cargarCadena();
-//paso de string a char
+        //paso de string a char
         if (Volver(texto.c_str())) {
             cout << "Volviendo al menu...\n";
             return;
@@ -133,13 +187,13 @@ void ClienteManager::buscarClientePorDNI() {
 
     int pos = _archivo.buscarPorDNI(dni);
     if (pos == -1) {
-        cout << "\nNo se encontro un cliente con ese DNI.\n";
+        cout << "No se encontro un cliente con ese DNI."<< endl;
         system("pause");
         return;
     }
 
     Cliente c = _archivo.leer(pos);
-    cout << "\n--- CLIENTE ENCONTRADO ---\n";
+    cout << "--- CLIENTE ENCONTRADO ---"<< endl;
     c.Mostrar();
 
 

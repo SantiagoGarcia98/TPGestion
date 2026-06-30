@@ -6,7 +6,6 @@
 ClienteArchivo::ClienteArchivo( std::string  nombreArchivo)
 : _nombreArchivo(nombreArchivo){
 }
-// guarda registro
 bool ClienteArchivo::guardar( Cliente registro) {
     FILE *pFile = fopen(_nombreArchivo.c_str(), "ab");
     if(pFile == nullptr) {
@@ -16,9 +15,9 @@ bool ClienteArchivo::guardar( Cliente registro) {
     fclose(pFile);
     return ok;
 }
-// guarda, modifica sobreescribe
+
 bool ClienteArchivo::guardar(int pos,  Cliente registro) {
-    FILE *pFile = fopen(_nombreArchivo.c_str(), "rb+");
+    FILE *pFile = fopen(_nombreArchivo.c_str(), "rb+"); // rb+ guarda, modifica sobreescribe
     if(pFile == nullptr) {
             return false;}
     fseek(pFile, pos * sizeof(Cliente), SEEK_SET);
@@ -41,7 +40,7 @@ Cliente ClienteArchivo::leer(int pos) {
     fclose(pFile);
     return reg;
 }
-// lee todos los clientes
+
 int ClienteArchivo::leerTodos(Cliente vec[], int cantidad) {
     FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
     if(pFile == nullptr) return 0;
@@ -49,7 +48,7 @@ int ClienteArchivo::leerTodos(Cliente vec[], int cantidad) {
     fclose(pFile);
     return leidos;
 }
-// cant de registros
+
 int ClienteArchivo::getCantidadRegistros() {
     FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
     if(pFile == nullptr) {
