@@ -15,4 +15,5 @@ public:
     void buscarClientePorDNI();
     void buscarClientePorApellido();
     void buscarClientePorID();
+    void listarClientesOrdenadosxapellido();
 };
