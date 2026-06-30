@@ -15,16 +15,16 @@ private:
 public:
     Venta();
 
-    void cargar();
+    void cargar(); /// No
     void mostrar();
 
-    int getIdVenta();
-    Fecha getFecha();
-    int getIdCliente();
-    int getIdVendedor();
-    int getIdTipoPago();
-    float getMontoTotal();
-    bool getEstado();
+    int getIdVenta() const;
+    Fecha getFecha() const;
+    int getIdCliente() const;
+    int getIdVendedor() const;
+    int getIdTipoPago() const;
+    float getMontoTotal() const;
+    bool getEstado() const;
 
     void setIdVenta(int id);
     void setFecha(Fecha f);

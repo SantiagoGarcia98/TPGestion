@@ -20,7 +20,14 @@ int VentaArchivo::getCantidadRegistros()
 
 int VentaArchivo::getNuevoID()
 {
-    return getCantidadRegistros() + 1;
+    int cant = getCantidadRegistros();
+
+    if(cant==0)
+        return 1;
+
+    Venta ultimo = leer(cant-1);
+
+    return ultimo.getIdVenta()+1;
 }
 
 int VentaArchivo::buscar(int id)

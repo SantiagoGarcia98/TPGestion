@@ -65,14 +65,57 @@ DetalleVenta DetalleVentaArchivo::leer(int pos)
     DetalleVenta reg;
 
     FILE* pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == nullptr) return reg;
+    if(pArchivo == nullptr)
+    {
+      reg.setIdDetalleVenta(-1);
+      return reg;
+    }
 
     fseek(pArchivo, sizeof(DetalleVenta)*pos, SEEK_SET);
-    fread(&reg, sizeof(DetalleVenta), 1, pArchivo);
+    if(!fread(&reg, sizeof(DetalleVenta), 1, pArchivo))
+    {
+      reg.setIdDetalleVenta(-1);
+    }
 
     fclose(pArchivo);
 
     return reg;
+}
+
+int DetalleVentaArchivo::leer(DetalleVenta vec[], int cantidad)
+{
+    FILE *pArchivo = fopen(_nombreArchivo.c_str(),"rb");
+
+    if(pArchivo == nullptr) return 0;
+
+    int leidos = fread(vec, sizeof(DetalleVenta), cantidad, pArchivo);
+
+    fclose(pArchivo);
+
+    return leidos;
+}
+
+int DetalleVentaArchivo::leerPorVenta(int idVenta, DetalleVenta vec[], int cantidad)
+{
+    FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
+
+    if(pFile == nullptr)
+        return 0;
+
+    DetalleVenta reg;
+    int i = 0;
+
+    while(fread(&reg, sizeof(DetalleVenta), 1, pFile) && i < cantidad)
+    {
+        if(reg.getIdVenta() == idVenta && reg.getEstado())
+        {
+            vec[i] = reg;
+            i++;
+        }
+    }
+    fclose(pFile);
+
+    return i;
 }
 
 bool DetalleVentaArchivo::guardar(DetalleVenta reg)
@@ -87,6 +130,34 @@ bool DetalleVentaArchivo::guardar(DetalleVenta reg)
     fclose(pArchivo);
 
     return resultado;
+}
+
+bool DetalleVentaArchivo::guardar(int pos, DetalleVenta reg)
+{
+    FILE *pArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+
+    if(pArchivo == nullptr)
+        return false;
+
+    fseek(pArchivo, pos * sizeof(DetalleVenta), SEEK_SET);
+
+    bool resultado = fwrite(&reg, sizeof(DetalleVenta), 1, pArchivo);
+
+    fclose(pArchivo);
+
+    return resultado;
+}
+
+bool DetalleVentaArchivo::eliminar(int pos)
+{
+  DetalleVenta reg = leer(pos);
+
+    if(reg.getIdDetalleVenta() <= 0)
+        return false;
+
+    reg.setEstado(false);
+
+    return guardar(pos, reg);
 }
 
 void DetalleVentaArchivo::listarPorVenta(int idVenta)
@@ -108,4 +179,3 @@ void DetalleVentaArchivo::listarPorVenta(int idVenta)
     }
     fclose(pArchivo);
 }
-

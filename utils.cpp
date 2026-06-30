@@ -108,22 +108,28 @@ void validarAlta(bool resultado)
     }
 }
 
+/*
 bool confirmarAccion(string mensaje)
 {
     char respuesta;
-    cout << mensaje << " (S/N): ";
-    cin >> respuesta;
 
-    while(respuesta != 's' && respuesta != 'S' && respuesta != 'n' && respuesta != 'N')
+    while (true)
     {
-        cout << endl;
-        cout << "Respuesta incorrecta, vuelva a intentarlo..." << endl;
-        cout << endl;
-        cout << mensaje << " (S/N): ";
-        cin >> respuesta;
+      cout << mensaje << " (S/N): ";
+      cin >> respuesta;
+
+      if (respuesta == 's' || respuesta == 'S')
+        return true;
+
+      if (respuesta == 'n' || respuesta == 'N')
+        return false;
+
+      cout << "Respuesta incorrecta, vuelva a intentarlo..." << endl;
+      system("pause");
+      system("cls");
     }
-    return (respuesta == 's' || respuesta == 'S');
 }
+*/
 
 bool validarDNI(char* dni) {
     int tam = strlen(dni);
@@ -171,18 +177,27 @@ bool Volver(const char* texto) {
     return strcmp(texto, "0") == 0;
 }
 
-bool confirmarAccion(const char* mensaje ) {
-    cout << mensaje;
-    string respuesta = cargarCadena();
 
+bool confirmarAccion(const char* mensaje)
+{
+    string respuesta;
 
-    while (respuesta.empty() ||/// que no este vacio
-          (respuesta[0] != 's' && respuesta[0] != 'S' &&
-           respuesta[0] != 'n' && respuesta[0] != 'N')) {
+    while(true)
+    {
+        cout << mensaje << " (S/N): ";
+             respuesta = cargarCadena();
 
-        cout << "Opcion invalida. Ingrese 's' o 'n': ";
-        respuesta = cargarCadena();
+        if (!respuesta.empty())
+        {
+            if (respuesta[0] == 's' || respuesta[0] == 'S')
+                return true;
+
+            if (respuesta[0] == 'n' || respuesta[0] == 'N')
+                return false;
+        }
+
+        cout << "Opcion invalida. Ingrese 's' o 'n'" << endl;
+        cout << endl;
     }
 
-    return (respuesta[0] == 's' || respuesta[0] == 'S');
 }

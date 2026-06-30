@@ -16,14 +16,14 @@ DetalleVenta::DetalleVenta()
     _estado=true;
 }
 
-void DetalleVenta::cargar()
+void DetalleVenta::mostrar() const
 {
-
-}
-
-void DetalleVenta::mostrar()
-{
-
+    cout << "ID Detalle: " << _idDetalleVenta << endl;
+    cout << "ID Auto: " << _idAuto << endl;
+    cout << "Cantidad: " << _cantidad << endl;
+    cout << "Precio: $" << _precioHistorico << endl;
+    cout << "Subtotal: $" << _subtotal << endl;
+    cout << "Estado: " << (_estado ? "Activo" : "Inactivo") << endl;
 }
 
 /// GETTERS

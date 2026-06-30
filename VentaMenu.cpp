@@ -75,7 +75,7 @@ void VentaMenu::ejecutarOpcion(int opcion)
     case 6:
         system("cls");
         cout << "----- CONSULTA DE VENTAS -----" << endl;
-        _ventaManager.consultarVentas(); /// VER BIEN
+        _ventaManager.consultarVentasPorFechas(); /// VER BIEN
         //
         break;
     case 0:

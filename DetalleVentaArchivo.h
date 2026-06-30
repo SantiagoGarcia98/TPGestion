@@ -2,7 +2,6 @@
 #include <string>
 #include "DetalleVenta.h"
 
-
 class DetalleVentaArchivo
 {
 private:
@@ -12,18 +11,20 @@ public:
 
     DetalleVentaArchivo(std::string nombreArchivo = "detalleventas.dat");
 
-    int getCantidadRegistros();
+    int getCantidadRegistros(); /// Ok
 
-    int getNuevoID();
+    int getNuevoID(); /// Ok
 
-    int buscar(int id);
+    int buscar(int id); /// Ok
 
-    DetalleVenta leer(int pos);
-    int leer(DetalleVenta vec[], int cantidad);
-    int leerPorVenta(int idVenta, DetalleVenta vec[], int cantidad); /// DEFINIR
+    DetalleVenta leer(int pos); /// Ok
+    int leer(DetalleVenta vec[], int cantidad); /// Ok
+    int leerPorVenta(int idVenta, DetalleVenta vec[], int cantidad); /// Ok
 
-    bool guardar(DetalleVenta reg);
-    bool guardar(int pos, DetalleVenta reg);
+    bool guardar(DetalleVenta reg); /// Ok
+    bool guardar(int pos, DetalleVenta reg); /// Ok
 
-    void listarPorVenta(int idVenta); /// De
+    bool eliminar(int pos); /// Ok
+
+    void listarPorVenta(int idVenta); /// Ok
 };

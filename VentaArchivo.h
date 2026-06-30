@@ -13,7 +13,7 @@ public:
     int getCantidadRegistros();
     int getNuevoID();
 
-    int buscar(int id);
+    int buscar(int id); /// por ID
 
     Venta leer(int pos);
     int leer(Venta vec[], int cant);

@@ -10,10 +10,10 @@ void validarCarga(bool resultado);
 void validarModificacion(bool resultado);
 void validarBaja(bool resultado);
 void validarAlta(bool resultado);
-bool confirmarAccion(std::string mensaje);
+///bool confirmarAccion(std::string mensaje);
 
 bool validarDNI( char *dni);
 bool esTelefonoValido( char* tel);
-bool confirmarAccion(const char* mensaje  );
+bool confirmarAccion(const char* mensaje);
 bool Volver(const char* texto);
 

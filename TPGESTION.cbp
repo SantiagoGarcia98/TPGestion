@@ -37,6 +37,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="App.cpp" />
+		<Unit filename="App.h" />
 		<Unit filename="Auto.cpp">
 			<Option virtualFolder="Autos/" />
 		</Unit>

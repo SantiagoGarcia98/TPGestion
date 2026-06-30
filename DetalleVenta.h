@@ -14,8 +14,7 @@ private:
 public:
     DetalleVenta();
 
-    void cargar(); /// No, se carga la venta
-    void mostrar(); /// No, tampoco hacerlo
+    void mostrar() const;
 
     int getIdDetalleVenta() const;
     int getIdVenta() const;

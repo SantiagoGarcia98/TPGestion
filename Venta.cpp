@@ -1,5 +1,4 @@
 #include "Venta.h"
-//#include "utils.h"
 #include <iostream>
 
 using namespace std;
@@ -37,31 +36,38 @@ void Venta::mostrar()
 }
 
 /// GETTERS
-int Venta::getIdVenta(){
+int Venta::getIdVenta() const
+{
     return _idVenta;
 }
 
-Fecha Venta::getFecha(){
+Fecha Venta::getFecha() const
+{
     return _fecha;
 }
 
-int Venta::getIdCliente(){
+int Venta::getIdCliente() const
+{
     return _idCliente;
 }
 
-int Venta::getIdVendedor(){
+int Venta::getIdVendedor() const
+{
     return _idVendedor;
 }
 
-int Venta::getIdTipoPago(){
+int Venta::getIdTipoPago() const
+{
     return _idTipoPago;
 }
 
-float Venta::getMontoTotal(){
+float Venta::getMontoTotal() const
+{
     return _montoTotal;
 }
 
-bool Venta::getEstado(){
+bool Venta::getEstado() const
+{
     return _estado;
 }
 

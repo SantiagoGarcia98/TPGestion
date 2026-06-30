@@ -15,20 +15,27 @@ private:
     VendedorArchivo _repoVendedor;
     AutoArchivo _repoAuto;
     TipoPagoArchivo _repoTipoPagos;
-
     DetalleVentaArchivo _repoDetalle;
 
 public:
     VentaManager();
 
-    bool cargarVenta(); /// Nueva venta, acá va toda la lógica, creo que 1ro en memoria y luego paso a archivo, VER ESTO
-    bool modificarVenta(); /// Definir
+    bool cargarVenta(); /// OK - Nueva venta, acá va toda la lógica, creo que 1ro en memoria y luego paso a archivo, VER ESTO
+    bool modificarVenta(); /// NO aplica, tener en cuenta que son txt históricas. Para preservar la integridad de la info, una venta no se modifica, se cancela y se genera una nueva.
 
-    bool eliminarVenta(); /// Definir
-    bool altaVenta(); /// Definir
+    bool eliminarVenta(); /// Ok, al intentar eliminar mencionar "Una venta eliminada no puede reactivarse"
+    bool altaVenta(); /// NO aplica, no sería lógico a nivel negocio dar de alta una venta ya eliminada - ELIMINAR
 
-    void listarVentas(); /// Definir
-    void mostrarVentaCompleta(int idVenta); /// Definir
+    /// LISTADOS
+    void listarVentas(); /// OK
+    void mostrarVentaCompleta(int idVenta); /// OK, muestra todo el detalle de la venta
+    void listarVentaPorFecha(); /// Ordenada por fecha
+    void listarVentaPorMonto(); /// OK, Ordenadas por monto total de manera descendente
 
-    void consultarVentas();
+    /// CONSULTAS
+    void consultarVentasPorFechas(); /// Por rango de fechas
+    void consultarVentaPorCliente(); /// Por cliente (dni podrías ser)
+    void consultarVentaPorVendedor(); /// Por vendedor (legajo podría ser)
+    void consultarVentaPorTipoDePago(); /// Por tipo de pago
+    void consularVentaPorAutoVendido(); /// Por vehiculo vendido
 };
