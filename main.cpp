@@ -5,11 +5,7 @@ using namespace std;
 
 int main()
 {
-    ///App app;
-    ///app.run();
-    ///return 0;
-    ClienteMenu cm;
-    cm.mostrar();
+    App app;
+    app.run();
+    return 0;
 }
-
-

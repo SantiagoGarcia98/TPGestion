@@ -267,11 +267,6 @@ bool VentaManager::cargarVenta()
 
 }
 
-bool VentaManager::modificarVenta() /// NO VA
-{
-
-}
-
 bool VentaManager::eliminarVenta() /// Definir
 {
     int idVenta;
@@ -331,11 +326,6 @@ bool VentaManager::eliminarVenta() /// Definir
     return true;
 }
 
-bool VentaManager::altaVenta() /// NO aplica
-{
-    cout << "Una venta eliminada no puede reactivarse." << endl;
-    return false;
-}
 
 /// LISTADOS
 void VentaManager::listarVentas() /// Definir
@@ -432,6 +422,45 @@ void VentaManager::mostrarVentaCompleta(int idVenta) /// Definir
 void VentaManager::listarVentaPorFecha() /// Ordenada por fecha de más reciente a más antigua
 {
 
+    int cant = _repoVenta.getCantidadRegistros();
+
+    if(cant <= 0)
+    {
+      cout << "No hay ventas registradas." << endl;
+      return;
+    }
+
+    Venta *vec;
+    vec = new Venta[cant];
+
+    _repoVenta.leer(vec, cant);
+
+    // Ordena de más reciente a más antiguo
+    for(int i=0; i<cant; i++)
+    {
+      for(int x=i+1; x<cant; x++)
+      {
+        if(vec[i].getFecha() < vec[x].getFecha())
+        {
+          Venta aux = vec[i];
+          vec[i] = vec[x];
+          vec[x] = aux;
+        }
+      }
+    }
+
+    cout << "----- VENTAS ORDENADAS POR FECHA -----" << endl;
+
+    for(int i=0; i<cant; i++)
+    {
+        if(vec[i].getEstado())
+        {
+          vec[i].mostrar();
+          cout << endl;
+        }
+    }
+
+    delete[] vec;
 }
 
 void VentaManager::listarVentaPorMonto() /// Ordenadas por monto total de manera descendente
@@ -490,11 +519,6 @@ void VentaManager::consultarVentaPorCliente()
 }
 
 void VentaManager::consultarVentaPorVendedor()
-{
-
-}
-
-void VentaManager::consultarVentaPorTipoDePago()
 {
 
 }
