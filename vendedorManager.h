@@ -11,7 +11,8 @@ public:
     void cargarVendedor();
     void listarVendedores();
     void modificarVendedor();
-    void eliminarVendedor();
+    void BajaVendedor();
+    void altaVendedor();
     void buscarVendedorPorApellido();
     void buscarVendedorPorLegajo();
     void buscarVendedorPorDNI();

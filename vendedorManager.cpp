@@ -224,15 +224,15 @@ void VendedorManager::listarVendedores() {
     cout << "\n";
 
 }
-void VendedorManager::eliminarVendedor() {
+void VendedorManager::BajaVendedor() {
 
 
     int id;
-     if (!confirmarAccion(" Intenta ELIMINAR un Vendedor? (s/n): ")) {
+     if (!confirmarAccion(" Intenta dar de BAJA un Vendedor? (s/n): ")) {
         cout << "Operacion cancelada. Volviendo al menu..."<<endl;
         return;
     }
-    cout << "Legajo del vendedor a eliminar: ";
+    cout << "ID del vendedor : ";
     cin >> id;
 
     int pos = _archivo.buscarPorID(id);
@@ -246,7 +246,7 @@ void VendedorManager::eliminarVendedor() {
     v.Mostrar();
 
     char confirma;
-    cout << " Esta seguro que desea eliminar este vendedor? (s/n): ";
+    cout << " Esta seguro que desea dar de baja este vendedor? (s/n): ";
     cin >> confirma;
 
     if (confirma == 's' || confirma == 'S') {
@@ -257,6 +257,55 @@ void VendedorManager::eliminarVendedor() {
             cout << "Error al actualizar el registro."<<endl;
     } else {
         cout << "Operacion cancelada."<<endl;
+    }
+}
+void VendedorManager::altaVendedor(){
+    int id;
+
+    if (!confirmarAccion("¿Desea dar de alta un vendedor? (s/n): "))
+    {
+        cout << "Operacion cancelada. Volviendo al menu..." << endl;
+        return;
+    }
+
+    cout << "ID del vendedor a dar de alta: ";
+    cin >> id;
+
+    int pos = _archivo.buscarPorID(id);
+
+    if (pos == -1)
+    {
+        cout << "Vendedor no encontrado." << endl;
+        return;
+    }
+
+    Vendedor v = _archivo.leer(pos);
+
+    cout << "--- DATOS DEL VENDEDOR ---" << endl;
+    v.Mostrar();
+
+    if (v.getEstado())
+    {
+        cout << "El vendedor ya se encuentra ACTIVO." << endl;
+        return;
+    }
+
+    char confirma;
+    cout << "¿Confirma el alta de este vendedor? (s/n): ";
+    cin >> confirma;
+
+    if (confirma == 's' || confirma == 'S')
+    {
+        v.setEstado(true);
+
+        if (_archivo.guardar(pos, v))
+            cout << "Vendedor dado de ALTA correctamente." << endl;
+        else
+            cout << "Error al actualizar el registro." << endl;
+    }
+    else
+    {
+        cout << "Operacion cancelada." << endl;
     }
 }
 
@@ -365,3 +414,4 @@ void VendedorManager::buscarFechaContratacion()
         cout << "No hay vendedores con esa fecha de ingreso." << endl;
     }
 }
+
