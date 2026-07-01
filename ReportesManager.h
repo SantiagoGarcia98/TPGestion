@@ -1,5 +1,4 @@
-#ifndef REPORTESMANAGER_H
-#define REPORTESMANAGER_H
+#pragma once
 
 
 class ReportesManager
@@ -12,5 +11,3 @@ class ReportesManager
 
   private:
 };
-
-#endif // REPORTESMANAGER_H

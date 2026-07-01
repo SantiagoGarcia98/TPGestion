@@ -1,13 +1,7 @@
 #include <iostream>
+#include "ReportesManager.h"
 
 using namespace std;
-
-int main()
-{
-
-
- return 0;
-}#include "ReportesManager.h"
 
 ReportesManager::ReportesManager()
 {

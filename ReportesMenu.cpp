@@ -1,13 +1,7 @@
 #include <iostream>
+#include "ReportesMenu.h"
 
 using namespace std;
-
-int main()
-{
-
-
- return 0;
-}#include "ReportesMenu.h"
 
 ReportesMenu::ReportesMenu()
 {
