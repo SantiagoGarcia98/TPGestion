@@ -64,6 +64,7 @@ void ClienteManager::listarClientes()
     cout << "2. Listar clientes INACTIVOS"<<endl;
     cout << "3. Listar TODOS los clientes"<<endl;
     cout << "4. Lista de clientes ordenados por apellido alfabeticamente"<<endl;
+    cout << "5. Lista de clientes ordenados por DNI ascendente"<<endl;
     cout << "0. Volver al menu anterior\n"<<endl;
     cout << "Opcion: ";
 
@@ -76,7 +77,14 @@ void ClienteManager::listarClientes()
         cout << "Volviendo al menu:...";
         return;
     }
-
+     system("cls");
+    if (opcion == 4){
+             listarClientesOrdenadosxapellido();
+             return;}
+     system("cls");
+    if (opcion == 5){
+             listarClientesPorDni();
+             return;}
     system("cls");
     cout << "--- LISTADO DE CLIENTES ---"<<endl;
     bool hayClientes = false;// todavia no sabemos el estado del los clientes
@@ -106,14 +114,10 @@ void ClienteManager::listarClientes()
             c.Mostrar();
             hayClientes = true;
             break;
-        case 4:
-            listarClientesOrdenadosxapellido();
-            break;
-        default:
+          default:
             cout << "Opcion invalida.\n";
             return;
-        }
-    }
+        }}
 
     if (!hayClientes){
         if (opcion == 1)
@@ -272,18 +276,12 @@ void ClienteManager::buscarClientePorID()
 void ClienteManager::listarClientesOrdenadosxapellido()
 {
     int cant = _archivo.getCantidadRegistros();
-
     Cliente *vec = new Cliente[cant];
-
-    for(int i = 0; i < cant; i++)
-    {
+    for(int i = 0; i < cant; i++){
         vec[i] = _archivo.leer(i);
     }
-
     Cliente aux;
-
-    for(int i = 0; i < cant - 1; i++)
-    {
+    for(int i = 0; i < cant - 1; i++){
         for(int j = i + 1; j < cant; j++)
         {
             if(strcmp(vec[i].getApellido(), vec[j].getApellido()) > 0)
@@ -294,14 +292,37 @@ void ClienteManager::listarClientesOrdenadosxapellido()
             }
         }
     }
-
-    for(int i = 0; i < cant; i++)
-    {
+    for(int i = 0; i < cant; i++){
         vec[i].Mostrar();
     }
-
     delete[] vec;
 }
+void ClienteManager::listarClientesPorDni()
+{
+    int cant = _archivo.getCantidadRegistros();
+    Cliente *vec = new Cliente[cant];
+
+    for (int i = 0; i < cant; i++){
+        vec[i] = _archivo.leer(i);
+    }
+    Cliente aux;
+    for (int i = 0; i < cant - 1; i++){
+        for (int j = i + 1; j < cant; j++)
+        {
+           if (strcmp(vec[i].getDni(), vec[j].getDni()) > 0)
+{
+    aux = vec[i];
+    vec[i] = vec[j];
+    vec[j] = aux;
+}
+        }
+    }
+    for (int i = 0; i < cant; i++){
+        vec[i].Mostrar();
+    }
+    delete[] vec;
+}
+
 
 
 

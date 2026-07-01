@@ -16,4 +16,5 @@ public:
     void buscarClientePorApellido();
     void buscarClientePorID();
     void listarClientesOrdenadosxapellido();
+    void listarClientesPorDni();
 };

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1782701955 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
+1782913029 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\main.cpp
 	<iostream>
 	"App.h"
 	"clienteMenu.h"
@@ -22,11 +22,11 @@
 1780525836 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\persona.h
 	"Fecha.h"
 
-1780510423 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\fecha.cpp
+1782913029 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\fecha.cpp
 	"Fecha.h"
 	<iostream>
 
-1780510407 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\fecha.h
+1782913029 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\fecha.h
 	<string>
 
 1781811769 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedor.cpp
@@ -158,22 +158,22 @@
 	<string>
 	"Auto.h"
 
-1782230241 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automanager.cpp
+1782913029 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automanager.cpp
 	"AutoManager.h"
 	"Auto.h"
 	"utils.h"
 	<iostream>
 	<cstring>
 
-1782230241 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automanager.h
+1782913029 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automanager.h
 	"AutoArchivo.h"
 
-1782230241 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.cpp
+1782913029 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.cpp
 	<iostream>
 	"AutoMenu.h"
 	"utils.h"
 
-1782230241 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.h
+1782913029 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.h
 	"AutoManager.h"
 
 1782840816 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\utils.cpp
@@ -194,14 +194,14 @@
 	"Cliente.h"
 	<string>
 
-1782863534 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.cpp
+1782913709 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.cpp
 	"ClienteManager.h"
 	"Cliente.h"
 	"utils.h"
 	<iostream>
 	<cstring>
 
-1782863602 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.h
+1782913531 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.h
 	"ClienteArchivo.h"
 
 1782859076 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\clientearchivo.cpp
@@ -376,7 +376,7 @@
 1782840816 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\venta.h
 	"fecha.h"
 
-1782840816 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventaarchivo.cpp
+1782913029 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventaarchivo.cpp
 	"VentaArchivo.h"
 	<cstdio>
 
@@ -384,14 +384,14 @@
 	<string>
 	"Venta.h"
 
-1782840816 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamanager.cpp
+1782913029 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamanager.cpp
 	"VentaManager.h"
 	"DetalleVenta.h"
 	"utils.h"
 	"fecha.h"
 	<iostream>
 
-1782840816 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamanager.h
+1782913029 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamanager.h
 	"VentaArchivo.h"
 	"ClienteArchivo.h"
 	"vendedorArchivo.h"
@@ -399,12 +399,12 @@
 	"TipoPagoArchivo.h"
 	"DetalleVentaArchivo.h"
 
-1782840816 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamenu.cpp
+1782913029 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamenu.cpp
 	"VentaMenu.h"
 	<iostream>
 	"utils.h"
 
-1782663247 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamenu.h
+1782913029 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\ventamenu.h
 	"VentaManager.h"
 
 1782663247 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedorarchivo.cpp
