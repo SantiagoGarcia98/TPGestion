@@ -19,7 +19,15 @@ public:
     bool eliminarAuto(); /// OK
     bool altaAuto(); /// OK
 
-    void listarAutos(); /// Definir
-    void listarAutosActivos(); /// Definir
-    void listarAutosInactivos(); /// Definir
+    /// LISTADOS
+    void listarAutos(); /// OK, permite listar activos, inactivos, todos
+    void ordenadosPorMarcaYModelo(); /// Ok
+    void ordenadosPorAnio(); /// OK, de más nuevo a más antiguo
+    void ordenadosPorPrecio(); /// OK, de manera descendente
+
+    /// CONSULTAS
+    void consultarAutoPorMarcaYModelo(); /// OK
+    void consultarAutoPorAnio(); /// OK
+    void consultarAutoPorRangoPrecio(); /// OK
+    void consultarAutoPorDisponibilidad(); /// OK
 };

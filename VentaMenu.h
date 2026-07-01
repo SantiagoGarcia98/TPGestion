@@ -1,5 +1,3 @@
-/// DEFINIR
-
 #pragma once
 #include "VentaManager.h"
 
@@ -13,6 +11,9 @@ private:
     void mostrarOpciones();
     int seleccionarOpcion();
     void ejecutarOpcion(int opcion);
+
+    void menuListados();
+    void menuConsultas();
 
 public:
     VentaMenu();

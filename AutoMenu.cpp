@@ -7,7 +7,7 @@ using namespace std;
 
 AutoMenu::AutoMenu()
 {
-    _cantidadOpciones = 7;
+    _cantidadOpciones = 6;
 }
 
 void AutoMenu::mostrar()
@@ -31,9 +31,8 @@ void AutoMenu::mostrarOpciones()
     cout << "2 - MODIFICAR AUTO" << endl;
     cout << "3 - ELIMINAR AUTO" << endl;
     cout << "4 - ALTA AUTO" << endl;
-    cout << "5 - LISTAR AUTOS" << endl;
-    cout << "6 - LISTAR SOLO AUTOS ACTIVOS" << endl;
-    cout << "7 - LISTAR SOLO AUTOS INACTIVOS" << endl;
+    cout << "5 - LISTADO DE AUTOS" << endl;
+    cout << "6 - CONSULTA DE AUTOS" << endl;
     cout << "-------------------------" << endl;
     cout << "0 - SALIR" << endl;
     cout << "-------------------------" << endl;
@@ -67,21 +66,11 @@ void AutoMenu::ejecutarOpcion(int opcion)
         break;
     case 5:
         system("cls");
-        cout << "----- LISTADO DE AUTOS -----" << endl;
-        _autoManager.listarAutos();
-        //
+        menuListados();
         break;
     case 6:
         system("cls");
-        cout << "----- LISTADO DE AUTOS ACTIVOS -----" << endl;
-        _autoManager.listarAutosActivos();
-        //
-        break;
-    case 7:
-        system("cls");
-        cout << "----- LISTADO DE AUTOS INACTIVOS -----" << endl;
-        _autoManager.listarAutosInactivos();
-        //
+        menuConsultas();
         break;
     case 0:
         system("cls");
@@ -108,4 +97,95 @@ int AutoMenu::seleccionarOpcion()
         cin >> opcion;
     }
     return opcion;
+}
+
+
+void AutoMenu::menuListados()
+{
+    int opcion;
+
+    do
+    {
+        system("cls");
+
+        cout << "----- LISTADOS DE AUTOS -----" << endl;
+        cout << "1 - Listar autos" << endl;
+        cout << "2 - Ordenados por marca y modelo" << endl;
+        cout << "3 - Ordenados por anio" << endl;
+        cout << "4 - Ordenados por precio" << endl;
+        cout << "0 - Volver" << endl << endl;
+        cout << "Opcion: ";
+        cin >> opcion;
+
+        cout << endl;
+
+        switch(opcion)
+        {
+        case 1:
+            _autoManager.listarAutos();
+            break;
+        case 2:
+            _autoManager.ordenadosPorMarcaYModelo();
+            break;
+        case 3:
+            _autoManager.ordenadosPorAnio();
+            break;
+        case 4:
+            _autoManager.ordenadosPorPrecio();
+            break;
+        case 0:
+            break;
+        default:
+            cout << "Opcion invalida." << endl;
+        }
+
+        if(opcion != 0)
+            system("pause");
+
+    } while(opcion != 0);
+}
+
+void AutoMenu::menuConsultas()
+{
+    int opcion;
+
+    do
+    {
+        system("cls");
+
+        cout << "----- CONSULTAS DE AUTOS -----" << endl;
+        cout << "1 - Buscar por marca y modelo" << endl;
+        cout << "2 - Buscar por anio" << endl;
+        cout << "3 - Buscar por rango de precios" << endl;
+        cout << "4 - Buscar por disponibilidad" << endl;
+        cout << "0 - Volver" << endl << endl;
+        cout << "Opcion: ";
+        cin >> opcion;
+
+        cout << endl;
+
+        switch(opcion)
+        {
+        case 1:
+            _autoManager.consultarAutoPorMarcaYModelo();
+            break;
+        case 2:
+            _autoManager.consultarAutoPorAnio();
+            break;
+        case 3:
+            _autoManager.consultarAutoPorRangoPrecio();
+            break;
+        case 4:
+            _autoManager.consultarAutoPorDisponibilidad();
+            break;
+        case 0:
+            break;
+        default:
+            cout << "Opcion invalida." << endl;
+        }
+
+        if(opcion != 0)
+            system("pause");
+
+    } while(opcion != 0);
 }

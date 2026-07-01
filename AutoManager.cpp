@@ -12,6 +12,22 @@ AutoManager::AutoManager()
     //ctor
 }
 
+bool AutoManager::autoExiste(Auto *pAutos, int cant, const Auto& autoBuscado, int idActual)
+{
+    for(int i=0; i<cant; i++)
+    {
+        if(pAutos[i].getIdAuto() != idActual &&
+                strcmp(pAutos[i].getMarca(), autoBuscado.getMarca()) == 0 &&
+                strcmp(pAutos[i].getModelo(), autoBuscado.getModelo()) == 0 &&
+                pAutos[i].getAnio() == autoBuscado.getAnio())
+        {
+            return true;
+        }
+    }
+    return false;
+
+}
+
 bool AutoManager::cargarAuto()
 {
     int idAuto, cantRegistros;
@@ -260,81 +276,327 @@ bool AutoManager::altaAuto()
     return _repoAuto.alta(id-1);
 }
 
+/// LISTADOS
 void AutoManager::listarAutos() /// Listar todos los reg
 {
     int cant = _repoAuto.getCantidadRegistros();
 
     if(cant==0)
     {
-        cout << "No hay autos registrados." << endl;
+        cout << "No hay autos registrados." << endl << endl;
         return;
     }
 
-    for(int i=0; i<cant; i++)
-    {
-        Auto reg = _repoAuto.leer(i);
-        reg.mostrar();
-        cout << endl;
-    }
-}
-
-void AutoManager::listarAutosActivos() /// Listar solo los reg activos
-{
-    int cant = _repoAuto.getCantidadRegistros();
-
-    if(cant==0)
-    {
-        cout << "No hay autos registrados." << endl;
-        return;
-    }
+    int opcion;
+    cout << "1 - Listar activos" << endl;
+    cout << "2 - Listar inactivos" << endl;
+    cout << "3 - Listar todos" << endl;
+    cout << "Opcion: ";
+    cin >> opcion;
+    cout << endl;
 
     for(int i=0; i<cant; i++)
     {
         Auto reg = _repoAuto.leer(i);
 
-        if(reg.getEstado())
+        switch(opcion)
         {
+        case 1:
+            if(reg.getEstado())
+            {
+                reg.mostrar();
+                cout << endl;
+            }
+            break;
+        case 2:
+            if(!reg.getEstado())
+            {
+                reg.mostrar();
+                cout << endl;
+            }
+            break;
+        case 3:
             reg.mostrar();
             cout << endl;
+            break;
+        default:
+            cout << "Opcion invalida." << endl;
+            return;
         }
     }
 }
 
-void AutoManager::listarAutosInactivos() /// Listar solo los reg inactivos
+void AutoManager::ordenadosPorMarcaYModelo()
 {
     int cant = _repoAuto.getCantidadRegistros();
 
-    if(cant==0)
+    if(cant == 0)
     {
         cout << "No hay autos registrados." << endl;
         return;
     }
+
+    Auto *vec;
+    vec = new Auto[cant];
+
+    _repoAuto.leer(vec, cant);
+
+    for(int i=0; i<cant-1; i++)
+    {
+        for(int x=i+1; x<cant; x++)
+        {
+            bool intercambiar = false;
+
+            if(strcmp(vec[i].getMarca(), vec[x].getMarca()) > 0)
+            {
+                intercambiar = true;
+            }
+            else if(strcmp(vec[i].getMarca(), vec[x].getMarca()) == 0)
+            {
+                if(strcmp(vec[i].getModelo(), vec[x].getModelo()) > 0)
+                {
+                    intercambiar = true;
+                }
+            }
+
+            if(intercambiar)
+            {
+                Auto aux = vec[i];
+                vec[i] = vec[x];
+                vec[x] = aux;
+            }
+        }
+    }
+
+    for(int i=0; i<cant; i++)
+    {
+        vec[i].mostrar();
+        cout << endl;
+    }
+
+    delete[] vec;
+}
+
+void AutoManager::ordenadosPorAnio()
+{
+    int cant = _repoAuto.getCantidadRegistros();
+
+    if(cant == 0)
+    {
+        cout << "No hay autos registrados." << endl;
+        return;
+    }
+
+    Auto *vec;
+    vec = new Auto[cant];
+
+    _repoAuto.leer(vec, cant);
+
+    for(int i=0; i<cant-1; i++)
+    {
+        for(int x=i+1; x<cant; x++)
+        {
+            if(vec[i].getAnio()<vec[x].getAnio())
+            {
+                Auto aux = vec[i];
+                vec[i] = vec[x];
+                vec[x] = aux;
+            }
+        }
+    }
+
+    for(int i=0; i<cant; i++)
+    {
+        vec[i].mostrar();
+        cout << endl;
+    }
+
+    delete[] vec;
+}
+
+void AutoManager::ordenadosPorPrecio()
+{
+    int cant = _repoAuto.getCantidadRegistros();
+
+    if(cant == 0)
+    {
+        cout << "No hay autos registrados." << endl;
+        return;
+    }
+
+    Auto *vec;
+    vec = new Auto[cant];
+
+    _repoAuto.leer(vec, cant);
+
+    for(int i=0; i<cant-1; i++)
+    {
+        for(int x=i+1; x<cant; x++)
+        {
+            if(vec[i].getPrecio()<vec[x].getPrecio())
+            {
+                Auto aux = vec[i];
+                vec[i] = vec[x];
+                vec[x] = aux;
+            }
+        }
+    }
+
+    for(int i=0; i<cant; i++)
+    {
+        vec[i].mostrar();
+        cout << endl;
+    }
+
+    delete[] vec;
+}
+
+
+/// CONSULTAS
+
+void AutoManager::consultarAutoPorMarcaYModelo()
+{
+    char marca[30];
+    char modelo[30];
+
+    cout << "Marca: ";
+    cin.ignore();
+    cin.getline(marca, 30);
+
+    cout << "Modelo: ";
+    cin.getline(modelo, 30);
+    cout << endl << endl;
+
+    int cant = _repoAuto.getCantidadRegistros();
+
+    bool encontro = false;
+
+    for(int i=0; i<cant; i++)
+    {
+        Auto reg = _repoAuto.leer(i);
+
+        if(reg.getEstado() && strcmp(reg.getMarca(), marca) == 0 && strcmp(reg.getModelo(), modelo) == 0)
+        {
+            reg.mostrar();
+            cout << endl;
+            encontro = true;
+        }
+    }
+
+    if(!encontro)
+    {
+        cout << "No se encontraron autos con esa marca y modelo." << endl;
+    }
+}
+
+void AutoManager::consultarAutoPorAnio()
+{
+    int anio;
+    cout << "Anio: ";
+    cin >> anio;
+    cout << endl << endl;
+
+    int cant = _repoAuto.getCantidadRegistros();
+
+    bool encontro = false;
+
+    for(int i=0; i<cant; i++)
+    {
+        Auto reg = _repoAuto.leer(i);
+
+        if(reg.getEstado() && reg.getAnio() == anio)
+        {
+            reg.mostrar();
+            cout << endl;
+            encontro = true;
+        }
+    }
+
+    if(!encontro)
+    {
+        cout << "No se encontraron autos para ese anio." << endl;
+    }
+}
+
+void AutoManager::consultarAutoPorRangoPrecio()
+{
+    float precioMin;
+    float precioMax;
+
+    cout << "Precio minimo: $ ";
+    cin >> precioMin;
+
+    cout << "Precio maximo: $ ";
+    cin >> precioMax;
+
+    if(precioMin > precioMax)
+    {
+        cout << "Rango de precios invalido." << endl;
+        return;
+    }
+
+    cout << endl << endl;
+
+    int cant = _repoAuto.getCantidadRegistros();
+
+    bool encontro = false;
+
+    for(int i=0; i<cant; i++)
+    {
+        Auto reg = _repoAuto.leer(i);
+
+        if(reg.getEstado() && reg.getPrecio() >= precioMin && reg.getPrecio() <= precioMax)
+        {
+            reg.mostrar();
+            cout << endl;
+            encontro = true;
+        }
+    }
+
+    if(!encontro)
+    {
+        cout << "No se encontraron autos en ese rango de precios." << endl;
+    }
+}
+
+void AutoManager::consultarAutoPorDisponibilidad()
+{
+    int opcion;
+    cout << "1 - Disponibles" << endl;
+    cout << "2 - Sin stock" << endl;
+    cout << "Opcion: ";
+    cin >> opcion;
+
+    cout << endl << endl;
+
+    int cant = _repoAuto.getCantidadRegistros();
+
+    bool encontro = false;
 
     for(int i=0; i<cant; i++)
     {
         Auto reg = _repoAuto.leer(i);
 
         if(!reg.getEstado())
+            continue;
+
+        if(opcion == 1 && reg.getStock() > 0)
         {
             reg.mostrar();
             cout << endl;
+            encontro = true;
         }
-    }
 
-}
-
-bool AutoManager::autoExiste(Auto *pAutos, int cant, const Auto& autoBuscado, int idActual)
-{
-    for(int i=0; i<cant; i++)
-    {
-        if(pAutos[i].getIdAuto() != idActual &&
-                strcmp(pAutos[i].getMarca(), autoBuscado.getMarca()) == 0 &&
-                strcmp(pAutos[i].getModelo(), autoBuscado.getModelo()) == 0 &&
-                pAutos[i].getAnio() == autoBuscado.getAnio())
+        if(opcion == 2 && reg.getStock() == 0)
         {
-            return true;
+            reg.mostrar();
+            cout << endl;
+            encontro = true;
         }
     }
-    return false;
 
+    if(!encontro)
+    {
+        cout << "No se encontraron autos." << endl;
+    }
 }

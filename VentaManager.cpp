@@ -11,7 +11,6 @@ VentaManager::VentaManager()
 
 }
 
-
 bool VentaManager::cargarVenta()
 {
     cout << "---------- NUEVA VENTA ----------" << endl << endl;
@@ -264,10 +263,9 @@ bool VentaManager::cargarVenta()
     cout << "Total: $" << total << endl;
 
     return true;
-
 }
 
-bool VentaManager::eliminarVenta() /// Definir
+bool VentaManager::eliminarVenta()
 {
     int idVenta;
 
@@ -321,20 +319,20 @@ bool VentaManager::eliminarVenta() /// Definir
 
     cout << endl;
     cout << "La venta fue cancelada correctamente." << endl;
-    cout << "Una venta cancelada no puede reactivarse." << endl;
+    cout << "Recorda que una venta cancelada no puede reactivarse." << endl;
 
     return true;
 }
 
 
 /// LISTADOS
-void VentaManager::listarVentas() /// Definir
+void VentaManager::listarVentas()
 {
     int cant = _repoVenta.getCantidadRegistros();
 
     if(cant == 0)
     {
-        cout << "No hay ventas registradas.\n";
+        cout << "No hay ventas registradas." << endl << endl;
         return;
     }
 
@@ -356,16 +354,18 @@ void VentaManager::listarVentas() /// Definir
         {
         case 1:
             if(v.getEstado())
+            {
                 v.mostrar();
                 cout << endl;
+            }
             break;
-
         case 2:
             if(!v.getEstado())
+            {
                 v.mostrar();
                 cout << endl;
+            }
             break;
-
         case 3:
             v.mostrar();
             cout << endl;
@@ -378,7 +378,7 @@ void VentaManager::listarVentas() /// Definir
     }
 }
 
-void VentaManager::mostrarVentaCompleta(int idVenta) /// Definir
+void VentaManager::mostrarVentaCompleta(int idVenta)
 {
     int pos = _repoVenta.buscar(idVenta);
 
@@ -510,20 +510,206 @@ void VentaManager::listarVentaPorMonto() /// Ordenadas por monto total de manera
 
 void VentaManager::consultarVentasPorFechas()
 {
+    Fecha desde, hasta;
 
+    cout << "Fecha desde: ";
+    desde.Cargar();
+
+    cout << endl;
+    cout << "Fecha hasta: ";
+    hasta.Cargar();
+
+    int cant = _repoVenta.getCantidadRegistros();
+
+    bool encontro = false;
+
+    for(int i=0; i<cant; i++)
+    {
+      Venta v = _repoVenta.leer(i);
+
+      if(v.getEstado() && v.getFecha() >= desde && v.getFecha() <= hasta)
+      {
+        v.mostrar();
+        cout << endl;
+        encontro = true;
+      }
+    }
+
+    if(!encontro)
+    {
+      cout << "No se encontraron ventas en ese rango de fechas." << endl;
+    }
 }
 
 void VentaManager::consultarVentaPorCliente()
 {
+    char dni[12];
 
+    cout << "DNI del cliente: ";
+    cin.ignore();
+    cin.getline(dni, 12);
+
+    int posCliente = _repoCliente.buscarPorDNI(dni);
+
+    if(posCliente == -1)
+    {
+      cout << "Cliente inexistente.";
+      return;
+    }
+
+    Cliente cliente =_repoCliente.leer(posCliente);
+    int idCliente = cliente.getIdCliente();
+
+    int cant = _repoVenta.getCantidadRegistros();
+    bool encontro = false;
+
+    for(int i=0; i<cant; i++)
+    {
+      Venta v = _repoVenta.leer(i);
+
+      if(v.getEstado() && v.getIdCliente() == idCliente)
+      {
+        v.mostrar();
+        cout << endl;
+        encontro = true;
+      }
+    }
+
+    if(!encontro)
+    {
+      cout << "El cliente no posee ventas." << endl;
+    }
 }
 
+/// Dejo comentado porque falta definir getLegajo en vendedor.cpp y sino da error
+/*
 void VentaManager::consultarVentaPorVendedor()
 {
+    int legajoVendedor;
 
+    cout << "Legajo del vendedor: ";
+    cin >> legajoVendedor;
+
+    int cantVendedores = _repoVendedor.getCantidadRegistros();
+
+    int idVendedor = -1;
+
+    for(int i=0; i<cantVendedores; i++)
+    {
+        Vendedor v = _repoVendedor.leer(i);
+
+        if(v.getLegajo()==legajoVendedor) /// Definir getLegajo en vendedor.cpp
+        {
+            idVendedor = v.getIdVendedor();
+            break;
+        }
+    }
+
+    if(idVendedor == -1)
+    {
+        cout << "No existe un vendedor con ese legajo." << endl;
+        return;
+    }
+
+    int cant = _repoVenta.getCantidadRegistros();
+
+    bool encontro = false;
+
+    cout << endl;
+    cout << "----- Ventas del vendedor -----" << endl << endl;
+
+    for(int i=0; i<cant; i++)
+    {
+      Venta v = _repoVenta.leer(i);
+
+      if(v.getEstado() && v.getIdVendedor() == idVendedor)
+      {
+        v.mostrar();
+        cout << endl;
+        encontro = true;
+      }
+    }
+
+    if(!encontro)
+    {
+        cout << "El vendedor no posee ventas registradas." << endl;
+    }
 }
+*/
 
-void VentaManager::consularVentaPorAutoVendido()
+void VentaManager::consultarVentaPorAutoVendido()
 {
+    int cantAutos = _repoAuto.getCantidadRegistros();
 
+    if(cantAutos == 0){
+      cout << "No hay autos cargados." << endl;
+      return;
+    }
+
+    cout << "----- AUTOS DISPONIBLES -----" << endl << endl;
+
+    for(int i=0; i<cantAutos; i++)
+    {
+        Auto a = _repoAuto.leer(i);
+
+        if(a.getEstado())
+        {
+            cout << "ID: " << a.getIdAuto() << " - " << a.getMarca() << " " << a.getModelo();
+            cout << endl;
+        }
+    }
+
+    int idAuto;
+    cout << "Ingrese ID del auto: ";
+    cin >> idAuto;
+
+    int posAuto = _repoAuto.buscar(idAuto);
+
+    if(posAuto == -1)
+    {
+        cout << "El auto no existe." << endl;
+        return;
+    }
+
+    Auto autoSeleccionado = _repoAuto.leer(posAuto);
+
+    if(!autoSeleccionado.getEstado())
+    {
+        cout << "El auto se encuentra inactivo." << endl;
+        return;
+    }
+
+    cout << endl;
+    cout << "----- VENTAS DEL AUTO -----" << endl << endl;
+
+    bool encontro = false;
+
+    int cantDetalles = _repoDetalle.getCantidadRegistros();
+
+    for(int i=0; i<cantDetalles; i++)
+    {
+        DetalleVenta det = _repoDetalle.leer(i);
+
+        if(det.getEstado() && det.getIdAuto() == idAuto)
+        {
+            int posVenta = _repoVenta.buscar(det.getIdVenta());
+
+            if(posVenta >= 0)
+            {
+                Venta venta = _repoVenta.leer(posVenta);
+
+                if(venta.getEstado())
+                {
+                    venta.mostrar();
+                    cout << endl;
+                    encontro = true;
+                }
+            }
+        }
+    }
+
+    if(!encontro)
+    {
+        cout << "El auto seleccionado no posee ventas registradas." << endl;
+    }
 }

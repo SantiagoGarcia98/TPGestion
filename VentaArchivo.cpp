@@ -11,7 +11,7 @@ VentaArchivo::VentaArchivo(string nombreArchivo)
 int VentaArchivo::getCantidadRegistros()
 {
     FILE* pArchivo = fopen(_nombreArchivo.c_str(), "rb");
-    if(pArchivo == nullptr) return -1;
+    if(pArchivo == nullptr) return 0;
     fseek(pArchivo, 0, SEEK_END);
     int cant = ftell(pArchivo) / sizeof(Venta);
     fclose(pArchivo);
