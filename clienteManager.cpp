@@ -193,43 +193,26 @@ void ClienteManager::eliminarCliente()
 }
 void ClienteManager::buscarClientePorDNI()
 {
-    string texto;
-    char dni[12];
-    cout << "--- BUSCAR CLIENTE POR DNI ---"<< endl;
-    do
+    char dni[9];
+
+    cout << "Ingrese el DNI: ";
+    cin >> dni;
+
+    int cant = _archivo.getCantidadRegistros();
+
+    for (int i = 0; i < cant; i++)
     {
-        cout << "Ingrese DNI (0 para volver): "<< endl;
-        texto = cargarCadena();
-        //paso de string a char
-        if (Volver(texto.c_str()))
+        Cliente c = _archivo.leer(i);
+
+        if (strcmp(c.getDni(), dni) == 0)
         {
-            cout << "Volviendo al menu...\n";
+            cout << "cliente encontrado:\n";
+            c.Mostrar();
             return;
         }
-
-        if (!validarDNI((char*)texto.c_str()))
-        {
-            cout << "DNI invalido. Reintente.\n";
-            texto.clear();// si es invalido limpiamos
-        }
-    }
-    while (texto.empty());  // si esta vacio, seguimos pidiendo
-
-    strcpy(dni, texto.c_str());
-
-    int pos = _archivo.buscarPorDNI(dni);
-    if (pos == -1)
-    {
-        cout << "No se encontro un cliente con ese DNI."<< endl;
-        system("pause");
-        return;
     }
 
-    Cliente c = _archivo.leer(pos);
-    cout << "--- CLIENTE ENCONTRADO ---"<< endl;
-    c.Mostrar();
-
-
+    cout << "No existe un cliente con ese DNI." << endl;
 }
 
 void ClienteManager::buscarClientePorApellido()

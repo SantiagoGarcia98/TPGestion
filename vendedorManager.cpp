@@ -308,3 +308,60 @@ void VendedorManager::buscarVendedorPorLegajo()
 
     cout << "No existe un vendedor con ese legajo." << endl;
 }
+void VendedorManager::buscarVendedorPorDNI(){
+    char dni[9];
+
+    cout << "Ingrese el DNI: ";
+    cin >> dni;
+
+    int cant = _archivo.getCantidadRegistros();
+
+    for (int i = 0; i < cant; i++)
+    {
+        Vendedor v = _archivo.leer(i);
+
+        if (strcmp(v.getDni(), dni) == 0)
+        {
+            cout << "Vendedor encontrado:\n";
+            v.Mostrar();
+            return;
+        }
+    }
+
+    cout << "No existe un vendedor con ese DNI." << endl;
+}
+
+void VendedorManager::buscarFechaContratacion()
+{
+    int dia, mes, anio;
+
+    cout << "Ingrese la fecha de ingreso" << endl;
+    cout << "Dia: ";
+    cin >> dia;
+    cout << "Mes: ";
+    cin >> mes;
+    cout << "Anio: ";
+    cin >> anio;
+
+    int cant = _archivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cant; i++)
+    {
+        Vendedor v = _archivo.leer(i);
+        Fecha f = v.getFechaContratacion();
+
+        if (f.getDia() == dia &&
+            f.getMes() == mes &&
+            f.getAnio() == anio)
+        {
+            v.Mostrar();
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado)
+    {
+        cout << "No hay vendedores con esa fecha de ingreso." << endl;
+    }
+}

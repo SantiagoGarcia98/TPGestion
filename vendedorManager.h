@@ -14,5 +14,7 @@ public:
     void eliminarVendedor();
     void buscarVendedorPorApellido();
     void buscarVendedorPorLegajo();
+    void buscarVendedorPorDNI();
+    void buscarFechaContratacion();
 
 };

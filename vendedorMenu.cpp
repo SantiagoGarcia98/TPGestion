@@ -3,7 +3,7 @@
 using namespace std;
 
 VendedorMenu::VendedorMenu() {
-    _cantidadOpciones = 7;
+    _cantidadOpciones = 8;
 }
 
 void VendedorMenu::mostrar() {
@@ -26,6 +26,8 @@ void VendedorMenu::mostrarOpciones() {
     cout << "4- ELIMINAR VENDEDOR" << endl;
     cout << "5- BUSCAR POR APELLIDO" << endl;
     cout << "6- BUSCAR POR LEGAJO" << endl;
+    cout << "7- BUSCAR POR DNI" << endl;
+    cout << "8- BUSCAR POR FECHA DE CONTRATACION" << endl;
     cout << "0- SALIR" << endl;
 }
 
@@ -51,6 +53,8 @@ void VendedorMenu::ejecutarOpcion(int opcion) {
         case 4: _vendedorManager.eliminarVendedor(); break;
         case 5: _vendedorManager.buscarVendedorPorApellido(); break;
         case 6: _vendedorManager.buscarVendedorPorLegajo(); break;
+        case 7: _vendedorManager.buscarVendedorPorDNI(); break;
+        case 8: _vendedorManager.buscarFechaContratacion(); break;
 
     }
 }
