@@ -1,5 +1,5 @@
-#ifndef REPORTESMENU_H
-#define REPORTESMENU_H
+#pragma once
+#include "ReportesManager.h"
 
 
 class ReportesMenu
@@ -12,5 +12,3 @@ class ReportesMenu
 
   private:
 };
-
-#endif // REPORTESMENU_H
