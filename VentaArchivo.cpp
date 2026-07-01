@@ -124,3 +124,19 @@ bool VentaArchivo::alta(int pos)
 
     return guardar(pos, reg);
 }
+
+bool VentaArchivo::existeTipoPagoEnVentas(int idTipoPago)
+{
+    int cant = getCantidadRegistros();
+
+    for(int i=0; i<cant; i++)
+    {
+        Venta reg = leer(i);
+
+        if(reg.getEstado() && reg.getIdTipoPago() == idTipoPago)
+        {
+            return true;
+        }
+    }
+    return false;
+}

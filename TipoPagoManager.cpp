@@ -99,6 +99,14 @@ bool TipoPagoManager::modificarTipoPago()
 
         reg = _repoTipoPago.leer(pos);
 
+        if(_repoVenta.existeTipoPagoEnVentas(id))
+        {
+            cout << endl;
+            cout << "No se puede modificar el tipo de pago." << endl;
+            cout << "Existen ventas asociadas a este registro." << endl;
+            return false;
+        }
+
         system("cls");
 
         cout << "----- DATOS DEL REGISTRO A MODIFICAR -----" << endl;
@@ -180,6 +188,15 @@ bool TipoPagoManager::eliminarTipoPago()
         }
 
         reg = _repoTipoPago.leer(pos);
+
+        if(_repoVenta.existeTipoPagoEnVentas(id))
+        {
+            cout << endl;
+            cout << "No se puede eliminar el tipo de pago." << endl;
+            cout << "Existen ventas asociadas a este registro." << endl;
+            return false;
+        }
+
         cout << "----- DATOS DEL REGISTRO A DAR DE BAJA -----" << endl;
         reg.mostrar();
 
@@ -261,6 +278,7 @@ void TipoPagoManager::listarTiposPago() /// Listar todos los reg
     {
         TipoPago reg = _repoTipoPago.leer(i);
         reg.mostrar();
+        cout << "-----------------------------------------";
         cout << endl;
     }
 }
@@ -282,6 +300,7 @@ void TipoPagoManager::listarTiposPagoActivos() /// Listar solo los reg activos
         if(reg.getEstado())
         {
             reg.mostrar();
+            cout << "-----------------------------------------";
             cout << endl;
         }
     }
@@ -304,6 +323,7 @@ void TipoPagoManager::listarTiposPagoInactivos() /// Listar solo los reg inactiv
         if(!reg.getEstado())
         {
             reg.mostrar();
+            cout << "-----------------------------------------";
             cout << endl;
         }
     }

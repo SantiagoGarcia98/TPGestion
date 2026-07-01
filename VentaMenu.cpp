@@ -169,7 +169,7 @@ void VentaMenu::menuConsultas()
             _ventaManager.consultarVentaPorCliente();
             break;
         case 3:
-            ///_ventaManager.consultarVentaPorVendedor();
+            _ventaManager.consultarVentaPorVendedor();
             break;
         case 4:
             _ventaManager.consultarVentaPorAutoVendido();

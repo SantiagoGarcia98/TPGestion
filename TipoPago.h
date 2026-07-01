@@ -4,7 +4,7 @@ class TipoPago
 {
 private:
     int _idTipoPago;
-    char _descripcion[30]; /// Efectivo - Crédito -
+    char _descripcion[30]; /// Efectivo - Transferencia bancaria - Tarjeta de débito - Tarjeta de Crédito - Financiación
     bool _estado;
 
 public:

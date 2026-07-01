@@ -582,7 +582,7 @@ void VentaManager::consultarVentaPorCliente()
 }
 
 /// Dejo comentado porque falta definir getLegajo en vendedor.cpp y sino da error
-/*
+
 void VentaManager::consultarVentaPorVendedor()
 {
     int legajoVendedor;
@@ -635,7 +635,6 @@ void VentaManager::consultarVentaPorVendedor()
         cout << "El vendedor no posee ventas registradas." << endl;
     }
 }
-*/
 
 void VentaManager::consultarVentaPorAutoVendido()
 {

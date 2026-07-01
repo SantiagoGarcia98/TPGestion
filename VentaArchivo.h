@@ -23,4 +23,6 @@ public:
 
     bool eliminar(int pos);
     bool alta(int pos);
+
+    bool existeTipoPagoEnVentas(int idTipoPago);
 };

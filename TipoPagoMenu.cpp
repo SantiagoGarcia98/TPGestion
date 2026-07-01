@@ -6,7 +6,7 @@ using namespace std;
 
 TipoPagoMenu::TipoPagoMenu()
 {
-    _cantidadOpciones = 7;
+    _cantidadOpciones = 5;
 }
 
 void TipoPagoMenu::mostrar()
@@ -29,9 +29,7 @@ void TipoPagoMenu::mostrarOpciones()
     cout << "2 - MODIFICAR TIPO DE PAGO" << endl;
     cout << "3 - ELIMINAR TIPO DE PAGO" << endl;
     cout << "4 - ALTA TIPO DE PAGO" << endl;
-    cout << "5 - LISTAR TIPOS DE PAGO" << endl;
-    cout << "6 - LISTAR TIPOS DE PAGO ACTIVOS" << endl;
-    cout << "7 - LISTAR TIPOS DE PAGO INACTIVOS" << endl;
+    cout << "5 - LISTADOS DE TIPOS DE PAGO" << endl;
     cout << "------------------------------" << endl;
     cout << "0 - SALIR" << endl;
     cout << "------------------------------" << endl;
@@ -67,18 +65,7 @@ void TipoPagoMenu::ejecutarOpcion(int opcion)
         break;
     case 5:
         system("cls");
-        cout << "----- LISTADO DE TIPOS DE PAGO -----" << endl;
-        _tipoPagoManager.listarTiposPago();
-        break;
-    case 6:
-        system("cls");
-        cout << "----- LISTADO DE TIPOS DE PAGO ACTIVOS -----" << endl;
-        _tipoPagoManager.listarTiposPagoActivos();
-        break;
-    case 7:
-        system("cls");
-        cout << "----- LISTADO DE TIPOS DE PAGO INACTIVOS -----" << endl;
-        _tipoPagoManager.listarTiposPagoInactivos();
+        menuListados();
         break;
     case 0:
         system("cls");
@@ -106,4 +93,50 @@ int TipoPagoMenu::seleccionarOpcion()
         cin >> opcion;
     }
     return opcion;
+}
+
+void TipoPagoMenu::menuListados()
+{
+    int opcion;
+
+    do
+    {
+        system("cls");
+
+        cout << "----- LISTADOS DE TIPOS DE PAGO -----" << endl;
+        cout << "1 - Listar todos" << endl;
+        cout << "2 - Listar activos" << endl;
+        cout << "3 - Listar inactivos" << endl;
+        cout << "0 - Volver" << endl;
+        cout << "Opcion: ";
+        cin >> opcion;
+
+        system("cls");
+
+        switch(opcion)
+        {
+        case 1:
+            _tipoPagoManager.listarTiposPago();
+            break;
+
+        case 2:
+            _tipoPagoManager.listarTiposPagoActivos();
+            break;
+
+        case 3:
+            _tipoPagoManager.listarTiposPagoInactivos();
+            break;
+
+        case 0:
+            break;
+
+        default:
+            cout << "Opcion invalida." << endl;
+        }
+
+        if(opcion != 0)
+            system("pause");
+
+    }
+    while(opcion != 0);
 }

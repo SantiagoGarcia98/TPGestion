@@ -11,6 +11,8 @@ private:
     int seleccionarOpcion();
     void ejecutarOpcion(int opcion);
 
+    void menuListados();
+
 public:
     TipoPagoMenu();
 

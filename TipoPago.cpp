@@ -27,10 +27,10 @@ void TipoPago::cargar()
 void TipoPago::mostrar()const
 {
     cout << "ID: " << _idTipoPago << endl;
+    cout << "Descripcion: " << _descripcion << endl;
     cout << "Estado: "
          << (_estado ? "ACTIVO" : "INACTIVO")
          << endl;
-    cout << "Descripcion: " << _descripcion << endl;
 }
 
 /// GETTERS
