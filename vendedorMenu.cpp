@@ -25,6 +25,7 @@ void VendedorMenu::mostrarOpciones() {
     cout << "3- MODIFICAR VENDEDOR" << endl;
     cout << "4- ELIMINAR VENDEDOR" << endl;
     cout << "5- BUSCAR POR APELLIDO" << endl;
+    cout << "6- BUSCAR POR LEGAJO" << endl;
     cout << "0- SALIR" << endl;
 }
 
@@ -49,6 +50,8 @@ void VendedorMenu::ejecutarOpcion(int opcion) {
         case 3: _vendedorManager.modificarVendedor(); break;
         case 4: _vendedorManager.eliminarVendedor(); break;
         case 5: _vendedorManager.buscarVendedorPorApellido(); break;
+        case 6: _vendedorManager.buscarVendedorPorLegajo(); break;
+
     }
 }
 

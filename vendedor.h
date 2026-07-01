@@ -13,7 +13,6 @@ private:
 public:
     Vendedor();
     void setIdVendedor(int id);
-    void setLegajo (int legajo);
     void setSueldo(float s);
     void setFechaContratacion(Fecha f);
     void setFechaBaja(Fecha fb);

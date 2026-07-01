@@ -9,11 +9,8 @@ Vendedor::Vendedor() {
 }
 
 void Vendedor::setIdVendedor(int id) {
-    _IdVendedor = id; }
-
-void Vendedor::setLegajo(int legajo) {
-    _legajo = legajo; }
-
+    _IdVendedor = id;
+    _legajo = id+1000; }
 void Vendedor::setSueldo(float s) {
      _Sueldo = s; }
 void Vendedor::setFechaContratacion(Fecha f) {
@@ -22,7 +19,8 @@ void Vendedor::setFechaBaja(Fecha fb) {
     _FechaBaja = fb; }
 int Vendedor::getIdVendedor() {
     return _IdVendedor; }
-
+int Vendedor::getLegajo(){
+    return _legajo;}
 float Vendedor::getSueldo() {
     return _Sueldo; }
     Fecha Vendedor::getFechaContratacion() {
@@ -40,14 +38,14 @@ void Vendedor::Cargar() {
     _FechaContratacion.Cargar();
 
 
-    cout << "\nSueldo (ingrese 0 para cancelar): ";
+    cout << "\nSueldo (ingrese 0 para cancelar): "<<endl;
 
     cin >> _Sueldo;
 
     cin.ignore();
 
     if (_Sueldo == 0) {
-        cout << "Carga cancelada por el usuario.\n";
+        cout << "Carga cancelada por el usuario."<<endl;
         _Estado = false;
         return;
     }
@@ -59,6 +57,7 @@ void Vendedor::Cargar() {
 void Vendedor::Mostrar() {
     cout << "==============================" << endl;
     cout << "ID Vendedor: " << _IdVendedor << endl;
+    cout << "Legajo vendedor: " << _legajo <<endl;
     Persona::Mostrar();
     cout << "Fecha Contratacion: ";
     _FechaContratacion.Mostrar();

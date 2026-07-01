@@ -16,7 +16,5 @@ public:
     int getCantidadRegistros();
     int getNuevoID();
     int buscarPorID(int id);
-    int buscarPorDNI(char *dni);
-    int buscarPorApellido(const char *apellido);
     bool eliminar(int pos);
 };

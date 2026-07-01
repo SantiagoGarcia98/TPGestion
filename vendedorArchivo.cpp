@@ -78,37 +78,6 @@ int VendedorArchivo::buscarPorID(int id) {
     return pos;
 }
 
-int VendedorArchivo::buscarPorDNI(char *dni) {
-    FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
-    if (pFile == nullptr) return -1;
-    Vendedor reg;
-    int pos = -1;
-    while (fread(&reg, sizeof(Vendedor), 1, pFile)) {
-        if (reg.getDni() != nullptr && dni != nullptr &&
-            strcmp(reg.getDni(), dni) == 0) {
-            pos = ftell(pFile) / sizeof(Vendedor) - 1;
-            break;
-        }
-    }
-    fclose(pFile);
-    return pos;
-}
-
-int VendedorArchivo::buscarPorApellido(const char *apellido) {
-    FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
-    if (pFile == nullptr) return -1;
-    Vendedor reg;
-    int pos = -1;
-    while (fread(&reg, sizeof(Vendedor), 1, pFile)) {
-        if (reg.getEstado() && strcmp(reg.getApellido(), apellido) == 0) {
-            pos = ftell(pFile) / sizeof(Vendedor) - 1;
-            break;
-        }
-    }
-    fclose(pFile);
-    return pos;
-}
-
 bool VendedorArchivo::eliminar(int pos) {
     Vendedor vendedor = leer(pos);
     if (vendedor.getIdVendedor() == -1) return false;

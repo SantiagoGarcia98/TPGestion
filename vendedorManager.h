@@ -13,4 +13,6 @@ public:
     void modificarVendedor();
     void eliminarVendedor();
     void buscarVendedorPorApellido();
+    void buscarVendedorPorLegajo();
+
 };

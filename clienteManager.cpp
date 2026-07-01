@@ -213,7 +213,7 @@ void ClienteManager::buscarClientePorDNI()
             texto.clear();// si es invalido limpiamos
         }
     }
-    while (texto.empty());  // mientras este vacio, seguimos pidiendo
+    while (texto.empty());  // si esta vacio, seguimos pidiendo
 
     strcpy(dni, texto.c_str());
 
@@ -302,22 +302,25 @@ void ClienteManager::listarClientesPorDni()
     int cant = _archivo.getCantidadRegistros();
     Cliente *vec = new Cliente[cant];
 
-    for (int i = 0; i < cant; i++){
+    for (int i = 0; i < cant; i++)
+    {
         vec[i] = _archivo.leer(i);
     }
     Cliente aux;
-    for (int i = 0; i < cant - 1; i++){
+    for (int i = 0; i < cant - 1; i++)
+    {
         for (int j = i + 1; j < cant; j++)
         {
-           if (strcmp(vec[i].getDni(), vec[j].getDni()) > 0)
-{
-    aux = vec[i];
-    vec[i] = vec[j];
-    vec[j] = aux;
-}
+            if (strcmp(vec[i].getDni(), vec[j].getDni()) > 0)
+            {
+                aux = vec[i];
+                vec[i] = vec[j];
+                vec[j] = aux;
+            }
         }
     }
-    for (int i = 0; i < cant; i++){
+    for (int i = 0; i < cant; i++)
+    {
         vec[i].Mostrar();
     }
     delete[] vec;
