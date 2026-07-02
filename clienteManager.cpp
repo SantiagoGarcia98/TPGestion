@@ -248,7 +248,7 @@ void ClienteManager::buscarClientePorID()
     int pos = _archivo.buscarPorID(id);
     if (pos=-1)
     {
-        cout << "vendedor no encontrado. \n";
+        cout << "cliente no encontrado. \n";
     }
     Cliente c = _archivo.leer(pos);
     c.Mostrar();

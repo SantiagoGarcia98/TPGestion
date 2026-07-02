@@ -5,11 +5,13 @@ class ClienteMenu {
 private:
     int _cantidadOpciones;
     ClienteManager _clienteManager;
+public:
     int seleccionOpcion();
     void ejecutarOpcion(int opcion);
     void mostrarOpciones();
-
-public:
     ClienteMenu();
     void mostrar();
+    void mostrarOpcionesBuscar();
+    int seleccionOpcionBuscar();
+    void ejecutarOpcionBuscar(int opcion);
 };
