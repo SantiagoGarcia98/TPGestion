@@ -17,5 +17,6 @@ public:
     void buscarVendedorPorLegajo();
     void buscarVendedorPorDNI();
     void buscarFechaContratacion();
+    void listarVendedorOrdenadosxapellido();
 
 };

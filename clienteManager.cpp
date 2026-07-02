@@ -65,7 +65,7 @@ void ClienteManager::listarClientes()
     cout << "3. Listar TODOS los clientes"<<endl;
     cout << "4. Lista de clientes ordenados por apellido alfabeticamente"<<endl;
     cout << "5. Lista de clientes ordenados por DNI ascendente"<<endl;
-    cout << "0. Volver al menu anterior\n"<<endl;
+    cout << "0. Volver al menu anterior"<<endl;
     cout << "Opcion: ";
 
     int opcion;
