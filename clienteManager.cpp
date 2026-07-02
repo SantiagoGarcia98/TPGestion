@@ -131,11 +131,11 @@ void ClienteManager::listarClientes()
 
 
 
-void ClienteManager::eliminarCliente()
+void ClienteManager::bajaCliente()
 {
     char dni[12];
 
-    if (!confirmarAccion("Intenta eliminar un cliente? (s/n): "))
+    if (!confirmarAccion("Intenta dar de baja un cliente? (s/n): "))
     {
         cout << "Operacion cancelada. Volviendo al menu"<<endl;
         return;
@@ -144,7 +144,7 @@ void ClienteManager::eliminarCliente()
     string texto;
     do
     {
-        cout << "Ingrese DNI del cliente a eliminar (0 para cancelar): ";
+        cout << "Ingrese DNI del cliente para darle de baja (0 para cancelar): ";
         texto = cargarCadena();
 
         if (Volver(texto.c_str()))   // permite volver al menú
@@ -175,7 +175,7 @@ void ClienteManager::eliminarCliente()
     c.Mostrar();
 
     char confirma;
-    cout << "Esta seguro que desea eliminar este cliente? (s/n): "<< endl;
+    cout << "Esta seguro que desea dar de baja este cliente? (s/n): "<< endl;
     cin >> confirma;
 
     if (confirma == 's' || confirma == 'S')
@@ -191,6 +191,75 @@ void ClienteManager::eliminarCliente()
         cout << "Operacion cancelada."<< endl;
     }
 }
+void ClienteManager::altaCliente(){
+    char dni[12];
+
+    if (!confirmarAccion("Intenta dar de alta un cliente? (s/n): "))
+    {
+        cout << "Operacion cancelada. Volviendo al menu"<<endl;
+        return;
+    }
+
+    string texto;
+    do
+    {
+        cout << "Ingrese DNI del cliente para darle de alta (0 para cancelar): ";
+        texto = cargarCadena();
+
+        if (Volver(texto.c_str()))
+        {
+            cout << "Operacion cancelada por el usuario."<<endl;
+            return;
+        }
+
+        if (!validarDNI((char*)texto.c_str()))
+        {
+            cout << "DNI invalido. Reintente."<<endl;
+            texto.clear();
+        }
+    }
+    while (texto.empty());
+
+    strcpy(dni, texto.c_str());
+
+    int pos = _archivo.buscarPorDNI(dni);
+
+    if (pos == -1)
+    {
+        cout << "Vendedor no encontrado." << endl;
+        return;
+    }
+
+    Cliente c = _archivo.leer(pos);
+
+    cout << "--- DATOS DEL CLIENTE  ---" << endl;
+    c.Mostrar();
+
+    if (c.getEstado())
+    {
+        cout << "El cliente ya se encuentra ACTIVO." << endl;
+        return;
+    }
+
+    char confirma;
+    cout << "¿Confirma el alta de este CLIENTE? (s/n): ";
+    cin >> confirma;
+
+    if (confirma == 's' || confirma == 'S')
+    {
+        c.setEstado(true);
+
+        if (_archivo.guardar(pos, c))
+            cout << "cliente dado de ALTA correctamente." << endl;
+        else
+            cout << "Error al actualizar el registro." << endl;
+    }
+    else
+    {
+        cout << "Operacion cancelada." << endl;
+    }
+}
+
 void ClienteManager::buscarClientePorDNI()
 {
     char dni[9];

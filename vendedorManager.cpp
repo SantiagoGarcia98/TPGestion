@@ -37,7 +37,7 @@ void VendedorManager::modificarVendedor() {
         cout << "Operacion cancelada. Volviendo al menu..."<<endl;
         return;
     }
-    cout << "Legajo Vendedor a modificar: ";
+    cout << "ID Vendedor a modificar: ";
     cin >> id;
     cin.ignore();
 
