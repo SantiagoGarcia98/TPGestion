@@ -22,11 +22,11 @@
 1780525836 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\persona.h
 	"Fecha.h"
 
-1782913029 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\fecha.cpp
+1783009310 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\fecha.cpp
 	"Fecha.h"
 	<iostream>
 
-1782913029 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\fecha.h
+1783009310 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\fecha.h
 	<string>
 
 1782919951 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedor.cpp
@@ -427,7 +427,7 @@
 	"VendedorManager.h"
 	"utils.h"
 
-1783006116 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.h
+1783009369 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.h
 	"VendedorArchivo.h"
 
 1782946796 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedormanager.h

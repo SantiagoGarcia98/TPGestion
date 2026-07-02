@@ -21,7 +21,7 @@ public:
 
     bool esBisiesto(int anio);
     bool esFechaValida(int dia, int mes, int anio);
-
+    bool esMayor(Fecha otra) const;
     bool operator==(const Fecha &otra) const;
     bool operator<(const Fecha &otra) const;
     bool operator>(const Fecha &otra) const;

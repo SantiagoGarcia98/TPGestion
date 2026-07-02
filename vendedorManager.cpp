@@ -197,6 +197,7 @@ void VendedorManager::listarVendedores() {
     cout << "2. INACTIVOS "<<endl;
     cout << "3. LISTAR TODOS "<<endl;
     cout << "4. Lista de vendedores ordenados por apellido alfabeticamente"<<endl;
+    cout << "5. Lista de vendedores ordenados por fecha de contratacion"<<endl;
     cout << "0. Volver al menu anterior"<<endl;
     cout << "Seleccione una opcion: ";
     cin >> opcion;
@@ -209,6 +210,10 @@ void VendedorManager::listarVendedores() {
      system("cls");
     if (opcion == 4){
              listarVendedorOrdenadosxapellido();
+             return;}
+     system("cls");
+     if (opcion == 5){
+            listarFechaContratacion();
              return;}
      system("cls");
 
@@ -446,4 +451,37 @@ void VendedorManager::listarVendedorOrdenadosxapellido(){
     }
     delete[] vec;
 
+}
+
+void VendedorManager::listarFechaContratacion(){
+    int cant = _archivo.getCantidadRegistros();
+
+    if (cant == 0){
+        cout << "No hay vendedores cargados." << endl;
+        return;
+    }
+    Vendedor *vec = new Vendedor[cant];
+    for (int i = 0; i < cant; i++){
+        vec[i] = _archivo.leer(i);
+    }
+    // Ordenar por fecha de contratación (de más antigua a más reciente)
+    Vendedor aux;
+
+    for (int i = 0; i < cant - 1; i++){
+        for (int j = i + 1; j < cant; j++){
+            if (vec[i].getFechaContratacion().esMayor(vec[j].getFechaContratacion())){
+                aux = vec[i];
+                vec[i] = vec[j];
+                vec[j] = aux;
+            }
+        }
+    }
+    for (int i = 0; i < cant; i++){
+        if (vec[i].getEstado()){
+            vec[i].Mostrar();
+            cout << endl;
+        }
+    }
+
+    delete[] vec;
 }

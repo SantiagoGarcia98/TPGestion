@@ -85,3 +85,13 @@ bool Fecha::operator>=(const Fecha &otra) const
 {
     return *this > otra || *this == otra;
 }
+bool Fecha::esMayor(Fecha otra) const
+{
+    if (_anio != otra._anio)
+        return _anio > otra._anio;
+
+    if (_mes != otra._mes)
+        return _mes > otra._mes;
+
+    return _dia > otra._dia;
+}
