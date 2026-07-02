@@ -5,7 +5,7 @@ using namespace std;
 
 ReportesMenu::ReportesMenu()
 {
-    _cantidadOpciones = 4;
+    _cantidadOpciones = 5;
 }
 
 void ReportesMenu::mostrarOpciones()
@@ -13,9 +13,10 @@ void ReportesMenu::mostrarOpciones()
     cout << "----- REPORTES -----" << endl;
 
     cout << "1 - FACTURACION MENSUAL POR ANIO" << endl;
-    cout << "2 - FACTURACION TOTAL ENTRE FECHAS" << endl;
-    cout << "3 - FACTURACION POR VENDEDOR ENTRE FECHAS" << endl;
-    cout << "4 - PORCENTAJE DE VENTAS POR TIPO DE PAGO ENTRE FECHAS" << endl;
+    cout << "2 - FACTURACION TOTAL EN UN RANGO DE FECHAS DETERMINADO" << endl;
+    cout << "3 - FACTURACION POR VENDEDOR EN UN RANGO DE FECHAS DETERMINADO" << endl;
+    cout << "4 - PORCENTAJE DE VENTAS POR TIPO DE PAGO EN UN RANGO DE FECHAS DETERMINADO" << endl;
+    cout << "5 - TOP 5 AUTOS MAS VENDIDOS EN UN RANGO DE FECHAS DETERMINADO" << endl;
 
     cout << "-------------------------" << endl;
     cout << "0 - SALIR" << endl;
@@ -114,7 +115,25 @@ void ReportesMenu::ejecutarOpcion(int opcion)
         _reportesManager.porcentajeVentasPorTipoPago(desde, hasta);
         break;
     }
+    case 5:
+    {
+        system("cls");
 
+        Fecha desde, hasta;
+
+        cout << "----- TOP 5 AUTOS MAS VENDIDOS -----" << endl << endl;
+
+        cout << "Fecha desde:" << endl;
+        desde.Cargar();
+        cout << endl;
+        cout << "Fecha hasta:" << endl;
+        hasta.Cargar();
+
+        cout << endl;
+
+        _reportesManager.top5AutosVendidos(desde, hasta);
+        break;
+    }
 
     case 0:
         cout << "Saliendo del menu..." << endl;

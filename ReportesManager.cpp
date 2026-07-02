@@ -346,7 +346,142 @@ void ReportesManager::porcentajeVentasPorTipoPago(Fecha desde, Fecha hasta)
 
 void ReportesManager::top5AutosVendidos(Fecha desde, Fecha hasta)
 {
+    if(desde > hasta)
+    {
+        cout << "El rango de fechas es invalido." << endl;
+        return;
+    }
 
+    int cantAutos = _repoAuto.getCantidadRegistros();
+    int cantVentas = _repoVenta.getCantidadRegistros();
+    int cantDetalles = _repoDetalle.getCantidadRegistros();
+
+    if(cantAutos == 0)
+    {
+        cout << "No hay autos registrados." << endl;
+        return;
+    }
+
+    if(cantVentas == 0)
+    {
+        cout << "No hay ventas registradas." << endl;
+        return;
+    }
+
+    if(cantDetalles == 0)
+    {
+        cout << "No hay detalles de venta registrados." << endl;
+        return;
+    }
+
+    Auto *pAutos = new Auto[cantAutos];
+    Venta *pVentas = new Venta[cantVentas];
+    DetalleVenta *pDetalles = new DetalleVenta[cantDetalles];
+    int *pCantidadVendida = new int[cantAutos]{};
+
+    if(pAutos == nullptr || pVentas == nullptr || pDetalles == nullptr || pCantidadVendida == nullptr)
+    {
+        cout << "Error al asignar memoria." << endl;
+
+        delete[] pAutos;
+        delete[] pVentas;
+        delete[] pDetalles;
+        delete[] pCantidadVendida;
+        return;
+    }
+
+    _repoAuto.leer(pAutos, cantAutos);
+    _repoVenta.leer(pVentas, cantVentas);
+    _repoDetalle.leer(pDetalles, cantDetalles);
+
+    /// Acumulamos cantidad vendida por auto
+    for(int i=0; i<cantVentas; i++)
+    {
+        if(!pVentas[i].getEstado())
+            continue;
+
+        if(pVentas[i].getFecha() >= desde && pVentas[i].getFecha() <= hasta)
+        {
+            for(int x=0; x<cantDetalles; x++)
+            {
+                if(!pDetalles[x].getEstado())
+                    continue;
+
+                if(pDetalles[x].getIdVenta() == pVentas[i].getIdVenta())
+                {
+                    for(int y=0; y<cantAutos; y++)
+                    {
+                      if(pAutos[y].getIdAuto() == pDetalles[x].getIdAuto())
+                        {
+                            pCantidadVendida[y] += pDetalles[x].getCantidad();
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /// Ordenamos de mayor a menor
+    for(int i=0; i<cantAutos-1; i++)
+    {
+        for(int x=i+1; x<cantAutos; x++)
+        {
+            if(pCantidadVendida[x] > pCantidadVendida[i])
+            {
+                int auxCantidad = pCantidadVendida[i];
+                pCantidadVendida[i] = pCantidadVendida[x];
+                pCantidadVendida[x] = auxCantidad;
+
+                Auto auxAuto = pAutos[i];
+                pAutos[i] = pAutos[x];
+                pAutos[x] = auxAuto;
+            }
+        }
+    }
+
+    cout << endl;
+    cout << "----- TOP 5 AUTOS MAS VENDIDOS -----" << endl << endl;
+    cout << "Periodo: " << desde.toString() << " al " << hasta.toString() << endl << endl;
+
+    int limite;
+
+    if(cantAutos < 5)
+        limite = cantAutos;
+    else
+        limite = 5;
+
+    bool encontro = false;
+
+    cout << "Posicion - Vehiculo - Cantidad vendida" << endl;
+    cout << "--------------------------------------" << endl;
+
+    for(int i=0; i<limite; i++)
+    {
+        if(pCantidadVendida[i] == 0)
+            break;
+
+        cout << i + 1 << ". ";
+        cout << pAutos[i].getMarca() << " ";
+        cout << pAutos[i].getModelo();
+        cout << " (" << pAutos[i].getAnio() << ")";
+        cout << " - ";
+        cout << pCantidadVendida[i] << " unidades" << endl;
+
+        encontro = true;
+    }
+
+    if(!encontro)
+    {
+        cout << "No existen ventas registradas en el periodo seleccionado." << endl;
+    }
+
+    cout << "-----------------------------" << endl;
+
+    delete[] pAutos;
+    delete[] pVentas;
+    delete[] pDetalles;
+    delete[] pCantidadVendida;
 }
 
 void ReportesManager::top5Vendedores(Fecha desde, Fecha hasta)
