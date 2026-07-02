@@ -277,6 +277,7 @@ bool AutoManager::altaAuto()
 }
 
 /// LISTADOS
+/*
 void AutoManager::listarAutos() /// Listar todos los reg
 {
     int cant = _repoAuto.getCantidadRegistros();
@@ -291,14 +292,25 @@ void AutoManager::listarAutos() /// Listar todos los reg
     cout << "1 - Listar activos" << endl;
     cout << "2 - Listar inactivos" << endl;
     cout << "3 - Listar todos" << endl;
+    cout << "-------------------------" << endl;
+    cout << "0 - Salir" << endl;
+    cout << "-------------------------" << endl;
     cout << "Opcion: ";
     cin >> opcion;
+
     cout << endl;
+
+     if(opcion == 0)
+    {
+        cout << "Saliendo del sub-menu..." << endl;
+        return;
+    }
+
+    bool encontro = false;
 
     for(int i=0; i<cant; i++)
     {
         Auto reg = _repoAuto.leer(i);
-
         switch(opcion)
         {
         case 1:
@@ -306,6 +318,7 @@ void AutoManager::listarAutos() /// Listar todos los reg
             {
                 reg.mostrar();
                 cout << endl;
+                encontro = true;
             }
             break;
         case 2:
@@ -313,18 +326,118 @@ void AutoManager::listarAutos() /// Listar todos los reg
             {
                 reg.mostrar();
                 cout << endl;
+                encontro = true;
             }
             break;
         case 3:
             reg.mostrar();
             cout << endl;
+            encontro = true;
             break;
         default:
             cout << "Opcion invalida." << endl;
             return;
         }
     }
+
+    if(!encontro)
+    {
+        switch(opcion)
+        {
+        case 1:
+            cout << "No hay autos activos." << endl;
+            break;
+        case 2:
+            cout << "No hay autos inactivos." << endl;
+                break;
+        }
+    }
 }
+*/
+
+void AutoManager::listarAutosActivos()
+{
+  int cant = _repoAuto.getCantidadRegistros();
+
+    if(cant==0)
+    {
+        cout << "No hay autos registrados." << endl << endl;
+        return;
+    }
+
+    cout << endl;
+    bool encontro = false;
+
+    for(int i=0; i<cant; i++)
+    {
+        Auto reg = _repoAuto.leer(i);
+
+        if(reg.getEstado())
+        {
+          reg.mostrar();
+          cout << endl;
+          encontro = true;
+        }
+    }
+
+    if(!encontro)
+    {
+        cout << "No hay autos activos." << endl;
+    }
+}
+
+void AutoManager::listarAutosInactivos()
+{
+    int cant = _repoAuto.getCantidadRegistros();
+
+    if(cant==0)
+    {
+        cout << "No hay autos registrados." << endl << endl;
+        return;
+    }
+
+    cout << endl;
+    bool encontro = false;
+
+    for(int i=0; i<cant; i++)
+    {
+        Auto reg = _repoAuto.leer(i);
+
+        if(!reg.getEstado())
+        {
+          reg.mostrar();
+          cout << endl;
+          encontro = true;
+        }
+    }
+
+    if(!encontro)
+    {
+        cout << "No hay autos inactivos." << endl;
+    }
+}
+
+void AutoManager::listarTodosLosAutos()
+{
+  int cant = _repoAuto.getCantidadRegistros();
+
+    if(cant==0)
+    {
+        cout << "No hay autos registrados." << endl << endl;
+        return;
+    }
+
+    cout << endl;
+
+    for(int i=0; i<cant; i++)
+    {
+        Auto reg = _repoAuto.leer(i);
+        reg.mostrar();
+        cout << endl;
+    }
+}
+
+
 
 void AutoManager::ordenadosPorMarcaYModelo()
 {

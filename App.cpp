@@ -71,9 +71,9 @@ void App::ejecutarOpcion(int opcion)
     case 5:
         _tipoPagoMenu.mostrar();
         break;
-    /*case 6:
+    case 6:
         _reportesMenu.mostrar();
-        break;*/
+        break;
     case 0:
         cout << "Saliendo... Gracias por utilizar el programa!" << endl;
         cout << endl;

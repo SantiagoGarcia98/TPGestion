@@ -20,7 +20,10 @@ public:
     bool altaAuto(); /// OK
 
     /// LISTADOS
-    void listarAutos(); /// OK, permite listar activos, inactivos, todos
+    ///void listarAutos(); /// OK, permite listar activos, inactivos, todos
+    void listarAutosActivos();
+    void listarAutosInactivos();
+    void listarTodosLosAutos();
     void ordenadosPorMarcaYModelo(); /// Ok
     void ordenadosPorAnio(); /// OK, de más nuevo a más antiguo
     void ordenadosPorPrecio(); /// OK, de manera descendente

@@ -4,11 +4,15 @@
 
 class ReportesMenu
 {
-  public:
+private:
+    int _cantidadOpciones;
+    ReportesManager _reportesManager;
+
+    void mostrarOpciones();
+    int seleccionarOpcion();
+    void ejecutarOpcion(int opcion);
+
+public:
     ReportesMenu();
-    virtual ~ReportesMenu();
-
-  protected:
-
-  private:
+    void mostrar();
 };

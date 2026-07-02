@@ -109,10 +109,12 @@ void AutoMenu::menuListados()
         system("cls");
 
         cout << "----- LISTADOS DE AUTOS -----" << endl;
-        cout << "1 - Listar autos" << endl;
-        cout << "2 - Ordenados por marca y modelo" << endl;
-        cout << "3 - Ordenados por anio" << endl;
-        cout << "4 - Ordenados por precio" << endl;
+        cout << "1 - Activos" << endl;
+        cout << "2 - Inactivos" << endl;
+        cout << "3 - Todos" << endl;
+        cout << "4 - Ordenados por marca y modelo" << endl;
+        cout << "5 - Ordenados por anio" << endl;
+        cout << "6 - Ordenados por precio" << endl;
         cout << "0 - Volver" << endl << endl;
         cout << "Opcion: ";
         cin >> opcion;
@@ -122,15 +124,21 @@ void AutoMenu::menuListados()
         switch(opcion)
         {
         case 1:
-            _autoManager.listarAutos();
+            _autoManager.listarAutosActivos();
             break;
         case 2:
-            _autoManager.ordenadosPorMarcaYModelo();
+            _autoManager.listarAutosInactivos();
             break;
         case 3:
-            _autoManager.ordenadosPorAnio();
+            _autoManager.listarTodosLosAutos();
             break;
         case 4:
+            _autoManager.ordenadosPorMarcaYModelo();
+            break;
+        case 5:
+            _autoManager.ordenadosPorAnio();
+            break;
+        case 6:
             _autoManager.ordenadosPorPrecio();
             break;
         case 0:

@@ -5,10 +5,133 @@ using namespace std;
 
 ReportesMenu::ReportesMenu()
 {
-  //ctor
+    _cantidadOpciones = 4;
 }
 
-ReportesMenu::~ReportesMenu()
+void ReportesMenu::mostrarOpciones()
 {
-  //dtor
+    cout << "----- REPORTES -----" << endl;
+
+    cout << "1 - FACTURACION MENSUAL POR ANIO" << endl;
+    cout << "2 - FACTURACION TOTAL ENTRE FECHAS" << endl;
+    cout << "3 - FACTURACION POR VENDEDOR ENTRE FECHAS" << endl;
+    cout << "4 - PORCENTAJE DE VENTAS POR TIPO DE PAGO ENTRE FECHAS" << endl;
+
+    cout << "-------------------------" << endl;
+    cout << "0 - SALIR" << endl;
+    cout << "-------------------------" << endl;
+}
+
+int ReportesMenu::seleccionarOpcion()
+{
+    int opcion;
+
+    mostrarOpciones();
+    cout << "--------------------" << endl;
+    cout << "SELECCIONE UNA OPCION: ";
+    cin >> opcion;
+
+    while(opcion < 0 || opcion > _cantidadOpciones)
+    {
+        cout << "--------------------" << endl;
+        cout << "Opcion incorrecta." << endl;
+        cout << "Vuelva a intentarlo." << endl;
+        cout << "--------------------" << endl;
+        cout << "SELECCIONE UNA OPCION: ";
+        cin >> opcion;
+    }
+
+    return opcion;
+}
+
+void ReportesMenu::ejecutarOpcion(int opcion)
+{
+    switch(opcion)
+    {
+    case 1:
+    {
+        system("cls");
+        int anio;
+        cout << "Ingrese el anio: ";
+        cin >> anio;
+        cout << endl;
+        _reportesManager.facturacionMensualPorAnio(anio);
+        break;
+    }
+    case 2:
+    {
+        system("cls");
+
+        Fecha desde, hasta;
+
+        cout << "----- FACTURACION ENTRE FECHAS -----" << endl;
+
+        cout << "Fecha desde: " << endl;
+        desde.Cargar();
+
+        cout << endl;
+        cout << "Fecha hasta:" << endl;
+        hasta.Cargar();
+
+        cout << endl;
+
+        _reportesManager.facturacionTotalEntreFechas(desde, hasta);
+        break;
+    }
+    case 3:
+    {
+        system("cls");
+
+        Fecha desde, hasta;
+
+        cout << "----- FACTURACION POR VENDEDOR -----" << endl << endl;
+
+        cout << "Fecha desde:" << endl;
+        desde.Cargar();
+        cout << endl;
+        cout << "Fecha hasta:" << endl;
+        hasta.Cargar();
+        cout << endl;
+
+        _reportesManager.facturacionPorVendedorEntreFechas(desde, hasta);
+        break;
+    }
+    case 4:
+    {
+        system("cls");
+
+        Fecha desde, hasta;
+
+        cout << "----- PORCENTAJE DE VENTAS POR TIPO DE PAGO -----" << endl << endl;
+
+        cout << "Fecha desde:" << endl;
+        desde.Cargar();
+        cout << endl;
+        cout << "Fecha hasta:" << endl;
+        hasta.Cargar();
+        cout << endl;
+
+        _reportesManager.porcentajeVentasPorTipoPago(desde, hasta);
+        break;
+    }
+
+
+    case 0:
+        cout << "Saliendo del menu..." << endl;
+        break;
+    }
+}
+
+void ReportesMenu::mostrar()
+{
+  int opcion;
+
+    do
+    {
+        system("cls");
+        opcion = seleccionarOpcion();
+        ejecutarOpcion(opcion);
+        system("pause");
+    }
+    while(opcion != 0);
 }

@@ -4,7 +4,7 @@
 #include "AutoMenu.h" /// Dentro estará listados y consultas
 #include "VentaMenu.h" /// Dentro estará listados y consultas
 #include "TipoPagoMenu.h" /// Dentro estará listados y consultas (si sumamos, no lo contemplamos en informe, VER)
-/// #include "ReportesMenu.h" /// Aún no lo tenemos
+#include "ReportesMenu.h" /// OK
 
 class App
 {
@@ -15,7 +15,7 @@ private:
     AutoMenu _autoMenu;
     VentaMenu _ventaMenu;
     TipoPagoMenu _tipoPagoMenu;
-    /// ReportesMenu _reportesMenu;
+    ReportesMenu _reportesMenu;
 
     void mostrarOpciones();
     int seleccionOpcion();
