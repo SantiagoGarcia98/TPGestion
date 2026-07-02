@@ -259,34 +259,35 @@
 	<string>
 	"TipoPago.h"
 
-1782184295 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopagomanager.cpp
+1782946481 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopagomanager.cpp
 	"TipoPagoManager.h"
 	"TipoPago.h"
 	"utils.h"
 	<iostream>
 	<cstring>
 
-1782184208 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopagomanager.h
+1782946253 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopagomanager.h
 	"TipoPagoArchivo.h"
+	"VentaArchivo.h"
 	<cstring>
 
-1782184654 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopagomenu.cpp
+1782945588 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopagomenu.cpp
 	<iostream>
 	"TipoPagoMenu.h"
 	"utils.h"
 
-1782184338 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopagomenu.h
+1782945179 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopagomenu.h
 	"TipoPagoManager.h"
 
-1782866692 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventaarchivo.cpp
+1782946195 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventaarchivo.cpp
 	"VentaArchivo.h"
 	<cstdio>
 
-1782784885 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventaarchivo.h
+1782946080 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventaarchivo.h
 	<string>
 	"Venta.h"
 
-1782878317 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamanager.cpp
+1782944075 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamanager.cpp
 	"VentaManager.h"
 	"DetalleVenta.h"
 	"utils.h"
@@ -301,7 +302,7 @@
 	"TipoPagoArchivo.h"
 	"DetalleVentaArchivo.h"
 
-1782883277 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamenu.cpp
+1782944171 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamenu.cpp
 	"VentaMenu.h"
 	<iostream>
 	"utils.h"
@@ -309,13 +310,13 @@
 1782882861 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamenu.h
 	"VentaManager.h"
 
-1782181524 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopago.cpp
+1782945742 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopago.cpp
 	"TipoPago.h"
 	"utils.h"
 	"cstring"
 	<iostream>
 
-1782349275 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopago.h
+1782945040 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\tipopago.h
 
 1782840816 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\detalleventa.cpp
 	"DetalleVenta.h"
@@ -428,7 +429,7 @@
 1782944377 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.h
 	"VendedorArchivo.h"
 
-1782943215 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedormanager.h
+1782946796 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedormanager.h
 	"VendedorArchivo.h"
 
 1782943215 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedorarchivo.h
@@ -441,7 +442,7 @@
 	<cstdio>
 	<cstring>
 
-1782943215 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedormanager.cpp
+1782946796 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedormanager.cpp
 	<iostream>
 	<cstring>
 	"Vendedor.h"
@@ -470,10 +471,10 @@
 1782423638 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\clientemenu.h
 	"ClienteManager.h"
 
-1782423638 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedormenu.h
+1782946796 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedormenu.h
 	"VendedorManager.h"
 
-1782943215 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedormenu.cpp
+1782946796 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\vendedormenu.cpp
 	<iostream>
 	"VendedorMenu.h"
 
@@ -504,4 +505,11 @@
 	"ReportesManager.h"
 
 1782943269 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmanager.h
+
+1782943337 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmenu.cpp
+	<iostream>
+	"ReportesMenu.h"
+
+1782943324 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmenu.h
+	"ReportesManager.h"
 
