@@ -230,9 +230,10 @@
 
 1782788796 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\detalleventa.h
 
-1782789197 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\venta.cpp
+1783018659 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\venta.cpp
 	"Venta.h"
 	<iostream>
+	<iomanip>
 
 1782789088 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\venta.h
 	"fecha.h"
@@ -287,12 +288,13 @@
 	<string>
 	"Venta.h"
 
-1782944075 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamanager.cpp
+1783018568 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamanager.cpp
 	"VentaManager.h"
 	"DetalleVenta.h"
 	"utils.h"
 	"fecha.h"
 	<iostream>
+	<iomanip>
 
 1782877856 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\ventamanager.h
 	"VentaArchivo.h"
@@ -515,7 +517,7 @@
 	"AutoArchivo.h"
 	"TipoPagoArchivo.h"
 
-1783008958 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmenu.cpp
+1783017537 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmenu.cpp
 	<iostream>
 	"ReportesMenu.h"
 

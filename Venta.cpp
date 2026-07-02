@@ -1,5 +1,6 @@
 #include "Venta.h"
 #include <iostream>
+#include <iomanip> /// Para fix de montos
 
 using namespace std;
 
@@ -29,6 +30,9 @@ void Venta::mostrar()
     cout << "Cliente: #" << _idCliente << endl;
     cout << "Vendedor: #" << _idVendedor << endl;
     cout << "Tipo Pago: #" << _idTipoPago << endl;
+
+    cout << fixed << setprecision(2); /// Fixear montos a notación decimal fija
+
     cout << "Monto Total: $" << _montoTotal << endl;
 
     cout << "Estado: " << _estado << endl;
