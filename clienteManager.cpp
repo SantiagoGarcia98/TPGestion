@@ -309,7 +309,133 @@ void ClienteManager::listarClientesPorDni()
     delete[] vec;
 }
 
+void ClienteManager::modificarCliente(){
+    char dni[10];
+    if (!confirmarAccion("Desea modificar los datos de un cliente? (s/n): ")) {
+        cout << "Operacion cancelada. Volviendo al menu..."<<endl;
+        return;
+    }
+    cout << "Ingrese el DNI del cliente a modificar: ";
+    cin.getline(dni, 9);
+    cout << "DNI ingresado: [" << dni << "]" << endl;
+    int pos = _archivo.buscarPorDNI(dni);
 
+    if (pos == -1){
+    cout << "Cliente no encontrado." << endl;
+    return;
+    }
+
+Cliente c = _archivo.leer(pos);
+
+    cout << "--- DATOS ACTUALES ---"<<endl;
+    c.Mostrar();
+
+    cout << "Seleccione el dato que desea modificar:"<<endl;
+    cout << "1. DNI "<<endl;
+    cout << "2. Nombre "<<endl;
+    cout << "3. Apellido "<<endl;
+    cout << "4. Telefono "<<endl;
+    cout << "5. Email "<<endl;
+    cout << "6. Modificar TODOS los datos "<<endl;
+    cout << "0. Volver sin modificar "<<endl;
+    cout << "Opcion: ";
+
+    int opcion;
+    cin >> opcion;
+    cin.ignore(); // limpiar salto de linea
+    string texto;  // auxiliar para cargar cadenas
+    switch (opcion) {
+        case 0:
+            cout << "Operacion cancelada. No se modifico el cliente."<<endl;
+            return;
+
+        case 1: {
+            do {
+                cout << "Nuevo DNI (0 para cancelar): ";
+                texto = cargarCadena();
+                if (Volver(texto.c_str())) {
+                    cout << "Modificacion cancelada. "<<endl;
+                    return;
+                }
+                if (!validarDNI((char*)texto.c_str())) {
+                    cout << "DNI invalido. Reintente. "<<endl;
+                    texto.clear();
+                }
+            } while (texto.empty());
+            c.setDni((char*)texto.c_str());
+            break;
+        }
+
+        case 2: {
+            cout << "Nuevo nombre (0 para cancelar): ";
+            texto = cargarCadena();
+            if (Volver(texto.c_str())) {
+                cout << "Modificacion cancelada. "<<endl;
+                return;
+            }
+            c.setNombre((char*)texto.c_str());
+            break;
+        }
+
+        case 3: {
+            cout << "Nuevo apellido (0 para cancelar): ";
+            texto = cargarCadena();
+            if (Volver(texto.c_str())) {
+                cout << "Modificacion cancelada. "<<endl;
+                return;
+            }
+            c.setApellido((char*)texto.c_str());
+            break;
+        }
+
+        case 4: {
+            do {
+                cout << "Nuevo telefono (0 para cancelar): ";
+                texto = cargarCadena();
+                if (Volver(texto.c_str())) {
+                    cout << "Modificacion cancelada. "<<endl;
+                    return;
+                }
+                if (!esTelefonoValido((char*)texto.c_str())) {
+                    cout << "Telefono invalido. Ingrese solo numeros (6–15 digitos)."<<endl;
+                    texto.clear();
+                }
+            } while (texto.empty());
+            c.setTelefono((char*)texto.c_str());
+            break;
+        }
+
+        case 5: {
+            cout << "Nuevo email (0 para cancelar): ";
+            texto = cargarCadena();
+            if (Volver(texto.c_str())) {
+                cout << "Modificacion cancelada. "<<endl;
+                return;
+            }
+
+            c.setEmail((char*)texto.c_str());
+            break;
+        }
+
+        case 6: {
+            cout << "--- Ingrese nuevamente todos los datos del cliente ---"<<endl;
+            c.Cargar();
+            if (!c.getEstado()) {
+                cout << "Modificacion cancelada."<<endl;
+                return;
+            }
+            break;
+        }
+
+        default:
+            cout << "Opcion invalida. "<<endl;
+            return;
+    }
+   if (_archivo.guardar(pos, c))
+    cout << "Cliente modificado correctamente." << endl;
+   else
+    cout << "Error al modificar el cliente." << endl;
+   }
 
 
 

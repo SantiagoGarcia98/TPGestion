@@ -3,6 +3,7 @@
 #include <cstring>
 
 
+
 ClienteArchivo::ClienteArchivo( std::string  nombreArchivo)
 : _nombreArchivo(nombreArchivo){
 }
@@ -99,6 +100,7 @@ int ClienteArchivo::buscarPorDNI( char *dni) {
             break;
         }
     }
+
     fclose(pFile);
     return pos;
 }

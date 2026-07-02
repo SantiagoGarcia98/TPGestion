@@ -185,23 +185,24 @@
 	"Venta.h"
 	<iostream>
 
-1782841740 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientearchivo.cpp
+1783001998 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientearchivo.cpp
 	"ClienteArchivo.h"
 	<string>
 	<cstring>
+	<iostream>
 
 1781215388 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientearchivo.h
 	"Cliente.h"
 	<string>
 
-1782949383 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.cpp
+1783001919 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.cpp
 	"ClienteManager.h"
 	"Cliente.h"
 	"utils.h"
 	<iostream>
 	<cstring>
 
-1782913531 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.h
+1782999764 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.h
 	"ClienteArchivo.h"
 
 1782859076 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\clientearchivo.cpp
@@ -419,7 +420,7 @@
 	<string>
 	"Vendedor.h"
 
-1782944377 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.cpp
+1782999764 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.cpp
 	<iostream>
 	<cstring>
 	"Vendedor.h"
@@ -458,7 +459,7 @@
 1782944398 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormenu.h
 	"VendedorManager.h"
 
-1782999102 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemenu.cpp
+1783001326 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemenu.cpp
 	<iostream>
 	"ClienteMenu.h"
 

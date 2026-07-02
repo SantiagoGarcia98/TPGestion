@@ -11,7 +11,8 @@ public:
 
     void cargarCliente();
     void listarClientes();
-    void eliminarCliente(); // baja lógica por ID
+    void eliminarCliente();// baja lógica por ID
+    void modificarCliente();
     void buscarClientePorDNI();
     void buscarClientePorApellido();
     void buscarClientePorID();

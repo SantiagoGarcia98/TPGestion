@@ -33,12 +33,10 @@ void VendedorManager::cargarVendedor() {
 }
 void VendedorManager::modificarVendedor() {
     int id;
-
     if (!confirmarAccion("Desea modificar los datos de un vendedor? (s/n): ")) {
         cout << "Operacion cancelada. Volviendo al menu..."<<endl;
         return;
     }
-
     cout << "Legajo Vendedor a modificar: ";
     cin >> id;
     cin.ignore();
@@ -48,12 +46,11 @@ void VendedorManager::modificarVendedor() {
         cout << "Vendedor no encontrado."<<endl;
         return;
     }
-
     Vendedor v = _archivo.leer(pos);
     cout << "--- DATOS ACTUALES ---"<<endl;
     v.Mostrar();
 
-    cout << "\nSeleccione el dato que desea modificar:"<<endl;
+    cout << "Seleccione el dato que desea modificar:"<<endl;
     cout << "1. DNI "<<endl;
     cout << "2. Nombre "<<endl;
     cout << "3. Apellido "<<endl;
