@@ -80,7 +80,7 @@ void ReportesManager::facturacionMensualPorAnio(int anio)
     cout << fixed << setprecision(2); /// Fixear montos a notación decimal fija
 
     cout << endl;
-    cout << "----- FACTURACION MENSUAL -----" << endl;
+    cout << "-------- FACTURACION MENSUAL --------" << endl;
     cout << "Anio: " << anio << endl;
     cout << endl;
 
@@ -94,9 +94,9 @@ void ReportesManager::facturacionMensualPorAnio(int anio)
             total += facturacion[i];
         }
 
-    cout << "-----------------------------" << endl;
+    cout << "-------------------------------------" << endl;
     cout << "TOTAL: $ " << total << endl;
-    cout << "-----------------------------" << endl;
+    cout << "-------------------------------------" << endl;
 }
 
 void ReportesManager::facturacionTotalEntreFechas(Fecha desde, Fecha hasta)
@@ -141,7 +141,7 @@ void ReportesManager::facturacionTotalEntreFechas(Fecha desde, Fecha hasta)
 
     cout << fixed << setprecision(2);
 
-    cout << "----- FACTURACION TOTAL -----" << endl << endl;
+    cout << "---------- FACTURACION TOTAL ----------" << endl << endl;
 
     cout << "Desde: ";
     desde.Mostrar();
@@ -150,10 +150,9 @@ void ReportesManager::facturacionTotalEntreFechas(Fecha desde, Fecha hasta)
     hasta.Mostrar();
 
     cout << endl;
-    cout << "-----------------------------" << endl;
     cout << "Cantidad de ventas: " << cantidadVentas << endl;
     cout << "Facturacion total: $ " << total << endl;
-    cout << "-----------------------------" << endl;
+    cout << "-------------------------------------" << endl;
 }
 
 void ReportesManager::facturacionPorVendedorEntreFechas(Fecha desde, Fecha hasta)
@@ -178,7 +177,7 @@ void ReportesManager::facturacionPorVendedorEntreFechas(Fecha desde, Fecha hasta
         return;
     }
 
-    cout << "----- VENDEDORES DISPONIBLES -----" << endl << endl;
+    cout << "-------- VENDEDORES DISPONIBLES --------" << endl << endl;
 
     for(int i=0; i<cantVendedores; i++)
     {
@@ -244,15 +243,14 @@ void ReportesManager::facturacionPorVendedorEntreFechas(Fecha desde, Fecha hasta
     cout << fixed << setprecision(2);
 
     cout << endl;
-    cout << "----- FACTURACION POR VENDEDOR -----" << endl << endl;
+    cout << "-------- FACTURACION POR VENDEDOR --------" << endl << endl;
 
     cout << "Vendedor: " << vendedorSeleccionado.getApellido() << ", " << vendedorSeleccionado.getNombre() << endl;
     cout << "Legajo: " << vendedorSeleccionado.getLegajo() << endl;
     cout << "Periodo: " << desde.toString() << " al " << hasta.toString() << endl;
-    cout << "-----------------------------" << endl;
     cout << "Cantidad de ventas: " << cantidadVentas << endl;
     cout << "Facturacion total: $ " << total << endl;
-    cout << "-----------------------------" << endl;
+    cout << "------------------------------------------" << endl;
 }
 
 void ReportesManager::porcentajeVentasPorTipoPago(Fecha desde, Fecha hasta)
@@ -337,9 +335,8 @@ void ReportesManager::porcentajeVentasPorTipoPago(Fecha desde, Fecha hasta)
     }
 
     cout << endl;
-    cout << "-----------------------------" << endl;
+    cout << "-------------------------------------------------" << endl;
     cout << "Total de ventas: " << totalVentas << endl;
-    cout << "-----------------------------" << endl;
 
     delete[] cantidadPorTipo;
 }
@@ -441,7 +438,7 @@ void ReportesManager::top5AutosVendidos(Fecha desde, Fecha hasta)
     }
 
     cout << endl;
-    cout << "----- TOP 5 AUTOS MAS VENDIDOS -----" << endl << endl;
+    cout << "-------- TOP 5 AUTOS MAS VENDIDOS --------" << endl << endl;
     cout << "Periodo: " << desde.toString() << " al " << hasta.toString() << endl << endl;
 
     int limite;
@@ -454,7 +451,7 @@ void ReportesManager::top5AutosVendidos(Fecha desde, Fecha hasta)
     bool encontro = false;
 
     cout << "Posicion - Vehiculo - Cantidad vendida" << endl;
-    cout << "--------------------------------------" << endl;
+    cout << "------------------------------------------" << endl;
 
     for(int i=0; i<limite; i++)
     {
@@ -476,8 +473,6 @@ void ReportesManager::top5AutosVendidos(Fecha desde, Fecha hasta)
         cout << "No existen ventas registradas en el periodo seleccionado." << endl;
     }
 
-    cout << "-----------------------------" << endl;
-
     delete[] pAutos;
     delete[] pVentas;
     delete[] pDetalles;
@@ -486,5 +481,118 @@ void ReportesManager::top5AutosVendidos(Fecha desde, Fecha hasta)
 
 void ReportesManager::top5Vendedores(Fecha desde, Fecha hasta)
 {
+    if(desde > hasta)
+    {
+        cout << "El rango de fechas es invalido." << endl;
+        return;
+    }
 
+    int cantVendedores = _repoVendedor.getCantidadRegistros();
+    int cantVentas = _repoVenta.getCantidadRegistros();
+
+    if(cantVendedores == 0)
+    {
+        cout << "No hay vendedores registrados." << endl;
+        return;
+    }
+
+    if(cantVentas == 0)
+    {
+        cout << "No hay ventas registradas." << endl;
+        return;
+    }
+
+    Vendedor *pVendedores = new Vendedor[cantVendedores];
+    Venta *pVentas = new Venta[cantVentas];
+    int *pCantidadVentas = new int[cantVendedores]{};
+
+    if(pVendedores == nullptr || pVentas == nullptr || pCantidadVentas == nullptr)
+    {
+        cout << "Error al asignar memoria." << endl;
+
+        delete[] pVendedores;
+        delete[] pVentas;
+        delete[] pCantidadVentas;
+        return;
+    }
+
+    _repoVendedor.leerTodos(pVendedores, cantVendedores);
+    _repoVenta.leer(pVentas, cantVentas);
+
+    /// Acumulamos ventas por vendedor
+    for(int i=0; i<cantVentas; i++)
+    {
+        if(!pVentas[i].getEstado())
+            continue;
+
+        if(pVentas[i].getFecha() >= desde && pVentas[i].getFecha() <= hasta)
+        {
+            for(int x=0; x<cantVendedores; x++)
+            {
+                if(pVendedores[x].getIdVendedor() == pVentas[i].getIdVendedor())
+                {
+                    pCantidadVentas[x]++;
+                    break;
+                }
+            }
+        }
+    }
+
+    /// Ordenamos de mayor a menor
+    for(int i=0; i<cantVendedores-1; i++)
+    {
+        for(int x=i+1; x<cantVendedores; x++)
+        {
+            if(pCantidadVentas[x] > pCantidadVentas[i])
+            {
+                int auxCantidad = pCantidadVentas[i];
+                pCantidadVentas[i] = pCantidadVentas[x];
+                pCantidadVentas[x] = auxCantidad;
+
+                Vendedor auxVendedor = pVendedores[i];
+                pVendedores[i] = pVendedores[x];
+                pVendedores[x] = auxVendedor;
+            }
+        }
+    }
+
+    cout << endl;
+    cout << "--------------- TOP 5 VENDEDORES ---------------" << endl << endl;
+    cout << "Periodo: " << desde.toString() << " al " << hasta.toString() << endl << endl;
+
+    cout << "Posicion - Vendedor - Ventas realizadas" << endl;
+    cout << "------------------------------------------------" << endl;
+
+    int limite;
+
+    if(cantVendedores < 5)
+        limite = cantVendedores;
+    else
+        limite = 5;
+
+    bool encontro = false;
+
+    for(int i=0; i<limite; i++)
+    {
+        if(pCantidadVentas[i] == 0)
+            break;
+
+        cout << i + 1 << ". ";
+        cout << pVendedores[i].getApellido() << ", ";
+        cout << pVendedores[i].getNombre();
+        cout << " (Legajo: " << pVendedores[i].getLegajo() << ")";
+        cout << " - ";
+        cout << pCantidadVentas[i] << " ventas" << endl;
+
+        encontro = true;
+    }
+
+    if(!encontro)
+    {
+        cout << "No existen ventas registradas en el periodo seleccionado." << endl;
+    }
+
+    delete[] pVendedores;
+    delete[] pVentas;
+    delete[] pCantidadVentas;
 }

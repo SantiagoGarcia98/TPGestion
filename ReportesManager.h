@@ -28,6 +28,5 @@ public:
     /// 4 a 6
     void porcentajeVentasPorTipoPago(Fecha desde, Fecha hasta); /// OK
     void top5AutosVendidos(Fecha desde, Fecha hasta); /// OK
-    void top5Vendedores(Fecha desde, Fecha hasta);
-
+    void top5Vendedores(Fecha desde, Fecha hasta); /// OK
 };

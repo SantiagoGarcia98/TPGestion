@@ -26,16 +26,15 @@ void AutoMenu::mostrar()
 
 void AutoMenu::mostrarOpciones()
 {
-    cout << "----- MENU AUTOS -----" << endl;
+    cout << "--------------------- MENU AUTOS ---------------------" << endl;
     cout << "1 - NUEVO AUTO" << endl;
     cout << "2 - MODIFICAR AUTO" << endl;
     cout << "3 - ELIMINAR AUTO" << endl;
     cout << "4 - ALTA AUTO" << endl;
     cout << "5 - LISTADO DE AUTOS" << endl;
     cout << "6 - CONSULTA DE AUTOS" << endl;
-    cout << "-------------------------" << endl;
     cout << "0 - SALIR" << endl;
-    cout << "-------------------------" << endl;
+    cout << "------------------------------------------------------" << endl;
 }
 
 void AutoMenu::ejecutarOpcion(int opcion)
@@ -84,15 +83,13 @@ int AutoMenu::seleccionarOpcion()
     int opcion;
 
     mostrarOpciones();
-    cout << "--------------------" << endl;
     cout << "SELECCIONE UNA OPCION: ";
     cin >> opcion;
 
     while(opcion < 0 || opcion > _cantidadOpciones)
     {
-        cout << "---------------" << endl;
-        cout << "Opcion incorrecta... Vuelva a intentarlo por favor..." << endl;
-        cout << "---------------" << endl;
+        cout << "------------------------------------------------------" << endl;
+        cout << "Opcion incorrecta... Vuelva a intentarlo por favor..." << endl << endl;
         cout << "SELECCIONE UNA OPCION: ";
         cin >> opcion;
     }
@@ -108,7 +105,7 @@ void AutoMenu::menuListados()
     {
         system("cls");
 
-        cout << "----- LISTADOS DE AUTOS -----" << endl;
+        cout << "---------- LISTADOS DE AUTOS ----------" << endl;
         cout << "1 - Activos" << endl;
         cout << "2 - Inactivos" << endl;
         cout << "3 - Todos" << endl;
@@ -161,7 +158,7 @@ void AutoMenu::menuConsultas()
     {
         system("cls");
 
-        cout << "----- CONSULTAS DE AUTOS -----" << endl;
+        cout << "---------- CONSULTAS DE AUTOS ----------" << endl;
         cout << "1 - Buscar por marca y modelo" << endl;
         cout << "2 - Buscar por anio" << endl;
         cout << "3 - Buscar por rango de precios" << endl;

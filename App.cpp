@@ -23,14 +23,13 @@ void App::run()
 
 void App::mostrarOpciones()
 {
-    cout << "--------- MENU PRINCIPAL ---------" << endl;
+    cout << "---------------------- MENU PRINCIPAL ----------------------" << endl;
     cout << "1- CLIENTES" << endl;
     cout << "2- VENDEDORES" << endl;
     cout << "3- AUTOS" << endl;
     cout << "4- VENTAS" << endl;
     cout << "5- TIPOS DE PAGO" << endl;
     cout << "6- REPORTES" << endl;
-    cout << "----------------------------------" << endl;
     cout << "0- SALIR" << endl;
 }
 
@@ -38,16 +37,17 @@ int App::seleccionOpcion()
 {
     int opcion;
     mostrarOpciones();
-    cout << "--------------------" << endl;
+    cout << "------------------------------------------------------------" << endl;
     cout << "SELECCIONE UNA OPCION: ";
     cin >> opcion;
+    cout << endl;
     while(opcion < 0 || opcion > _cantidadOpciones)
     {
-        cout << "---------------" << endl;
         cout << "Opcion incorrecta... Vuelva a intentarlo por favor..." << endl;
-        cout << "---------------" << endl;
+        cout << "------------------------------------------------------------" << endl;
         cout << "SELECCIONE UNA OPCION: ";
         cin >> opcion;
+        cout << endl;
     }
     return opcion;
 }
@@ -75,9 +75,7 @@ void App::ejecutarOpcion(int opcion)
         _reportesMenu.mostrar();
         break;
     case 0:
-        cout << "Saliendo... Gracias por utilizar el programa!" << endl;
-        cout << endl;
-        cout << endl;
+        cout << "Saliendo... Gracias por utilizar el programa!" << endl << endl;
         break;
     }
 }

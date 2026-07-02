@@ -119,7 +119,7 @@
 	<string>
 	"Auto.h"
 
-1782999421 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automanager.cpp
+1783023448 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automanager.cpp
 	"AutoManager.h"
 	"Auto.h"
 	"utils.h"
@@ -129,7 +129,7 @@
 1782998927 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automanager.h
 	"AutoArchivo.h"
 
-1782999588 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automenu.cpp
+1783023267 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\automenu.cpp
 	<iostream>
 	"AutoMenu.h"
 	"utils.h"
@@ -481,7 +481,7 @@
 	<iostream>
 	"VendedorMenu.h"
 
-1783002216 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\app.cpp
+1783023045 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\app.cpp
 	<iostream>
 	"App.h"
 
@@ -504,12 +504,12 @@
 	<iostream>
 	"App.h"
 
-1783017066 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmanager.cpp
+1783022756 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmanager.cpp
 	"ReportesManager.h"
 	<iostream>
 	<iomanip>
 
-1783017352 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmanager.h
+1783021614 c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmanager.h
 	"VentaArchivo.h"
 	"DetalleVentaArchivo.h"
 	"vendedorArchivo.h"
@@ -517,7 +517,7 @@
 	"AutoArchivo.h"
 	"TipoPagoArchivo.h"
 
-1783017537 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmenu.cpp
+1783022742 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\reportesmenu.cpp
 	<iostream>
 	"ReportesMenu.h"
 

@@ -75,6 +75,18 @@
 		<Unit filename="DetalleVentaArchivo.h">
 			<Option virtualFolder="Auxiliares/" />
 		</Unit>
+		<Unit filename="ReportesManager.cpp">
+			<Option virtualFolder="Reportes/" />
+		</Unit>
+		<Unit filename="ReportesManager.h">
+			<Option virtualFolder="Reportes/" />
+		</Unit>
+		<Unit filename="ReportesMenu.cpp">
+			<Option virtualFolder="Reportes/" />
+		</Unit>
+		<Unit filename="ReportesMenu.h">
+			<Option virtualFolder="Reportes/" />
+		</Unit>
 		<Unit filename="TipoPago.cpp">
 			<Option virtualFolder="Auxiliares/" />
 		</Unit>

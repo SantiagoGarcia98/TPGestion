@@ -5,22 +5,23 @@ using namespace std;
 
 ReportesMenu::ReportesMenu()
 {
-    _cantidadOpciones = 5;
+    _cantidadOpciones = 6;
 }
 
 void ReportesMenu::mostrarOpciones()
 {
-    cout << "----- REPORTES -----" << endl;
+    cout << "----------------------------------- REPORTES -----------------------------------" << endl;
 
     cout << "1 - FACTURACION MENSUAL POR ANIO" << endl;
     cout << "2 - FACTURACION TOTAL EN UN RANGO DE FECHAS DETERMINADO" << endl;
     cout << "3 - FACTURACION POR VENDEDOR EN UN RANGO DE FECHAS DETERMINADO" << endl;
     cout << "4 - PORCENTAJE DE VENTAS POR TIPO DE PAGO EN UN RANGO DE FECHAS DETERMINADO" << endl;
     cout << "5 - TOP 5 AUTOS MAS VENDIDOS EN UN RANGO DE FECHAS DETERMINADO" << endl;
+    cout << "6 - TOP 5 VENDEDORES CON MAS VENTAS REALIZADAS EN UN RANGO DE FECHAS DETERMINADO" << endl;
 
-    cout << "-------------------------" << endl;
+    cout << "--------------------------------------------------------------------------------" << endl;
     cout << "0 - SALIR" << endl;
-    cout << "-------------------------" << endl;
+    cout << "--------------------------------------------------------------------------------" << endl;
 }
 
 int ReportesMenu::seleccionarOpcion()
@@ -28,16 +29,16 @@ int ReportesMenu::seleccionarOpcion()
     int opcion;
 
     mostrarOpciones();
-    cout << "--------------------" << endl;
+    cout << endl;
     cout << "SELECCIONE UNA OPCION: ";
     cin >> opcion;
 
     while(opcion < 0 || opcion > _cantidadOpciones)
     {
-        cout << "--------------------" << endl;
+        cout << "--------------------------------------------------------------------------------" << endl;
         cout << "Opcion incorrecta." << endl;
         cout << "Vuelva a intentarlo." << endl;
-        cout << "--------------------" << endl;
+        cout << "--------------------------------------------------------------------------------" << endl;
         cout << "SELECCIONE UNA OPCION: ";
         cin >> opcion;
     }
@@ -65,7 +66,7 @@ void ReportesMenu::ejecutarOpcion(int opcion)
 
         Fecha desde, hasta;
 
-        cout << "----- FACTURACION ENTRE FECHAS -----" << endl;
+        cout << "-------- FACTURACION ENTRE FECHAS --------" << endl;
 
         cout << "Fecha desde: " << endl;
         desde.Cargar();
@@ -121,7 +122,7 @@ void ReportesMenu::ejecutarOpcion(int opcion)
 
         Fecha desde, hasta;
 
-        cout << "----- TOP 5 AUTOS MAS VENDIDOS -----" << endl << endl;
+        cout << "-------- TOP 5 AUTOS MAS VENDIDOS --------" << endl << endl;
 
         cout << "Fecha desde:" << endl;
         desde.Cargar();
@@ -134,7 +135,25 @@ void ReportesMenu::ejecutarOpcion(int opcion)
         _reportesManager.top5AutosVendidos(desde, hasta);
         break;
     }
+    case 6:
+    {
+        system("cls");
 
+        Fecha desde, hasta;
+
+        cout << "--------------- TOP 5 VENDEDORES ---------------" << endl << endl;
+
+        cout << "Fecha desde:" << endl;
+        desde.Cargar();
+        cout << endl;
+        cout << "Fecha hasta:" << endl;
+        hasta.Cargar();
+
+        cout << endl;
+
+        _reportesManager.top5Vendedores(desde, hasta);
+        break;
+    }
     case 0:
         cout << "Saliendo del menu..." << endl;
         break;

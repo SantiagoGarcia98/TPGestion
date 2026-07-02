@@ -34,7 +34,7 @@ bool AutoManager::cargarAuto()
     Auto reg;
     Auto *pAutos;
 
-    cout << "----- CARGA DE NUEVO AUTO -----" << endl;
+    cout << "------------------------- CARGA DE NUEVO AUTO -------------------------" << endl;
     cout << endl;
 
     if(quiereCancelar()) return false;
@@ -85,7 +85,7 @@ bool AutoManager::modificarAuto()
     Auto reg;
     Auto *pAutos;
 
-    cout << "----- ACTUALIZACIÓN DE AUTO -----" << endl;
+    cout << "----------------------- ACTUALIZACIÓN DE AUTO -----------------------" << endl;
 
     while(true)
     {
@@ -109,7 +109,7 @@ bool AutoManager::modificarAuto()
         reg = _repoAuto.leer(pos);
 
         system("cls");
-        cout << "----- DATOS DEL REGISTRO A MODIFICAR -----" << endl;
+        cout << "----------------- DATOS DEL REGISTRO A MODIFICAR -----------------" << endl;
         reg.mostrar();
         cout << endl;
 
@@ -120,7 +120,7 @@ bool AutoManager::modificarAuto()
     }
 
     system("cls");
-    cout << "----- CARGUE LOS NUEVOS DATOS DEL REGISTRO -----" << endl;
+    cout << "-------------- CARGUE LOS NUEVOS DATOS DEL REGISTRO --------------" << endl;
 
     cout << endl;
     cout << "ID: #" << id << endl;
@@ -173,7 +173,7 @@ bool AutoManager::eliminarAuto()
     int id;
     Auto reg;
 
-    cout << "-------- BAJA DE AUTO --------" << endl;
+    cout << "-------------- BAJA DE AUTO --------------" << endl;
     while(true)
     {
         cout << endl;
@@ -201,7 +201,7 @@ bool AutoManager::eliminarAuto()
             reg = _repoAuto.leer(id - 1);
         }
         system("cls");
-        cout << "----- DATOS DEL REGISTRO A DAR DE BAJA -----" << endl;
+        cout << "-------------- DATOS DEL REGISTRO A DAR DE BAJA --------------" << endl;
         reg.mostrar();
 
         if(!reg.getEstado())
@@ -223,7 +223,7 @@ bool AutoManager::altaAuto()
     int id;
     Auto reg;
 
-    cout << "-------- ALTA DE AUTO --------" << endl;
+    cout << "-------------- ALTA DE AUTO --------------" << endl;
 
     while(true)
     {
@@ -259,7 +259,7 @@ bool AutoManager::altaAuto()
 
         }
         system("cls");
-        cout << "----- DATOS DEL REGISTRO A DAR DE ALTA -----" << endl;
+        cout << "-------------- DATOS DEL REGISTRO A DAR DE ALTA --------------" << endl;
         reg.mostrar();
 
         if(reg.getEstado())
@@ -275,85 +275,6 @@ bool AutoManager::altaAuto()
 
     return _repoAuto.alta(id-1);
 }
-
-/// LISTADOS
-/*
-void AutoManager::listarAutos() /// Listar todos los reg
-{
-    int cant = _repoAuto.getCantidadRegistros();
-
-    if(cant==0)
-    {
-        cout << "No hay autos registrados." << endl << endl;
-        return;
-    }
-
-    int opcion;
-    cout << "1 - Listar activos" << endl;
-    cout << "2 - Listar inactivos" << endl;
-    cout << "3 - Listar todos" << endl;
-    cout << "-------------------------" << endl;
-    cout << "0 - Salir" << endl;
-    cout << "-------------------------" << endl;
-    cout << "Opcion: ";
-    cin >> opcion;
-
-    cout << endl;
-
-     if(opcion == 0)
-    {
-        cout << "Saliendo del sub-menu..." << endl;
-        return;
-    }
-
-    bool encontro = false;
-
-    for(int i=0; i<cant; i++)
-    {
-        Auto reg = _repoAuto.leer(i);
-        switch(opcion)
-        {
-        case 1:
-            if(reg.getEstado())
-            {
-                reg.mostrar();
-                cout << endl;
-                encontro = true;
-            }
-            break;
-        case 2:
-            if(!reg.getEstado())
-            {
-                reg.mostrar();
-                cout << endl;
-                encontro = true;
-            }
-            break;
-        case 3:
-            reg.mostrar();
-            cout << endl;
-            encontro = true;
-            break;
-        default:
-            cout << "Opcion invalida." << endl;
-            return;
-        }
-    }
-
-    if(!encontro)
-    {
-        switch(opcion)
-        {
-        case 1:
-            cout << "No hay autos activos." << endl;
-            break;
-        case 2:
-            cout << "No hay autos inactivos." << endl;
-                break;
-        }
-    }
-}
-*/
 
 void AutoManager::listarAutosActivos()
 {
@@ -436,8 +357,6 @@ void AutoManager::listarTodosLosAutos()
         cout << endl;
     }
 }
-
-
 
 void AutoManager::ordenadosPorMarcaYModelo()
 {
@@ -563,7 +482,6 @@ void AutoManager::ordenadosPorPrecio()
 
     delete[] vec;
 }
-
 
 /// CONSULTAS
 
