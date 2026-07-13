@@ -5,7 +5,7 @@
 		<Option title="TPGESTION" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Clientes/;Vendedores/;Autos/;Ventas/;Reportes/;Auxiliares/" />
+		<Option virtualFolders="Clientes/;Vendedores/;Vendedores/;Auxiliares/;Auxiliares/;Ventas/;Autos/;Reportes/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/TPGESTION" prefix_auto="1" extension_auto="1" />

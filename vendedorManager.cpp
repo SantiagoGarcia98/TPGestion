@@ -9,9 +9,9 @@ using namespace std;
 VendedorManager::VendedorManager()
 : _archivo("vendedores.dat") { }
 
-void VendedorManager::cargarVendedor() {
+void VendedorManager::cargarVendedor(){
     Vendedor v;
-     if (!confirmarAccion(" Desea cargar nuevo Vendedor? (s/n): ")) {
+     if (!confirmarAccion(" Desea cargar nuevo Vendedor?")) {
         cout << "Operacion cancelada. Volviendo al menu..."<<endl;
         return;
     }
@@ -31,9 +31,9 @@ void VendedorManager::cargarVendedor() {
     else
         cout << "Error al guardar el vendedor."<<endl;
 }
-void VendedorManager::modificarVendedor() {
+void VendedorManager::modificarVendedor(){
     int id;
-    if (!confirmarAccion("Desea modificar los datos de un vendedor? (s/n): ")) {
+    if (!confirmarAccion("Desea modificar los datos de un vendedor?")) {
         cout << "Operacion cancelada. Volviendo al menu..."<<endl;
         return;
     }
@@ -152,12 +152,18 @@ void VendedorManager::modificarVendedor() {
         case 7: {
             cout << "Nuevo sueldo (0 para cancelar): ";
             float sueldo;
+            do{
             cin >> sueldo;
-            cin.ignore();
+
             if (sueldo == 0) {
                 cout << "Modificacion cancelada.\n";
                 return;
             }
+            if (sueldo < 0){
+                cout << "error : el sueldo no puede ser negativo. Reingrese: ";
+            }
+            }while(sueldo<0);
+            cin.ignore();
             v.setSueldo(sueldo);
             break;
         }
@@ -184,7 +190,7 @@ void VendedorManager::modificarVendedor() {
     else
         cout << " Error al modificar el vendedor."<<endl;
 }
-void VendedorManager::listarVendedores() {
+void VendedorManager::listarVendedores(){
     int cant = _archivo.getCantidadRegistros();
     if (cant == 0) {
         cout << "No hay vendedores cargados."<<endl;
@@ -239,11 +245,11 @@ void VendedorManager::listarVendedores() {
     cout << "\n";
 
 }
-void VendedorManager::BajaVendedor() {
+void VendedorManager::BajaVendedor(){
 
 
     int id;
-     if (!confirmarAccion(" Intenta dar de BAJA un Vendedor? (s/n): ")) {
+     if (!confirmarAccion(" Intenta dar de BAJA un Vendedor?")) {
         cout << "Operacion cancelada. Volviendo al menu..."<<endl;
         return;
     }
@@ -277,7 +283,7 @@ void VendedorManager::BajaVendedor() {
 void VendedorManager::altaVendedor(){
     int id;
 
-    if (!confirmarAccion("¿Desea dar de alta un vendedor? (s/n): "))
+    if (!confirmarAccion("¿Desea dar de alta un vendedor?"))
     {
         cout << "Operacion cancelada. Volviendo al menu..." << endl;
         return;
@@ -323,8 +329,7 @@ void VendedorManager::altaVendedor(){
         cout << "Operacion cancelada." << endl;
     }
 }
-
-void VendedorManager::buscarVendedorPorApellido() {
+void VendedorManager::buscarVendedorPorApellido(){
     char apellido[50];
     cout << "Ingrese Apellido del vendedor: ";
     cin >> apellido;
@@ -385,7 +390,7 @@ void VendedorManager::buscarVendedorPorDNI(){
 
         if (strcmp(v.getDni(), dni) == 0)
         {
-            cout << "Vendedor encontrado:\n";
+            cout << "Vendedor encontrado:"<<endl;
             v.Mostrar();
             return;
         }
@@ -393,9 +398,7 @@ void VendedorManager::buscarVendedorPorDNI(){
 
     cout << "No existe un vendedor con ese DNI." << endl;
 }
-
-void VendedorManager::buscarFechaContratacion()
-{
+void VendedorManager::buscarFechaContratacion(){
     int dia, mes, anio;
 
     cout << "Ingrese la fecha de ingreso" << endl;
@@ -452,7 +455,6 @@ void VendedorManager::listarVendedorOrdenadosxapellido(){
     delete[] vec;
 
 }
-
 void VendedorManager::listarFechaContratacion(){
     int cant = _archivo.getCantidadRegistros();
 

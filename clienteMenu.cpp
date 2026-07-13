@@ -16,9 +16,8 @@ void ClienteMenu::mostrar() {
         system("pause");
     } while (opcion != 0);
 }
-
 void ClienteMenu::mostrarOpciones() {
-    cout << "===== MENU CLIENTES =====" << endl;
+    cout << "------ MENU CLIENTES ------" << endl;
     cout << "1- CARGAR CLIENTE" << endl;
     cout << "2- LISTAR CLIENTES" << endl;
     cout << "3- DAR BAJA CLIENTE" << endl;
@@ -27,7 +26,6 @@ void ClienteMenu::mostrarOpciones() {
     cout << "6- BUSCAR CLIENTE" <<endl;
     cout << "0- SALIR" << endl;
 }
-
 int ClienteMenu::seleccionOpcion() {
     int opcion;
     mostrarOpciones();
@@ -41,7 +39,6 @@ int ClienteMenu::seleccionOpcion() {
     }
     return opcion;
 }
-
 void ClienteMenu::ejecutarOpcion(int opcion) {
 
     switch (opcion) {
@@ -69,13 +66,12 @@ void ClienteMenu::ejecutarOpcion(int opcion) {
     }
 }
 void ClienteMenu::mostrarOpcionesBuscar(){
-    cout << "====== BUSCAR CLIENTE ======" << endl;
+    cout << "------ BUSCAR CLIENTE ------" << endl;
     cout << "1- Buscar por apellido" << endl;
     cout << "2- Buscar por ID" << endl;
     cout << "3- Buscar por DNI" << endl;
     cout << "0- Volver" << endl;
 }
-
 int ClienteMenu::seleccionOpcionBuscar(){
     int opcion;
 
@@ -93,8 +89,7 @@ int ClienteMenu::seleccionOpcionBuscar(){
 
     return opcion;
 }
-void ClienteMenu::ejecutarOpcionBuscar(int opcion)
-{
+void ClienteMenu::ejecutarOpcionBuscar(int opcion){
     switch(opcion)
     {
     case 1:

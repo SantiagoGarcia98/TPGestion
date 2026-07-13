@@ -16,7 +16,6 @@ bool ClienteArchivo::guardar( Cliente registro) {
     fclose(pFile);
     return ok;
 }
-
 bool ClienteArchivo::guardar(int pos,  Cliente registro) {
     FILE *pFile = fopen(_nombreArchivo.c_str(), "rb+"); // rb+ guarda, modifica sobreescribe
     if(pFile == nullptr) {
@@ -26,7 +25,6 @@ bool ClienteArchivo::guardar(int pos,  Cliente registro) {
     fclose(pFile);
     return ok;
 }
-// cliente por posicion
 Cliente ClienteArchivo::leer(int pos) {
     Cliente reg;
     FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
@@ -41,7 +39,6 @@ Cliente ClienteArchivo::leer(int pos) {
     fclose(pFile);
     return reg;
 }
-
 int ClienteArchivo::leerTodos(Cliente vec[], int cantidad) {
     FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
     if(pFile == nullptr) return 0;
@@ -49,7 +46,6 @@ int ClienteArchivo::leerTodos(Cliente vec[], int cantidad) {
     fclose(pFile);
     return leidos;
 }
-
 int ClienteArchivo::getCantidadRegistros() {
     FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
     if(pFile == nullptr) {
@@ -61,7 +57,6 @@ int ClienteArchivo::getCantidadRegistros() {
     fclose(pFile);
     return cantidad;
 }
-
 int ClienteArchivo::getNuevoID() {
     int cant = getCantidadRegistros();
     if(cant == 0) return 1;
@@ -73,7 +68,6 @@ int ClienteArchivo::getNuevoID() {
     if(ult.getIdCliente() == -1) return 1;
     return ult.getIdCliente() + 1;
 }
-
 int ClienteArchivo::buscarPorID(int id) {
     FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
     if(pFile == nullptr) return -1;
@@ -88,7 +82,6 @@ int ClienteArchivo::buscarPorID(int id) {
     fclose(pFile);
     return pos;
 }
-
 int ClienteArchivo::buscarPorDNI( char *dni) {
     FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
     if(pFile == nullptr) return -1;
@@ -104,7 +97,6 @@ int ClienteArchivo::buscarPorDNI( char *dni) {
     fclose(pFile);
     return pos;
 }
-
 bool ClienteArchivo::eliminar(int pos) {
     Cliente cliente = leer(pos);
     if(cliente.getIdCliente() == -1) return false;

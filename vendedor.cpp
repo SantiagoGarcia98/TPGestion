@@ -34,21 +34,32 @@ void Vendedor::Cargar() {
     }
 
 
-    cout << "\nFecha de contratacion: " << endl;
+    cout << "Fecha de contratacion: " << endl;
     _FechaContratacion.Cargar();
 
 
-    cout << "\nSueldo (ingrese 0 para cancelar): "<<endl;
+    cout << "Sueldo (ingrese 0 para cancelar): ";
 
+do
+{
     cin >> _Sueldo;
 
-    cin.ignore();
-
-    if (_Sueldo == 0) {
-        cout << "Carga cancelada por el usuario."<<endl;
+    if (_Sueldo == 0)
+    {
+        cout << "Carga cancelada por el usuario." << endl;
         _Estado = false;
         return;
     }
+
+    if (_Sueldo < 0)
+    {
+        cout << "Error: el sueldo no puede ser negativo. Reingrese: ";
+    }
+
+} while (_Sueldo < 0);
+
+cin.ignore();
+
 
     _Estado = true;
 

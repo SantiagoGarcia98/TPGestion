@@ -10,8 +10,7 @@ ClienteManager::ClienteManager()
     : _archivo("clientes.dat")
 { }
 
-void ClienteManager::cargarCliente()
-{
+void ClienteManager::cargarCliente(){
 
     if (!confirmarAccion("Desea cargar un nuevo cliente? (s/n): "))
     {
@@ -46,10 +45,7 @@ void ClienteManager::cargarCliente()
 
 
 }
-
-
-void ClienteManager::listarClientes()
-{
+void ClienteManager::listarClientes(){
 
     int cant = _archivo.getCantidadRegistros();
     if (cant == 0)
@@ -127,12 +123,7 @@ void ClienteManager::listarClientes()
     }
 
 }
-
-
-
-
-void ClienteManager::bajaCliente()
-{
+void ClienteManager::bajaCliente(){
     char dni[12];
 
     if (!confirmarAccion("Intenta dar de baja un cliente? (s/n): "))
@@ -259,9 +250,7 @@ void ClienteManager::altaCliente(){
         cout << "Operacion cancelada." << endl;
     }
 }
-
-void ClienteManager::buscarClientePorDNI()
-{
+void ClienteManager::buscarClientePorDNI(){
     char dni[9];
 
     cout << "Ingrese el DNI: ";
@@ -283,9 +272,7 @@ void ClienteManager::buscarClientePorDNI()
 
     cout << "No existe un cliente con ese DNI." << endl;
 }
-
-void ClienteManager::buscarClientePorApellido()
-{
+void ClienteManager::buscarClientePorApellido(){
     char apellido[50];
     cout << "Ingrese apellido del cliente"<< endl;
     cin >> apellido;
@@ -308,8 +295,7 @@ void ClienteManager::buscarClientePorApellido()
         cout << "Nose se encontraron clientes con el apellido" << apellido << endl;
     }
 }
-void ClienteManager::buscarClientePorID()
-{
+void ClienteManager::buscarClientePorID(){
     int id;
     cout << "Ingrese ID del cliente: ";
     cin >> id;
@@ -323,10 +309,7 @@ void ClienteManager::buscarClientePorID()
     c.Mostrar();
 
 }
-
-
-void ClienteManager::listarClientesOrdenadosxapellido()
-{
+void ClienteManager::listarClientesOrdenadosxapellido(){
     int cant = _archivo.getCantidadRegistros();
     Cliente *vec = new Cliente[cant];
     for(int i = 0; i < cant; i++){
@@ -349,8 +332,7 @@ void ClienteManager::listarClientesOrdenadosxapellido()
     }
     delete[] vec;
 }
-void ClienteManager::listarClientesPorDni()
-{
+void ClienteManager::listarClientesPorDni(){
     int cant = _archivo.getCantidadRegistros();
     Cliente *vec = new Cliente[cant];
 
@@ -377,7 +359,6 @@ void ClienteManager::listarClientesPorDni()
     }
     delete[] vec;
 }
-
 void ClienteManager::modificarCliente(){
     char dni[10];
     if (!confirmarAccion("Desea modificar los datos de un cliente? (s/n): ")) {
@@ -511,3 +492,6 @@ Cliente c = _archivo.leer(pos);
 
 
 
+///FECHA QUE NO SE INGRESEN FECHAS FUTURAS
+///SUELDO QUE NO SEA NEGATIVO
+///EN CUALQUIER LADO QUE QUE SE INGRESE NUMERO , VALIDAR QUE NO SE INGRESE LETRA Y SE ROMPA
