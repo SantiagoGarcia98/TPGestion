@@ -17,3 +17,5 @@ bool esTelefonoValido( char* tel);
 bool confirmarAccion(const char* mensaje);
 bool Volver(const char* texto);
 
+int ingresarOpcion(int minimo, int maximo);
+

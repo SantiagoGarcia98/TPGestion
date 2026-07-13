@@ -67,6 +67,7 @@ void VentaMenu::ejecutarOpcion(int opcion)
     }
 }
 
+/*
 int VentaMenu::seleccionarOpcion()
 {
     int opcion;
@@ -85,6 +86,13 @@ int VentaMenu::seleccionarOpcion()
         cin >> opcion;
     }
     return opcion;
+}
+*/
+
+int VentaMenu::seleccionarOpcion()
+{
+    mostrarOpciones();
+    return ingresarOpcion(0, _cantidadOpciones);
 }
 
 void VentaMenu::menuListados()

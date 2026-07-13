@@ -78,6 +78,7 @@ void AutoMenu::ejecutarOpcion(int opcion)
     }
 }
 
+/*
 int AutoMenu::seleccionarOpcion()
 {
     int opcion;
@@ -94,6 +95,13 @@ int AutoMenu::seleccionarOpcion()
         cin >> opcion;
     }
     return opcion;
+}
+*/
+
+int AutoMenu::seleccionarOpcion()
+{
+    mostrarOpciones();
+    return ingresarOpcion(0, _cantidadOpciones);
 }
 
 

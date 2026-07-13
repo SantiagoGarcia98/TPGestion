@@ -22,6 +22,7 @@ void Auto::cargar()
     string texto;
     int i;
     float f;
+    int const anioBase = 2010, anioTope = 2026;
 
     //cout << "----- NUEVO AUTO -----" << endl << endl;
 
@@ -35,16 +36,51 @@ void Auto::cargar()
     strncpy(_modelo, texto.c_str(), sizeof(_modelo) - 1);
     _modelo[sizeof(_modelo) - 1] = '\0';
 
-    cout << "Anio: ";
-    cin >> i;
+    /// Año
+    do
+    {
+        cout << "Anio: ";
+        cin >> i;
+
+        if(i < anioBase || i > anioTope)
+        {
+            cout << "Ingrese un anio valido (" << anioBase << " - " << anioTope << ")" << endl;
+        }
+    }
+    while(i < anioBase || i > anioTope);
+
     setAnio(i);
 
-    cout << "Precio: $ ";
-    cin >> f;
+    /// Precio
+    do
+    {
+        cout << "Precio: $";
+        cin >> f;
+
+        if(f <= 0)
+        {
+            cout << "El precio debe ser mayor a cero." << endl;
+        }
+
+    }
+    while(f <= 0);
+
     setPrecio(f);
 
-    cout << "Stock disponible: ";
-    cin >> i;
+    /// Stock
+    do
+    {
+        cout << "Stock inicial: ";
+        cin >> i;
+
+        if(i <= 0)
+        {
+            cout << "El stock inicial debe ser mayor a cero." << endl;
+        }
+
+    }
+    while(i <= 0);
+
     setStock(i);
 }
 
@@ -123,23 +159,20 @@ void Auto::setModelo(const char* mo)
 
 void Auto::setAnio(int a)
 {
-    if(a>=1900 && a<=2026)
-        _anio = a;
+    _anio = a;
 }
 
 void Auto::setPrecio(float p)
 {
-    if(p>0)
-        _precio = p;
+    _precio = p;
 }
 
 void Auto::setStock(int s)
 {
-    if(s>=0)
-        _stock = s;
+    _stock = s;
 }
 
 void Auto::setEstado(bool est)
 {
-  _estado = est;
+    _estado = est;
 }

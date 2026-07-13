@@ -201,3 +201,50 @@ bool confirmarAccion(const char* mensaje)
     }
 
 }
+
+
+int ingresarOpcion(int minimo, int maximo)
+{
+    string texto;
+    int opcion;
+    bool esNumero;
+
+    while(true)
+    {
+        cout << "SELECCIONE UNA OPCION: ";
+        texto = cargarCadena();
+
+        esNumero = true;
+
+        if(texto.empty())
+        {
+            esNumero = false;
+        }
+
+        for(int i=0; i<texto.size(); i++)
+        {
+            if(texto[i] < '0' || texto[i] > '9')
+            {
+                esNumero = false;
+                break;
+            }
+        }
+
+        if(!esNumero)
+        {
+            cout << "------------------------------------------------------" << endl;
+            cout << "Debe ingresar un numero." << endl << endl;
+            continue;
+        }
+
+        opcion = stoi(texto);
+
+        if(opcion >= minimo && opcion <= maximo)
+        {
+            return opcion;
+        }
+
+        cout << "------------------------------------------------------" << endl;
+        cout << "Opcion incorrecta... Vuelva a intentarlo por favor..." << endl << endl;
+    }
+}

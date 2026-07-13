@@ -74,6 +74,7 @@ void TipoPagoMenu::ejecutarOpcion(int opcion)
     }
 }
 
+/*
 int TipoPagoMenu::seleccionarOpcion()
 {
     int opcion;
@@ -94,6 +95,14 @@ int TipoPagoMenu::seleccionarOpcion()
     }
     return opcion;
 }
+*/
+
+int TipoPagoMenu::seleccionarOpcion()
+{
+    mostrarOpciones();
+    return ingresarOpcion(0, _cantidadOpciones);
+}
+
 
 void TipoPagoMenu::menuListados()
 {
