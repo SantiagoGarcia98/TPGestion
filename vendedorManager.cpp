@@ -190,61 +190,7 @@ void VendedorManager::modificarVendedor(){
     else
         cout << " Error al modificar el vendedor."<<endl;
 }
-void VendedorManager::listarVendedores(){
-    int cant = _archivo.getCantidadRegistros();
-    if (cant == 0) {
-        cout << "No hay vendedores cargados."<<endl;
-        return;
-    }
 
-    int opcion;
-    cout << "--- OPCIONES DE LISTADO ---"<<endl;
-    cout << "1. ACTIVOS "<<endl;
-    cout << "2. INACTIVOS "<<endl;
-    cout << "3. LISTAR TODOS "<<endl;
-    cout << "4. Lista de vendedores ordenados por apellido alfabeticamente"<<endl;
-    cout << "5. Lista de vendedores ordenados por fecha de contratacion"<<endl;
-    cout << "0. Volver al menu anterior"<<endl;
-    cout << "Seleccione una opcion: ";
-    cin >> opcion;
-    system("cls");
-    if (opcion == 0)
-    {
-        cout << "Volviendo al menu:..." << endl;
-        return;
-    }
-     system("cls");
-    if (opcion == 4){
-             listarVendedorOrdenadosxapellido();
-             return;}
-     system("cls");
-     if (opcion == 5){
-            listarFechaContratacion();
-             return;}
-     system("cls");
-
-    for (int i = 0; i < cant; i++) {
-        Vendedor v = _archivo.leer(i);
-
-        switch (opcion) {
-        case 1:
-            if (v.getEstado()) v.Mostrar();
-            break;
-        case 2:
-            if (!v.getEstado()) v.Mostrar();
-            break;
-        case 3:
-            v.Mostrar();
-            break;
-        default:
-            cout << "Opcion invalida."<<endl;
-            return;
-        }
-    }
-
-    cout << "\n";
-
-}
 void VendedorManager::BajaVendedor(){
 
 

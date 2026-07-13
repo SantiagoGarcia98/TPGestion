@@ -1,5 +1,7 @@
 #include <iostream>
 #include "VendedorMenu.h"
+#include "utils.h"
+
 using namespace std;
 
 VendedorMenu::VendedorMenu() {
@@ -18,7 +20,7 @@ void VendedorMenu::mostrar() {
 }
 void VendedorMenu::mostrarOpciones() {
 
-    cout << "===== MENU VENDEDORES =====" << endl;
+    cout << "----- MENU VENDEDORES -----" << endl;
     cout << "1- CARGAR VENDEDOR" << endl;
     cout << "2- LISTAR VENDEDORES" << endl;
     cout << "3- MODIFICAR VENDEDOR" << endl;
@@ -30,15 +32,7 @@ void VendedorMenu::mostrarOpciones() {
 int VendedorMenu::seleccionOpcion() {
     int opcion;
     mostrarOpciones();
-    cout << "--------------------------------" << endl;
-    cout << "Opcion: ";
-    cin >> opcion;
-    while (opcion < 0 || opcion > _cantidadOpciones) {
-        cout << "Opcion incorrecta..." << endl;
-        cout << "Opcion: ";
-        cin >> opcion;
-    }
-    return opcion;
+    return ingresarOpcion(0, _cantidadOpciones);
 }
 void VendedorMenu::ejecutarOpcion(int opcion) {
     switch (opcion) {
@@ -73,7 +67,7 @@ void VendedorMenu::ejecutarOpcion(int opcion) {
 }
 
 void VendedorMenu::mostrarOpcionesBuscar(){
-    cout << "====== BUSCAR VENDEDOR ======" << endl;
+    cout << "----- BUSCAR VENDEDOR -----" << endl;
     cout << "1- Buscar por apellido" << endl;
     cout << "2- Buscar por legajo" << endl;
     cout << "3- Buscar por DNI" << endl;
@@ -85,17 +79,7 @@ int VendedorMenu::seleccionOpcionBuscar(){
 
     mostrarOpcionesBuscar();
 
-    cout << "Opcion: ";
-    cin >> opcion;
-
-    while(opcion < 0 || opcion > 4)
-    {
-        cout << "Opcion incorrecta." << endl;
-        cout << "Opcion: ";
-        cin >> opcion;
-    }
-
-    return opcion;
+    return ingresarOpcion(0, _cantidadOpciones);
 }
 void VendedorMenu::ejecutarOpcionBuscar(int opcion){
     switch(opcion)
@@ -127,31 +111,20 @@ void VendedorMenu::mostrarOpcionesListar(){
         cout << "No hay vendedores cargados."<<endl;
         return;
     }
-    cout << "--- OPCIONES DE LISTADO ---"<<endl;
+    cout << "----- OPCIONES DE LISTADO -----"<<endl;
     cout << "1. ACTIVOS "<<endl;
     cout << "2. INACTIVOS "<<endl;
     cout << "3. LISTAR TODOS "<<endl;
     cout << "4. Lista de vendedores ordenados por apellido alfabeticamente"<<endl;
     cout << "5. Lista de vendedores ordenados por fecha de contratacion"<<endl;
     cout << "0. Volver al menu anterior"<<endl;
-    cout << "Seleccione una opcion: ";
 }
 int VendedorMenu::seleccionOpcionListar(){
     int opcion;
 
     mostrarOpcionesListar();
 
-    cout << "Opcion: ";
-    cin >> opcion;
-
-    while(opcion < 0 || opcion > 5)
-    {
-        cout << "Opcion incorrecta." << endl;
-        cout << "Opcion: ";
-        cin >> opcion;
-    }
-
-    return opcion;
+    return ingresarOpcion(0, _cantidadOpciones);
 
 }
 void VendedorMenu::ejecutarOpcionListar(int opcion){

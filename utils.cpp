@@ -211,7 +211,7 @@ int ingresarOpcion(int minimo, int maximo)
 
     while(true)
     {
-        cout << "SELECCIONE UNA OPCION: ";
+        cout << "Seleccione una opcion: ";
         texto = cargarCadena();
 
         esNumero = true;

@@ -12,7 +12,7 @@ ClienteManager::ClienteManager()
 
 void ClienteManager::cargarCliente(){
 
-    if (!confirmarAccion("Desea cargar un nuevo cliente? (s/n): "))
+    if (!confirmarAccion("Desea cargar un nuevo cliente?"))
     {
         cout << "Operacion cancelada. Volviendo al menu...\n";
         return;
@@ -28,7 +28,7 @@ void ClienteManager::cargarCliente(){
     // se valida que en Persona no haya quedado en estado false, cancelando la carga, en ese caso no guarda el registro.
     if (!c.getEstado())
     {
-        cout << "No se guardara el cliente.\n";
+        cout << "No se guardara el cliente."<< endl;
 
         return;
     }
@@ -36,11 +36,11 @@ void ClienteManager::cargarCliente(){
 
     if (_archivo.guardar(c))
     {
-        cout << "Cliente guardado correctamente.\n";
+        cout << "Cliente guardado correctamente."<< endl;
     }
     else
     {
-        cout << "Error al guardar el cliente.\n";
+        cout << "Error al guardar el cliente."<< endl;
     }
 
 
@@ -126,7 +126,7 @@ void ClienteManager::listarClientes(){
 void ClienteManager::bajaCliente(){
     char dni[12];
 
-    if (!confirmarAccion("Intenta dar de baja un cliente? (s/n): "))
+    if (!confirmarAccion("Intenta dar de baja un cliente?"))
     {
         cout << "Operacion cancelada. Volviendo al menu"<<endl;
         return;
@@ -166,7 +166,7 @@ void ClienteManager::bajaCliente(){
     c.Mostrar();
 
     char confirma;
-    cout << "Esta seguro que desea dar de baja este cliente? (s/n): "<< endl;
+    cout << "Esta seguro que desea dar de baja este cliente?"<< endl;
     cin >> confirma;
 
     if (confirma == 's' || confirma == 'S')
@@ -185,7 +185,7 @@ void ClienteManager::bajaCliente(){
 void ClienteManager::altaCliente(){
     char dni[12];
 
-    if (!confirmarAccion("Intenta dar de alta un cliente? (s/n): "))
+    if (!confirmarAccion("Intenta dar de alta un cliente?"))
     {
         cout << "Operacion cancelada. Volviendo al menu"<<endl;
         return;
@@ -361,7 +361,7 @@ void ClienteManager::listarClientesPorDni(){
 }
 void ClienteManager::modificarCliente(){
     char dni[10];
-    if (!confirmarAccion("Desea modificar los datos de un cliente? (s/n): ")) {
+    if (!confirmarAccion("Desea modificar los datos de un cliente?")) {
         cout << "Operacion cancelada. Volviendo al menu..."<<endl;
         return;
     }

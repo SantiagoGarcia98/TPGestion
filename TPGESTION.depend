@@ -176,7 +176,7 @@
 1782913029 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\automenu.h
 	"AutoManager.h"
 
-1783965159 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\utils.cpp
+1783972377 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\utils.cpp
 	<iostream>
 	"utils.h"
 	<cstring>
@@ -195,7 +195,7 @@
 	"Cliente.h"
 	<string>
 
-1783033216 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.cpp
+1783973576 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemanager.cpp
 	"ClienteManager.h"
 	"Cliente.h"
 	"utils.h"
@@ -423,7 +423,7 @@
 	<string>
 	"Vendedor.h"
 
-1783966460 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.cpp
+1783971562 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormanager.cpp
 	<iostream>
 	<cstring>
 	"Vendedor.h"
@@ -455,19 +455,21 @@
 	"VendedorManager.h"
 	"utils.h"
 
-1783971150 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormenu.cpp
+1783972400 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormenu.cpp
 	<iostream>
 	"VendedorMenu.h"
+	"utils.h"
 
 1783969619 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\vendedormenu.h
 	"VendedorArchivo.h"
 	"VendedorManager.h"
 
-1783024775 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemenu.cpp
+1783973680 source:c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemenu.cpp
 	<iostream>
 	"ClienteMenu.h"
+	"utils.h"
 
-1782998833 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemenu.h
+1783972791 c:\users\santi\desktop\progrramacion 2\proyecto gestion\tpgestion\clientemenu.h
 	"ClienteManager.h"
 
 1783010297 source:c:\users\ezero\onedrive\escritorio\utn tup\2026\1er cuatrimestre\2. programación ii\4. examenes\tp integrador\tpgestion\clientemenu.cpp
