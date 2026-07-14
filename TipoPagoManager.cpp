@@ -79,9 +79,14 @@ bool TipoPagoManager::modificarTipoPago()
     while(true)
     {
         cout << endl;
+        /*
         cout << "Ingrese ID del registro a modificar: ";
         cin >> id;
         id = validarPositivo(id);
+        */
+
+        cantRegistros = _repoTipoPago.getCantidadRegistros();
+        id = ingresarEntero("Ingrese ID del registro a modificar: ", 1, cantRegistros);
 
         pos = _repoTipoPago.buscar(id);
 
@@ -125,7 +130,7 @@ bool TipoPagoManager::modificarTipoPago()
     cout << endl;
     cout << "ID: #" << id << endl;
 
-    cantRegistros = _repoTipoPago.getCantidadRegistros();
+
     pTiposPago = new TipoPago[cantRegistros];
     if(pTiposPago == nullptr)
     {
@@ -175,10 +180,12 @@ bool TipoPagoManager::eliminarTipoPago()
     while(true)
     {
         cout << endl;
+        /*
         cout << "Ingrese ID del registro a eliminar: ";
         cin >> id;
         id = validarPositivo(id);
-
+        */
+        id = ingresarEntero("Ingrese ID del registro a eliminar: ", 1, 10);
         pos = _repoTipoPago.buscar(id);
 
         if(pos<0)
@@ -230,10 +237,12 @@ bool TipoPagoManager::altaTipoPago()
     while(true)
     {
         cout << endl;
+        /*
         cout << "Ingrese ID del registro a dar de alta: ";
         cin >> id;
         id = validarPositivo(id);
-
+        */
+        id = ingresarEntero("Ingrese ID del registro a dar de alta: ", 1, 10);
         pos = _repoTipoPago.buscar(id);
 
         if(pos<0)

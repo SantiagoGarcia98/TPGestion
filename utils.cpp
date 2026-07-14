@@ -67,13 +67,13 @@ void validarCarga(bool resultado)
     if(resultado)
     {
         cout << endl;
-        cout << "¡CARGA EXITOSA!" << endl;
+        cout << "CARGA EXITOSA!" << endl;
         cout << endl;
     }
     else
     {
         cout << endl;
-        cout << "NO SE PUDO REALIZAR LA CARGA..." << endl;
+        cout << "NO SE PUDO REALIZAR LA CARGA!" << endl;
         cout << endl;
     }
 }

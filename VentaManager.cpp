@@ -12,6 +12,31 @@ VentaManager::VentaManager()
 
 }
 
+void VentaManager::mostrarVenta(const Venta &venta)
+{
+    int posCliente = _repoCliente.buscarPorID(venta.getIdCliente());
+    Cliente cliente = _repoCliente.leer(posCliente);
+
+    int posVendedor = _repoVendedor.buscarPorID(venta.getIdVendedor());
+    Vendedor vendedor = _repoVendedor.leer(posVendedor);
+
+    int posTipoPago = _repoTipoPagos.buscar(venta.getIdTipoPago());
+    TipoPago tipoPago = _repoTipoPagos.leer(posTipoPago);
+
+    cout << "ID Venta: #" << venta.getIdVenta() << endl;
+
+    cout << "Fecha: ";
+    venta.getFecha().Mostrar();
+
+    cout << "Cliente: " << cliente.getApellido() << ", " << cliente.getNombre() << endl;
+    cout << "Vendedor: " << vendedor.getApellido() << ", " << vendedor.getNombre() << endl;
+    cout << "Tipo de Pago: " << tipoPago.getDescripcion() << endl;
+    cout << fixed << setprecision(2);
+    cout << "Monto Total: $" << venta.getMontoTotal() << endl;
+    cout << "Estado: " << (venta.getEstado() ? "ACTIVA" : "CANCELADA") << endl;
+}
+
+
 bool VentaManager::cargarVenta()
 {
     cout << "---------- NUEVA VENTA ----------" << endl << endl;
@@ -346,6 +371,7 @@ void VentaManager::listarVentas()
     cin >> opcion;
 
     cout << endl;
+    bool encontro = false;
 
     for(int i=0; i<cant; i++)
     {
@@ -358,6 +384,7 @@ void VentaManager::listarVentas()
             {
                 v.mostrar();
                 cout << endl;
+                encontro = true;
             }
             break;
         case 2:
@@ -365,16 +392,31 @@ void VentaManager::listarVentas()
             {
                 v.mostrar();
                 cout << endl;
+                encontro = true;
             }
             break;
         case 3:
             v.mostrar();
             cout << endl;
+            encontro = true;
             break;
 
         default:
             cout << "Opcion invalida.";
             return;
+        }
+    }
+    if(!encontro)
+    {
+        switch(opcion)
+        {
+        case 1:
+            cout << "No hay ventas activas." << endl;
+            break;
+
+        case 2:
+            cout << "No hay ventas inactivas." << endl;
+            break;
         }
     }
 }
@@ -391,11 +433,26 @@ void VentaManager::mostrarVentaCompleta(int idVenta)
 
     Venta venta = _repoVenta.leer(pos);
 
-    cout << "===== VENTA =====" << endl;
-    venta.mostrar();
+    cout << "========== VENTA ==========" << endl;
+    //venta.mostrar();
+
+    cout << "ID Venta: #" << venta.getIdVenta() << endl;
+    cout << "Fecha: ";
+    venta.getFecha().Mostrar();
+
+    Cliente cliente = _repoCliente.leer(_repoCliente.buscarPorID(venta.getIdCliente()));
+    Vendedor vendedor = _repoVendedor.leer(_repoVendedor.buscarPorID(venta.getIdVendedor()));
+    TipoPago tipo = _repoTipoPagos.leer(_repoTipoPagos.buscar(venta.getIdTipoPago()));
+
+    cout << "Cliente: " << cliente.getApellido() << ", " << cliente.getNombre() << endl;
+    cout << "Vendedor: " << vendedor.getApellido() << ", " << vendedor.getNombre() << endl;
+    cout << "Tipo de pago: " << tipo.getDescripcion() << endl;
+    cout << fixed << setprecision(2);
+    cout << "Monto Total: $" << venta.getMontoTotal() << endl;
+    cout << "Estado: " << (venta.getEstado() ? "ACTIVA" : "CANCELADA") << endl;
 
     cout << endl;
-    cout << "===== CLIENTE =====" << endl;
+    cout << "========== CLIENTE ==========" << endl;
 
     int posCliente = _repoCliente.buscarPorID(venta.getIdCliente());
 
@@ -404,8 +461,9 @@ void VentaManager::mostrarVentaCompleta(int idVenta)
         Cliente c = _repoCliente.leer(posCliente);
         c.Mostrar();
     }
+    cout << endl;
 
-    cout << "===== VENDEDOR =====";
+    cout << "========== VENDEDOR ==========" << endl;
 
     int posVendedor = _repoVendedor.buscarPorID(venta.getIdVendedor());
 
@@ -414,8 +472,9 @@ void VentaManager::mostrarVentaCompleta(int idVenta)
         Vendedor v = _repoVendedor.leer(posVendedor);
         v.Mostrar();
     }
+    cout << endl;
 
-    cout << "===== DETALLES =====";
+    cout << "========== DETALLES ==========" << endl;
 
     _repoDetalle.listarPorVenta(idVenta);
 }
@@ -456,7 +515,7 @@ void VentaManager::listarVentaPorFecha() /// Ordenada por fecha de más reciente 
     {
         if(vec[i].getEstado())
         {
-          vec[i].mostrar();
+          mostrarVenta(vec[i]);
           cout << endl;
         }
     }
@@ -498,7 +557,7 @@ void VentaManager::listarVentaPorMonto() /// Ordenadas por monto total de manera
     {
         if(vec[i].getEstado())
         {
-            vec[i].mostrar();
+            mostrarVenta(vec[i]);
             cout << endl;
         }
     }
@@ -520,6 +579,13 @@ void VentaManager::consultarVentasPorFechas()
     cout << "Fecha hasta: ";
     hasta.Cargar();
 
+    if(desde > hasta)
+    {
+        cout << endl;
+        cout << "La fecha desde no puede ser mayor que la fecha hasta." << endl;
+        return;
+    }
+
     int cant = _repoVenta.getCantidadRegistros();
 
     bool encontro = false;
@@ -530,7 +596,7 @@ void VentaManager::consultarVentasPorFechas()
 
       if(v.getEstado() && v.getFecha() >= desde && v.getFecha() <= hasta)
       {
-        v.mostrar();
+        mostrarVenta(v);
         cout << endl;
         encontro = true;
       }
@@ -570,7 +636,7 @@ void VentaManager::consultarVentaPorCliente()
 
       if(v.getEstado() && v.getIdCliente() == idCliente)
       {
-        v.mostrar();
+        mostrarVenta(v);
         cout << endl;
         encontro = true;
       }
@@ -625,7 +691,7 @@ void VentaManager::consultarVentaPorVendedor()
 
       if(v.getEstado() && v.getIdVendedor() == idVendedor)
       {
-        v.mostrar();
+        mostrarVenta(v);
         cout << endl;
         encontro = true;
       }

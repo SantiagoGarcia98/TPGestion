@@ -27,7 +27,7 @@ void VentaMenu::mostrar()
 void VentaMenu::mostrarOpciones()
 {
     cout << "----- MENU VENTA -----" << endl;
-    cout << "1 - NUEVA VENTA" << endl;
+    cout << "1 - CARGAR VENTA" << endl;
     cout << "2 - ELIMINAR VENTA" << endl;
     cout << "3 - LISTADO DE VENTAS" << endl; /// Dentro va listado de ventas del informe, son 2 + 2 que sume en VentaManager
     cout << "4 - CONSULTAS DE VENTAS" << endl; /// Dentro va consultas de ventas del informe, son 4 (también en VentaManager)
@@ -106,8 +106,8 @@ void VentaMenu::menuListados()
         cout << "----- LISTADO DE VENTAS -----" << endl;
         cout << "1 - Listar ventas" << endl;
         cout << "2 - Mostrar venta completa" << endl;
-        cout << "3 - Listar por fecha" << endl;
-        cout << "4 - Listar por monto" << endl;
+        cout << "3 - Listar por fecha descendente" << endl;
+        cout << "4 - Listar por monto descendente" << endl;
         cout << "0 - Volver" << endl;
         cout << "-----------------------------" << endl << endl;
         cout << "Opcion: ";

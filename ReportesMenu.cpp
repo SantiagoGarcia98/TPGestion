@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ReportesMenu.h"
+#include "utils.h"
 
 using namespace std;
 
@@ -26,24 +27,9 @@ void ReportesMenu::mostrarOpciones()
 
 int ReportesMenu::seleccionarOpcion()
 {
-    int opcion;
-
     mostrarOpciones();
     cout << endl;
-    cout << "SELECCIONE UNA OPCION: ";
-    cin >> opcion;
-
-    while(opcion < 0 || opcion > _cantidadOpciones)
-    {
-        cout << "--------------------------------------------------------------------------------" << endl;
-        cout << "Opcion incorrecta." << endl;
-        cout << "Vuelva a intentarlo." << endl;
-        cout << "--------------------------------------------------------------------------------" << endl;
-        cout << "SELECCIONE UNA OPCION: ";
-        cin >> opcion;
-    }
-
-    return opcion;
+    return ingresarEntero("SELECCIONE UNA OPCION: ", 0, _cantidadOpciones);
 }
 
 void ReportesMenu::ejecutarOpcion(int opcion)
@@ -53,9 +39,7 @@ void ReportesMenu::ejecutarOpcion(int opcion)
     case 1:
     {
         system("cls");
-        int anio;
-        cout << "Ingrese el anio: ";
-        cin >> anio;
+        int anio = ingresarEntero("Ingrese el anio: ", 2000, 2026);
         cout << endl;
         _reportesManager.facturacionMensualPorAnio(anio);
         break;

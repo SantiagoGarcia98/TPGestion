@@ -16,6 +16,7 @@ private:
     AutoArchivo _repoAuto;
     TipoPagoArchivo _repoTipoPagos;
     DetalleVentaArchivo _repoDetalle;
+    void mostrarVenta(const Venta &venta);
 
 public:
     VentaManager();

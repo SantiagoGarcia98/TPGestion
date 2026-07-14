@@ -31,7 +31,7 @@ void App::mostrarOpciones()
     cout << "4- VENTAS" << endl;
     cout << "5- TIPOS DE PAGO" << endl;
     cout << "6- REPORTES" << endl;
-    cout << "0- SALIR" << endl;
+    cout << "0- SALIR" << endl << endl;
 }
 
 int App::seleccionOpcion()

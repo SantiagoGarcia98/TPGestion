@@ -35,8 +35,7 @@ void Venta::mostrar()
 
     cout << "Monto Total: $" << _montoTotal << endl;
 
-    cout << "Estado: " << _estado << endl;
-
+    cout << "Estado: " << (_estado ? "ACTIVA" : "CANCELADA") << endl;
 }
 
 /// GETTERS
