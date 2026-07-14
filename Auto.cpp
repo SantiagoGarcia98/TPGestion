@@ -22,7 +22,7 @@ void Auto::cargar()
     string texto;
     int i;
     float f;
-    int const anioBase = 2010, anioTope = 2026;
+    int const anioBase = 2010, anioTope = 2026, stockMin = 1, stockMax = 100;
 
     //cout << "----- NUEVO AUTO -----" << endl << endl;
 
@@ -37,7 +37,8 @@ void Auto::cargar()
     _modelo[sizeof(_modelo) - 1] = '\0';
 
     /// Año
-    do
+
+    /*do
     {
         cout << "Anio: ";
         cin >> i;
@@ -50,8 +51,14 @@ void Auto::cargar()
     while(i < anioBase || i > anioTope);
 
     setAnio(i);
+    */
+
+    i = ingresarEntero("Anio: ", anioBase, anioTope);
+    setAnio(i);
 
     /// Precio
+
+    /*
     do
     {
         cout << "Precio: $";
@@ -66,8 +73,14 @@ void Auto::cargar()
     while(f <= 0);
 
     setPrecio(f);
+    */
+
+    f = ingresarFloat("Precio: $", 0.01f);
+    setPrecio(f);
 
     /// Stock
+
+    /*
     do
     {
         cout << "Stock inicial: ";
@@ -81,6 +94,10 @@ void Auto::cargar()
     }
     while(i <= 0);
 
+    setStock(i);
+    */
+
+    i = ingresarEntero("Stock inicial: ", stockMin, stockMax);
     setStock(i);
 }
 

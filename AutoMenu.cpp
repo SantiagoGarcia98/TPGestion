@@ -27,10 +27,10 @@ void AutoMenu::mostrar()
 void AutoMenu::mostrarOpciones()
 {
     cout << "--------------------- MENU AUTOS ---------------------" << endl;
-    cout << "1 - NUEVO AUTO" << endl;
+    cout << "1 - CARGAR AUTO" << endl;
     cout << "2 - MODIFICAR AUTO" << endl;
-    cout << "3 - ELIMINAR AUTO" << endl;
-    cout << "4 - ALTA AUTO" << endl;
+    cout << "3 - DAR DE BAJA AUTO" << endl;
+    cout << "4 - DAR DE ALTA AUTO" << endl;
     cout << "5 - LISTADO DE AUTOS" << endl;
     cout << "6 - CONSULTA DE AUTOS" << endl;
     cout << "0 - SALIR" << endl;
@@ -101,7 +101,7 @@ int AutoMenu::seleccionarOpcion()
 int AutoMenu::seleccionarOpcion()
 {
     mostrarOpciones();
-    return ingresarOpcion(0, _cantidadOpciones);
+    return ingresarEntero("SELECCIONE UNA OPCION: ", 0, _cantidadOpciones);
 }
 
 
@@ -117,13 +117,15 @@ void AutoMenu::menuListados()
         cout << "1 - Activos" << endl;
         cout << "2 - Inactivos" << endl;
         cout << "3 - Todos" << endl;
-        cout << "4 - Ordenados por marca y modelo" << endl;
-        cout << "5 - Ordenados por anio" << endl;
-        cout << "6 - Ordenados por precio" << endl;
+        cout << "4 - Ordenados por marca y modelo alfabeticamente" << endl;
+        cout << "5 - Ordenados por anio de manera descendente" << endl;
+        cout << "6 - Ordenados por precio de manera descendente" << endl;
         cout << "0 - Volver" << endl << endl;
+        /*
         cout << "Opcion: ";
         cin >> opcion;
-
+        */
+        opcion = ingresarEntero("Opcion: ", 0, 6);
         cout << endl;
 
         switch(opcion)
@@ -148,8 +150,6 @@ void AutoMenu::menuListados()
             break;
         case 0:
             break;
-        default:
-            cout << "Opcion invalida." << endl;
         }
 
         if(opcion != 0)
@@ -172,9 +172,11 @@ void AutoMenu::menuConsultas()
         cout << "3 - Buscar por rango de precios" << endl;
         cout << "4 - Buscar por disponibilidad" << endl;
         cout << "0 - Volver" << endl << endl;
+        /*
         cout << "Opcion: ";
         cin >> opcion;
-
+        */
+        opcion = ingresarEntero("Opcion: ", 0, 4);
         cout << endl;
 
         switch(opcion)
@@ -193,8 +195,6 @@ void AutoMenu::menuConsultas()
             break;
         case 0:
             break;
-        default:
-            cout << "Opcion invalida." << endl;
         }
 
         if(opcion != 0)

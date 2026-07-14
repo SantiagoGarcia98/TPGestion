@@ -1,5 +1,6 @@
 #include <iostream>
 #include "App.h"
+#include "utils.h"
 
 using namespace std;
 
@@ -35,21 +36,8 @@ void App::mostrarOpciones()
 
 int App::seleccionOpcion()
 {
-    int opcion;
     mostrarOpciones();
-    cout << "------------------------------------------------------------" << endl;
-    cout << "SELECCIONE UNA OPCION: ";
-    cin >> opcion;
-    cout << endl;
-    while(opcion < 0 || opcion > _cantidadOpciones)
-    {
-        cout << "Opcion incorrecta... Vuelva a intentarlo por favor..." << endl;
-        cout << "------------------------------------------------------------" << endl;
-        cout << "SELECCIONE UNA OPCION: ";
-        cin >> opcion;
-        cout << endl;
-    }
-    return opcion;
+    return ingresarEntero("SELECCIONE UNA OPCION: ", 0, _cantidadOpciones);
 }
 
 void App::ejecutarOpcion(int opcion)

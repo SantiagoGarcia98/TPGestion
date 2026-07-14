@@ -4,7 +4,7 @@
 
 std::string cargarCadena();
 
-bool quiereCancelar(std::string mensaje = "Ingrese 0 para cancelar o cualquier numero para continuar: ");
+bool quiereCancelar(std::string mensaje = "Ingrese 0 para cancelar o 1 para continuar: ");
 int validarPositivo(int num);
 void validarCarga(bool resultado);
 void validarModificacion(bool resultado);
@@ -19,3 +19,5 @@ bool Volver(const char* texto);
 
 int ingresarOpcion(int minimo, int maximo);
 
+int ingresarEntero(std::string mensaje, int minimo, int maximo);
+float ingresarFloat(std::string mensaje, float minimo);

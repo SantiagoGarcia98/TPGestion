@@ -85,15 +85,18 @@ bool AutoManager::modificarAuto()
     Auto reg;
     Auto *pAutos;
 
-    cout << "----------------------- ACTUALIZACIÓN DE AUTO -----------------------" << endl;
+    cout << "----------------------- ACTUALIZACION DE AUTO -----------------------" << endl;
 
     while(true)
     {
         cout << endl;
+        /*
         cout << "Ingrese ID del registro a modificar: ";
         cin >> id;
         id = validarPositivo(id);
-
+        */
+        cantRegistros = _repoAuto.getCantidadRegistros();
+        id = ingresarEntero("Ingrese ID del registro a modificar: ", 1, cantRegistros);
         pos = _repoAuto.buscar(id);
 
         if(pos<0)
@@ -126,7 +129,7 @@ bool AutoManager::modificarAuto()
     cout << "ID: #" << id << endl;
 /// reg.cargar();
 
-    cantRegistros = _repoAuto.getCantidadRegistros();
+    //cantRegistros = _repoAuto.getCantidadRegistros();
     pAutos = new Auto[cantRegistros];
     if(pAutos == nullptr)
     {
@@ -170,16 +173,21 @@ bool AutoManager::modificarAuto()
 
 bool AutoManager::eliminarAuto()
 {
-    int id;
+    int id, cantRegistros;
     Auto reg;
 
     cout << "-------------- BAJA DE AUTO --------------" << endl;
     while(true)
     {
         cout << endl;
+        /*
         cout << "Ingrese ID del registro a eliminar: ";
         cin >> id;
         id = validarPositivo(id);
+        */
+
+        cantRegistros = _repoAuto.getCantidadRegistros();
+        id = ingresarEntero("Ingrese ID del registro a eliminar: ", 1, cantRegistros);
 
         int pos = _repoAuto.buscar(id);
 
@@ -220,7 +228,7 @@ bool AutoManager::eliminarAuto()
 
 bool AutoManager::altaAuto()
 {
-    int id;
+    int id, cantRegistros;
     Auto reg;
 
     cout << "-------------- ALTA DE AUTO --------------" << endl;
@@ -228,10 +236,13 @@ bool AutoManager::altaAuto()
     while(true)
     {
         cout << endl;
+        /*
         cout << "Ingrese ID del registro a dar de alta: ";
         cin >> id;
         id = validarPositivo(id);
-
+        */
+        cantRegistros = _repoAuto.getCantidadRegistros();
+        id = ingresarEntero("Ingrese ID del registro a dar de alta: ", 1, cantRegistros);
         int pos = _repoAuto.buscar(id);
 
         if(pos>=0)
@@ -458,6 +469,12 @@ void AutoManager::ordenadosPorPrecio()
 
     Auto *vec;
     vec = new Auto[cant];
+
+    if(vec==nullptr)
+    {
+        cout << "Error al asignar memoria." << endl;
+        return;
+    }
 
     _repoAuto.leer(vec, cant);
 

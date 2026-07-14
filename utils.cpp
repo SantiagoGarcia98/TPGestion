@@ -18,7 +18,7 @@ std::string cargarCadena()
     return texto;
 }
 
-
+/*
 bool quiereCancelar(string mensaje)
 {
     int opcion;
@@ -32,6 +32,24 @@ bool quiereCancelar(string mensaje)
     }
     return false;
 }
+*/
+
+bool quiereCancelar(string mensaje)
+{
+    cout << mensaje << endl;
+
+    int opcion = ingresarEntero("0 - Cancelar\n1 - Continuar\nOpcion: ", 0, 1);
+
+    if(opcion == 0)
+    {
+        cout << endl;
+        cout << "Operacion cancelada..." << endl;
+        return true;
+    }
+
+    return false;
+}
+
 
 int validarPositivo(int num)
 {
@@ -247,4 +265,111 @@ int ingresarOpcion(int minimo, int maximo)
         cout << "------------------------------------------------------" << endl;
         cout << "Opcion incorrecta... Vuelva a intentarlo por favor..." << endl << endl;
     }
+}
+
+int ingresarEntero(string mensaje, int minimo, int maximo)
+{
+    string texto;
+    int numero;
+    bool esNumero;
+
+    while(true)
+    {
+        cout << mensaje;
+        texto = cargarCadena();
+
+        esNumero = true;
+
+        if(texto.empty())
+        {
+            esNumero = false;
+        }
+
+        for(int i=0; i<texto.size(); i++)
+        {
+            if(texto[i] < '0' || texto[i] > '9')
+            {
+                esNumero = false;
+                break;
+            }
+        }
+
+        if(!esNumero)
+        {
+            cout << "Debe ingresar un numero." << endl << endl;
+            continue;
+        }
+
+        numero = stoi(texto);
+
+        if(numero < minimo || numero > maximo)
+        {
+            cout << "El valor debe estar entre "
+                 << minimo << " y " << maximo << "." << endl << endl;
+            continue;
+        }
+
+        return numero;
+    }
+}
+
+float ingresarFloat(string mensaje, float minimo)
+{
+    string texto;
+    float numero;
+    bool esNumero;
+
+    while(true)
+    {
+        cout << mensaje;
+        texto = cargarCadena();
+
+        esNumero = true;
+        int cantidadPuntos = 0;
+
+        if(texto.empty())
+        {
+            esNumero = false;
+        }
+
+        for(int i=0; i<texto.size(); i++)
+        {
+            if(texto[i] == '.')
+            {
+                cantidadPuntos++;
+
+                if(cantidadPuntos > 1)
+                {
+                    esNumero = false;
+                    break;
+                }
+            }
+            else
+            {
+                if(texto[i] < '0' || texto[i] > '9')
+                {
+                    esNumero = false;
+                    break;
+                }
+            }
+        }
+
+        if(!esNumero)
+        {
+            cout << "Debe ingresar un numero valido." << endl << endl;
+            continue;
+        }
+
+        numero = stof(texto);
+
+        if(numero < minimo)
+        {
+            cout << "El valor debe ser mayor o igual a "
+                 << minimo << "." << endl << endl;
+            continue;
+        }
+
+        return numero;
+    }
+
 }

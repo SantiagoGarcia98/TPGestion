@@ -25,10 +25,10 @@ void TipoPagoMenu::mostrarOpciones()
 {
     cout << "----- MENU TIPOS DE PAGO -----" << endl;
 
-    cout << "1 - NUEVO TIPO DE PAGO" << endl;
+    cout << "1 - CARGAR TIPO DE PAGO" << endl;
     cout << "2 - MODIFICAR TIPO DE PAGO" << endl;
-    cout << "3 - ELIMINAR TIPO DE PAGO" << endl;
-    cout << "4 - ALTA TIPO DE PAGO" << endl;
+    cout << "3 - DAR DE BAJA TIPO DE PAGO" << endl;
+    cout << "4 - DAR DE ALTA TIPO DE PAGO" << endl;
     cout << "5 - LISTADOS DE TIPOS DE PAGO" << endl;
     cout << "------------------------------" << endl;
     cout << "0 - SALIR" << endl;
