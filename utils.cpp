@@ -18,21 +18,7 @@ std::string cargarCadena()
     return texto;
 }
 
-/*
-bool quiereCancelar(string mensaje)
-{
-    int opcion;
-    cout << mensaje << endl;
-    cin >> opcion;
-    if(opcion == 0)
-    {
-        cout << endl;
-        cout << "Operacion cancelada..." << endl;
-        return true;
-    }
-    return false;
-}
-*/
+
 
 bool quiereCancelar(string mensaje)
 {
@@ -126,28 +112,7 @@ void validarAlta(bool resultado)
     }
 }
 
-/*
-bool confirmarAccion(string mensaje)
-{
-    char respuesta;
 
-    while (true)
-    {
-      cout << mensaje << " (S/N): ";
-      cin >> respuesta;
-
-      if (respuesta == 's' || respuesta == 'S')
-        return true;
-
-      if (respuesta == 'n' || respuesta == 'N')
-        return false;
-
-      cout << "Respuesta incorrecta, vuelva a intentarlo..." << endl;
-      system("pause");
-      system("cls");
-    }
-}
-*/
 
 bool validarDNI(char* dni) {
     int tam = strlen(dni);

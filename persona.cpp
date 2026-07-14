@@ -87,64 +87,79 @@ bool Persona::getEstado()
 
 void Persona::Cargar()
 {
+    do{
+    cout << "DNI (0 para cancelar): ";
+    cin.getline(_DNI, 12);
 
-    do
-    {
-        cout << "DNI (0 para cancelar): ";
-        cin.getline(_DNI, 12);
-
-        if (Volver(_DNI))
-        {
-            cout << "Carga cancelada por el usuario.\n";
-            _Estado = false;
-            return;
-        }
-
-        if (!validarDNI(_DNI))
-        {
-            cout << "ERROR: DNI invalido. Reintente.\n";
-            strcpy(_DNI, "");// el campo se deja en blanco para repetir
-            continue; //
-        }
-        //Verificar si ya existe en el sistema (en clientes o vendedores)
-
-        break;
+    if (cin.fail()){
+        cin.clear();
+        cin.ignore(10000, '\n');
+        cout << "ERROR: El DNI es demasiado largo. Reingrese."<<endl;
+        strcpy(_DNI, "");
+        continue;
     }
-    while (strlen(_DNI) == 0);
 
+    if (Volver(_DNI)){
+        cout << "Carga cancelada por el usuario."<<endl;
+        _Estado = false;
+        return;
+    }
+
+    bool soloNumeros = true;
+
+    for (int i = 0; _DNI[i] != '\0'; i++){
+        if (!isdigit(_DNI[i]))
+        {
+            soloNumeros = false;
+            break;
+        }
+    }
+
+    if (!soloNumeros){
+        cout << "ERROR: El DNI solo puede contener numeros."<<endl;
+        strcpy(_DNI, "");
+        continue;
+    }
+
+    if (!validarDNI(_DNI)){
+        cout << "ERROR: DNI invalido. Reintente."<<endl;
+        strcpy(_DNI, "");
+        continue;
+    }
+
+    break;
+
+} while (strlen(_DNI) == 0);
     cout << "Nombre (0 para cancelar): ";
     cin.getline(_Nombre, 50);
-    if (Volver(_Nombre))
-    {
-        cout << "Carga cancelada por el usuario.\n";
+    if (Volver(_Nombre)){
+        cout << "Carga cancelada por el usuario."<<endl;
         _Estado = false;
         return;
     }
 
     cout << "Apellido (0 para cancelar): ";
     cin.getline(_Apellido, 50);
-    if (Volver(_Apellido))
-    {
-        cout << "Carga cancelada por el usuario.\n";
+    if (Volver(_Apellido)){
+        cout << "Carga cancelada por el usuario."<<endl;
         _Estado = false;
         return;
     }
 
-    do
-    {
+    do{
         cout << "Telefono (0 para cancelar): ";
         cin.getline(_Telefono, 20);
 
         if (Volver(_Telefono))
         {
-            cout << "Carga cancelada por el usuario.\n";
+            cout << "Carga cancelada por el usuario."<<endl;
             _Estado = false;
             return;
         }
 
         if (!esTelefonoValido(_Telefono))
         {
-            cout << "Telefono invalido. Ingrese solo numeros (6–15 digitos).\n";
+            cout << "Telefono invalido. Ingrese solo numeros (6 a 15 digitos)."<<endl;
             strcpy(_Telefono, "");
         }
 
@@ -153,9 +168,8 @@ void Persona::Cargar()
 
     cout << "Email (0 para cancelar): ";
     cin.getline(_Email, 50);
-    if (Volver(_Email))
-    {
-        cout << "Carga cancelada por el usuario.\n";
+    if (Volver(_Email)){
+        cout << "Carga cancelada por el usuario."<<endl;
         _Estado = false;
         return;
     }

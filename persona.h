@@ -16,11 +16,11 @@ protected:
 public:
     Persona();
 
-    // Métodos comunes
+
     void Cargar();
     void Mostrar();
 
-    // Getters
+
      char *getNombre() ;
      char* getApellido() ;
      char *getDni() ;
@@ -29,7 +29,7 @@ public:
      Fecha getFechaNacimiento();
      bool getEstado() ;
 
-    // Setters
+
     void setNombre( char* nombre);
     void setApellido( char *apellido);
     void setDni( char* dni);

@@ -22,7 +22,7 @@
   int Fecha::getAnio() { return _anio; }
   void Fecha::setAnio(int anio) { _anio = anio; }
   using namespace std;
-  void Fecha::Cargar() {
+ /* void Fecha::Cargar() {
       do {
           cout << "Dia: ";
           cin >> _dia;
@@ -36,6 +36,56 @@
           }
       } while (!esFechaValida(_dia, _mes, _anio));
   }
+*/
+void Fecha::Cargar()
+{
+    do
+    {
+        cout << "Dia: ";
+        cin >> _dia;
+
+        while (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "Error. Debe ingresar un numero.\n";
+            cout << "Dia: ";
+            cin >> _dia;
+        }
+
+        cout << "Mes: ";
+        cin >> _mes;
+
+        while (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "Error. Debe ingresar un numero.\n";
+            cout << "Mes: ";
+            cin >> _mes;
+        }
+
+        cout << "A" << char(164) << "o: ";
+        cin >> _anio;
+
+        while (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "Error. Debe ingresar un numero.\n";
+            cout << "A" << char(164) << "o: ";
+            cin >> _anio;
+        }
+
+        if (!esFechaValida(_dia, _mes, _anio))
+        {
+            cout << "\nFecha invalida. Reingrese.\n\n";
+        }
+
+    } while (!esFechaValida(_dia, _mes, _anio));
+
+    cin.ignore();
+}
 
   bool Fecha::esBisiesto(int anio) {
       return (anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0);

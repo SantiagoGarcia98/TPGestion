@@ -28,17 +28,9 @@ void ClienteMenu::mostrarOpciones() {
     cout << "0- SALIR" << endl;
 }
 int ClienteMenu::seleccionOpcion() {
-    int opcion;
+     int opcion;
     mostrarOpciones();
-    cout << "--------------------------------" << endl;
-    cout << "Opcion: ";
-    cin >> opcion;
-    while (opcion < 0 || opcion > _cantidadOpciones) {
-        cout << "Opcion incorrecta..." << endl;
-        cout << "Opcion: ";
-        cin >> opcion;
-    }
-    return opcion;
+    return ingresarOpcion(0, _cantidadOpciones);
 }
 void ClienteMenu::ejecutarOpcion(int opcion) {
 
@@ -87,7 +79,7 @@ void ClienteMenu::mostrarOpcionesBuscar(){
 int ClienteMenu::seleccionOpcionBuscar(){
     int opcion;
 
-    mostrarOpcionesListar();
+    mostrarOpcionesBuscar();
 
     return ingresarOpcion(0, _cantidadOpciones);
 }
@@ -136,7 +128,7 @@ void ClienteMenu::ejecutarOpcionListar(int opcion){
     }
      system("cls");
      if (opcion == 4){
-             _clienteManager.buscarClientePorApellido();
+             _clienteManager.listarClientesOrdenadosxapellido();
              return;}
      system("cls");
     if (opcion == 5){
