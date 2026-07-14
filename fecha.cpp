@@ -1,5 +1,6 @@
   #include "Fecha.h"
   #include <iostream>
+  #include <chrono>
    using namespace std;
 
 
@@ -94,4 +95,17 @@ bool Fecha::esMayor(Fecha otra) const
         return _mes > otra._mes;
 
     return _dia > otra._dia;
+}
+
+void Fecha::setCurrentDate()
+{
+    // Obtener la fecha actual del sistema
+    auto now = std::chrono::system_clock::now();
+    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+    std::tm* localTime = std::localtime(&now_c);
+
+    // Asignar los valores a la fecha
+    _dia = localTime->tm_mday;
+    _mes = localTime->tm_mon + 1; // tm_mon va de 0 a 11
+    _anio = localTime->tm_year + 1900; // tm_year es el número de años desde 1900
 }

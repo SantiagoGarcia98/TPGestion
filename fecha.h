@@ -28,6 +28,8 @@ public:
     bool operator<=(const Fecha &otra) const;
     bool operator>=(const Fecha &otra) const;
 
+    void setCurrentDate(); /// Obtener fecha actual
+
 private:
     int _dia;
     int _mes;

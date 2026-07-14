@@ -56,7 +56,24 @@ bool VentaManager::cargarVenta()
     cout << "--- DATOS ---" << endl;
 
     Fecha fecha; /// Ver constructor que esté por default con fecha actual por ej y sino opción de ingresar fecha manual
-    fecha.Cargar();
+
+    Fecha hoy;
+    do
+    {
+        fecha.Cargar();
+
+        hoy.setCurrentDate();
+
+        if(fecha > hoy)
+        {
+            cout << endl;
+            cout << "La fecha de la venta no puede ser posterior a la fecha actual." << endl;
+            cout << "Vuelva a ingresarla." << endl << endl;
+        }
+
+    }
+    while(fecha > hoy);
+
     venta.setFecha(fecha);
 
     cout << endl;
